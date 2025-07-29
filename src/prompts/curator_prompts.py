@@ -80,8 +80,12 @@ def format_chat_history(chat_history: list) -> str:
         return "No previous conversation."
     
     formatted = []
-    for entry in chat_history[-5:]:  # Last 5 exchanges
-        formatted.append(f"User: {entry.get('message', '')}")
-        formatted.append(f"Assistant: {entry.get('response', '')}")
+    formatted.append("=== CONVERSATION HISTORY ===")
+    for i, entry in enumerate(chat_history[-5:], 1):  # Last 5 exchanges
+        formatted.append(f"Exchange {i}:")
+        formatted.append(f"  User: {entry.get('message', '')}")
+        formatted.append(f"  Assistant: {entry.get('response', '')}")
+        formatted.append("")
+    formatted.append("=== END CONVERSATION HISTORY ===")
     
     return "\n".join(formatted) 

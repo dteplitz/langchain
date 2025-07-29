@@ -1,249 +1,370 @@
-# LangChain Chat System - Stage 1
+# LangChain Chat System - Stage 3 Complete
 
-A LangChain-based chat system with intelligent agents, built with FastAPI and modern Python practices.
+A comprehensive LangChain-based chat system with intelligent agents, advanced orchestration, and robust error handling.
 
-## 🏗️ Architecture
+## 🏗️ Architecture Overview
 
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   FastAPI App   │───▶│  Simple Chain   │───▶│ Curator Agent   │
-│                 │    │                 │    │                 │
-│ • /chat         │    │ • Memory Mgmt   │    │ • Input Clean   │
-│ • /health       │    │ • Error Handling│    │ • Validation    │
-│ • CORS          │    │ • Logging       │    │ • JSON Output   │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
-         ▼                       ▼                       ▼
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   SQLite DB     │    │   Groq LLM      │    │   Logging       │
-│                 │    │                 │    │                 │
-│ • Chat History  │    │ • llama3-8b     │    │ • Structured    │
-│ • Session Mgmt  │    │ • Fast Response │    │ • Request IDs   │
-│ • Persistence   │    │ • Configurable  │    │ • Performance   │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           LANGCHAIN CHAT SYSTEM                             │
+│                              (Stage 3 Complete)                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              FASTAPI LAYER                                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐        │
+│  │   /chat     │  │   /health   │  │     /       │  │   /docs     │        │
+│  │   POST      │  │    GET      │  │    GET      │  │    GET      │        │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘        │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           MIDDLEWARE STACK                                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐              │
+│  │   Security      │  │  Performance    │  │ Enriched Logging│              │
+│  │  Middleware     │  │  Middleware     │  │  Middleware     │              │
+│  │                 │  │                 │  │                 │              │
+│  │ • Security Headers│ │ • Slow Request │  │ • Request/Response│              │
+│  │ • XSS Protection│ │   Detection     │  │   Logging       │              │
+│  │ • CSP Headers   │ │ • Performance   │  │ • Error Tracking│              │
+│  │                 │ │   Metrics       │  │ • Request IDs   │              │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘              │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        ADVANCED CHAIN ORCHESTRATION                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  ┌─────────────────────────────────────────────────────────────────────────┐ │
+│  │                    RunnableSequence + Fallbacks                        │ │
+│  │                                                                         │ │
+│  │  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐                │ │
+│  │  │   Curator   │───▶│  Processor  │───▶│  Formatter  │                │ │
+│  │  │   Agent     │    │   Agent     │    │   Agent     │                │ │
+│  │  │             │    │             │    │             │                │ │
+│  │  │ • Validation│    │ • LLM Gen   │    │ • Format    │                │ │
+│  │  │ • Cleaning  │    │ • Tools     │    │ • Structure │                │ │
+│  │  │ • Content   │    │ • Search    │    │ • Readability│                │ │
+│  │  │   Type      │    │ • Context   │    │ • Output    │                │ │
+│  │  └─────────────┘    └─────────────┘    └─────────────┘                │ │
+│  │         │                   │                   │                      │ │
+│  │         ▼                   ▼                   ▼                      │ │
+│  │  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐                │ │
+│  │  │   Fallback  │    │   Fallback  │    │   Fallback  │                │ │
+│  │  │   Handler   │    │   Handler   │    │   Handler   │                │ │
+│  │  └─────────────┘    └─────────────┘    └─────────────┘                │ │
+│  └─────────────────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              TOOLS LAYER                                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐        │
+│  │   Search    │  │ Calculator  │  │   Weather   │  │    Time     │        │
+│  │    Tool     │  │    Tool     │  │    Tool     │  │    Tool     │        │
+│  │             │  │             │  │             │  │             │        │
+│  │ • Web Search│  │ • Math Ops  │  │ • Weather   │  │ • Time/Date │        │
+│  │ • Knowledge │  │ • Functions │  │   Data      │  │ • Timezone  │        │
+│  │   Base      │  │ • Variables │  │ • Forecast  │  │ • Schedule  │        │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘        │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              MEMORY LAYER                                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  ┌─────────────────────────────────────────────────────────────────────────┐ │
+│  │                    SQLite Conversation Memory                          │ │
+│  │                                                                         │ │
+│  │  • Session Management                                                   │ │
+│  │  • Conversation History                                                 │ │
+│  │  • Persistent Storage                                                   │ │
+│  │  • Context Retrieval                                                    │ │
+│  └─────────────────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              LLM LAYER                                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  ┌─────────────────────────────────────────────────────────────────────────┐ │
+│  │                           Groq LLM                                     │ │
+│  │                                                                         │ │
+│  │  • llama3-8b-8192 Model                                                │ │
+│  │  • Configurable Parameters (temp, tokens, top_p)                       │ │
+│  │  • Async Processing                                                     │ │
+│  │  • Error Handling                                                       │ │
+│  └─────────────────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           ENHANCED LOGGING                                 │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  ┌─────────────────────────────────────────────────────────────────────────┐ │
+│  │                    Structured Logging System                           │ │
+│  │                                                                         │ │
+│  │  • Request/Response Tracking                                           │ │
+│  │  • Agent Execution Logs                                                │ │
+│  │  • Tool Usage Logs                                                     │ │
+│  │  • Performance Metrics                                                 │ │
+│  │  • Error Context                                                       │ │
+│  │  • File + Console Output                                               │ │
+│  └─────────────────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-## 🚀 Features (Stage 1)
+## 🚀 Features
 
-- **Curator Agent**: Cleans and validates user input
-- **FastAPI Integration**: RESTful API with OpenAPI documentation
-- **SQLite Memory**: Persistent conversation history
-- **Structured Logging**: Request tracking and performance metrics
-- **Error Handling**: Comprehensive error management
-- **CORS Support**: Cross-origin resource sharing
-- **Type Safety**: Full type hints and Pydantic validation
+### ✅ **Stage 3 Complete Features:**
 
-## 📋 Prerequisites
+#### **Advanced Chain Orchestration:**
+- **RunnableSequence**: Proper agent orchestration with sequential execution
+- **RunnableWithFallbacks**: Robust error handling with fallback mechanisms
+- **ConsoleCallbackHandler**: Real-time debugging and monitoring
+- **Configurable LLM Parameters**: Per-agent temperature, max_tokens, top_p settings
 
-- Python 3.8+
-- Groq API key (get one at [groq.com](https://groq.com))
+#### **Enhanced Middleware Stack:**
+- **Security Middleware**: XSS protection, CSP headers, security enhancements
+- **Performance Middleware**: Slow request detection, performance metrics
+- **Enriched Logging Middleware**: Detailed request/response logging with context
 
-## 🛠️ Installation
+#### **Comprehensive Testing:**
+- **FakeLLM Tests**: Prompt validation using LangChain's FakeLLM
+- **Agent Integration Tests**: Complete chain flow validation
+- **Error Handling Tests**: Fallback mechanism validation
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd langchain
-   ```
+#### **Production-Ready Features:**
+- **Structured Logging**: Human-readable logs with colors and formatting
+- **Error Tracking**: Comprehensive error context and debugging
+- **Performance Monitoring**: Request timing and bottleneck detection
+- **Security Headers**: Production-grade security enhancements
 
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### ✅ **Previous Stage Features:**
 
-3. **Configure environment**
-   ```bash
-   cp env.example .env
-   # Edit .env with your Groq API key
-   ```
+#### **Intelligent Agents:**
+- **Curator Agent**: Input validation, cleaning, and content type detection
+- **Processor Agent**: LLM generation with tools and context
+- **Formatter Agent**: Response formatting and readability optimization
 
-4. **Set your Groq API key**
-   ```bash
-   # Edit .env file
-   GROQ_API_KEY=your_actual_groq_api_key_here
-   ```
+#### **Tools Integration:**
+- **Search Tool**: Web search and knowledge base queries
+- **Calculator Tool**: Mathematical operations and functions
+- **Weather Tool**: Weather data and forecasts
+- **Time Tool**: Time, date, and timezone information
 
-## 🏃‍♂️ Running the Application
+#### **Memory Management:**
+- **SQLite Persistence**: Conversation history and session management
+- **Context Retrieval**: Intelligent conversation context loading
+- **Session Isolation**: Multi-user session support
 
-### Development Mode
+## 📦 Installation
+
+1. **Clone the repository:**
+```bash
+git clone <repository-url>
+cd langchain
+```
+
+2. **Install dependencies:**
+```bash
+pip install -r requirements.txt
+```
+
+3. **Set up environment variables:**
+```bash
+cp env.example .env
+# Edit .env with your GROQ_API_KEY
+```
+
+4. **Run the application:**
 ```bash
 python -m src.main
 ```
 
-### Production Mode
-```bash
-uvicorn src.main:app --host 0.0.0.0 --port 8000
+## 🔧 Configuration
+
+### **Environment Variables:**
+```env
+# Groq API Configuration
+GROQ_API_KEY=your_groq_api_key_here
+
+# Database Configuration
+DATABASE_URL=sqlite:///./chat_memory.db
+
+# Logging Configuration
+LOG_LEVEL=INFO
+DEBUG=false
+
+# LLM Configuration
+MODEL_NAME=llama3-8b-8192
+TEMPERATURE=0.7
+MAX_TOKENS=1000
 ```
 
-### With Debug Logging
-```bash
-DEBUG=true python -m src.main
-```
+### **Agent Configuration:**
+```python
+# Curator Agent
+curator_config = {
+    "temperature": 0.1,    # Low temperature for consistent validation
+    "max_tokens": 500      # Short responses for validation
+}
 
-## 📚 API Documentation
+# Processor Agent
+processor_config = {
+    "temperature": 0.7,    # Balanced creativity and consistency
+    "max_tokens": 1000     # Longer responses for detailed answers
+}
 
-Once running, visit:
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
-- **Health Check**: http://localhost:8000/health
-
-## 🔧 API Usage
-
-### Chat Endpoint
-
-**POST** `/chat`
-
-```json
-{
-  "message": "What is the capital of France?",
-  "session_id": "user_123",
-  "debug": false
+# Formatter Agent
+formatter_config = {
+    "temperature": 0.3,    # Low temperature for consistent formatting
+    "max_tokens": 800      # Medium length for formatted responses
 }
 ```
 
-**Response:**
+## 🧪 Testing
+
+### **Run All Tests:**
+```bash
+# Stage 1 tests
+python test_stage1.py
+
+# Stage 2 tests
+python test_stage2.py
+
+# Enhanced logging tests
+python test_enhanced_logging.py
+
+# Prompt validation tests
+python src/tests/prompt_tests.py
+```
+
+### **Test Individual Components:**
+```bash
+# Test specific agents
+python -c "from src.agents.curator_agent import create_curator_agent; agent = create_curator_agent(); print('Curator agent created successfully')"
+
+# Test tools
+python -c "from src.utils.tools import execute_tool; result = execute_tool('search_web', query='test'); print(result)"
+
+# Test memory
+python -c "from src.memory.conversation_memory import create_memory; memory = create_memory('test'); print('Memory created successfully')"
+```
+
+## 📡 API Usage
+
+### **Chat Endpoint:**
+```bash
+curl -X POST "http://localhost:8000/chat" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "message": "What is the capital of France?",
+       "session_id": "user_123",
+       "debug": false
+     }'
+```
+
+### **Response Format:**
 ```json
 {
-  "response": "I understand your question: What is the capital of France?. This would be processed by the full chain in later stages.",
+  "response": "**Answer:** Paris is the capital of France.\n\n**Details:** Paris is known as the 'City of Light'...",
   "session_id": "user_123",
-  "request_id": "req_456",
-  "processing_time": 1.23,
+  "request_id": "81f8060d-90e7-492e-88a3-5020aa8b39c3",
+  "processing_time": 4.36,
   "metadata": {
-    "agent_used": "curator",
+    "agents_used": ["curator", "processor", "formatter"],
     "is_valid": true,
     "confidence": 0.95,
     "content_type": "question",
-    "validation_errors": [],
-    "stage": "stage_1"
+    "tools_executed": [...],
+    "search_performed": true,
+    "response_quality": 0.8,
+    "readability_score": 0.55,
+    "response_structure": "paragraph",
+    "stage": "stage_3",
+    "success": true,
+    "errors": []
   }
 }
 ```
 
-## 🏗️ Project Structure
+## 📊 Monitoring & Logging
 
-```
-langchain/
-├── src/
-│   ├── __init__.py
-│   ├── main.py                 # FastAPI application
-│   ├── config.py              # Configuration management
-│   ├── models.py              # Pydantic models
-│   ├── agents/
-│   │   ├── __init__.py
-│   │   └── curator_agent.py   # Curator agent implementation
-│   ├── chains/
-│   │   ├── __init__.py
-│   │   └── simple_chain.py    # Simple chain for Stage 1
-│   ├── memory/
-│   │   ├── __init__.py
-│   │   └── conversation_memory.py  # SQLite memory management
-│   ├── prompts/
-│   │   ├── __init__.py
-│   │   └── curator_prompts.py # Curator agent prompts
-│   └── utils/
-│       ├── __init__.py
-│       ├── llm_client.py      # Groq LLM client
-│       └── logger.py          # Structured logging
-├── requirements.txt           # Python dependencies
-├── env.example               # Environment variables template
-├── chat_memory.db            # SQLite database (created automatically)
-└── README.md                 # This file
-```
+### **Log Files:**
+- **Console Output**: Real-time colored logs with emojis and formatting
+- **File Logs**: `logs/langchain_YYYYMMDD.log` for detailed analysis
+- **Request Tracking**: Complete request/response lifecycle logging
 
-## 🔍 Testing the System
+### **Performance Metrics:**
+- **Processing Time**: Per-request and per-agent timing
+- **Slow Request Detection**: Automatic alerts for requests > 5s
+- **Agent Performance**: Individual agent execution times
+- **Tool Usage**: Tool execution frequency and success rates
 
-### 1. Health Check
+### **Error Tracking:**
+- **Detailed Error Context**: Full error stack traces with request context
+- **Fallback Handling**: Automatic fallback when agents fail
+- **Error Classification**: Categorized error types for analysis
+
+## 🔍 Debugging
+
+### **Enhanced Logging:**
 ```bash
-curl http://localhost:8000/health
+# Enable verbose mode
+export DEBUG=true
+
+# View detailed logs
+tail -f logs/langchain_$(date +%Y%m%d).log
 ```
 
-### 2. Simple Chat
-```bash
-curl -X POST "http://localhost:8000/chat" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "message": "Hello, how are you?",
-    "session_id": "test_user"
-  }'
+### **Agent Debugging:**
+```python
+# Debug individual agents
+agent = create_curator_agent(verbose=True)
+result = agent.debug("Test message")
+
+# Debug complete chain
+chain = create_advanced_chain(verbose=True)
+result = chain.debug("Test message")
 ```
 
-### 3. Debug Mode
-```bash
-curl -X POST "http://localhost:8000/chat" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "message": "What is Python?",
-    "session_id": "debug_user",
-    "debug": true
-  }'
-```
+### **Middleware Debugging:**
+- **Request IDs**: Track requests across the entire system
+- **Performance Headers**: Monitor processing times
+- **Security Headers**: Verify security configurations
 
-## 🧪 Validation Examples
+## 🏗️ Architecture Benefits
 
-The Curator Agent will validate different types of input:
+### **Stage 3 Improvements:**
+1. **Robust Error Handling**: Fallbacks ensure system reliability
+2. **Production Monitoring**: Comprehensive logging and metrics
+3. **Security Enhancements**: Production-grade security headers
+4. **Performance Optimization**: Slow request detection and optimization
+5. **Testing Coverage**: FakeLLM tests ensure prompt quality
 
-- **Valid Questions**: "What is the capital of France?"
-- **Valid Statements**: "I like programming"
-- **Invalid Content**: Messages with inappropriate content
-- **Empty Messages**: Will be flagged as invalid
+### **Scalability Features:**
+- **Modular Design**: Easy to add new agents or tools
+- **Configurable Parameters**: Fine-tune performance per use case
+- **Session Management**: Support for multiple concurrent users
+- **Memory Optimization**: Efficient conversation history management
 
-## 📊 Monitoring
+## 🚀 Next Steps
 
-The system provides comprehensive logging:
+The system is now **production-ready** with:
+- ✅ Complete agent orchestration
+- ✅ Robust error handling
+- ✅ Comprehensive logging
+- ✅ Security enhancements
+- ✅ Performance monitoring
+- ✅ Testing coverage
 
-- **Request Tracking**: Each request gets a unique ID
-- **Performance Metrics**: Processing time for each agent
-- **Error Logging**: Detailed error information with context
-- **Agent Responses**: Logged with metadata and confidence scores
+**Ready for deployment and scaling!** 🎉
 
-## 🔧 Configuration
+## 📝 License
 
-Key configuration options in `.env`:
-
-```bash
-# LLM Settings
-MODEL_NAME=llama3-8b-8192    # Groq model to use
-TEMPERATURE=0.7              # Response creativity (0.0-2.0)
-MAX_TOKENS=1000              # Maximum response length
-
-# Logging
-LOG_LEVEL=INFO               # Logging level
-DEBUG=false                  # Debug mode
-
-# Database
-DATABASE_URL=sqlite:///./chat_memory.db
-```
-
-## 🚧 Stage 1 Limitations
-
-This is the first stage of development. Current limitations:
-
-- Only the Curator Agent is implemented
-- No actual response generation (placeholder responses)
-- Basic chain orchestration
-- No tools or external APIs
-
-## 🔮 Next Stages
-
-**Stage 2**: Add Processor and Response agents with tools
-**Stage 3**: Complete RunnableSequence with fallbacks and callbacks
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 🆘 Support
-
-For issues and questions:
-1. Check the API documentation at `/docs`
-2. Review the logs for error details
-3. Ensure your Groq API key is valid
-4. Verify all dependencies are installed 
+This project is licensed under the MIT License - see the LICENSE file for details. 

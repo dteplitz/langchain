@@ -133,14 +133,26 @@ class ProcessorAgent(Runnable):
                 
                 execution_time = time.time() - start_time
                 
-                # Log tool execution
-                self.logger.log_tool_execution(request_id, tool_name, input_params, result, execution_time)
+                # Log tool execution (handle list results properly)
+                log_result = result
+                if isinstance(result, list):
+                    log_result = {"results_count": len(result), "results": result}
+                self.logger.log_tool_execution(request_id, tool_name, input_params, log_result, execution_time)
+                
+                # Handle different result types for success/error
+                if isinstance(result, dict):
+                    success = result.get("success", True)
+                    error = result.get("error")
+                else:
+                    # For list results (like search_web), consider it successful if we got results
+                    success = True if result else False
+                    error = None
                 
                 tool_result = ToolExecutionResult(
                     tool_name=tool_name,
-                    success=result.get("success", True),
+                    success=success,
                     result=result,
-                    error=result.get("error"),
+                    error=error,
                     execution_time=execution_time
                 )
                 
@@ -150,10 +162,11 @@ class ProcessorAgent(Runnable):
                 execution_time = time.time() - start_time
                 
                 # Log tool error
-                self.logger.log_error(request_id, f"tool_{tool_name}", e, {
+                error_context = {
                     "tool_name": tool_name,
                     "input_params": input_params if 'input_params' in locals() else {}
-                })
+                }
+                self.logger.log_error(request_id, f"tool_{tool_name}", e, error_context)
                 
                 tool_result = ToolExecutionResult(
                     tool_name=tool_name,

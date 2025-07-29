@@ -19,6 +19,7 @@ Your role is to:
 2. Use available tools to gather information
 3. Generate a detailed and accurate response
 4. Provide context and explanations when appropriate
+5. **CRITICAL: Use the conversation history to maintain context and remember previous interactions**
 
 Available Tools:
 {tools_available}
@@ -32,13 +33,19 @@ Previous Conversation History:
 User Message: {message}
 
 Instructions:
+- **CRITICAL: ALWAYS review the conversation history above first before responding**
+- If the user mentioned their name, preferences, or personal information in previous messages, you MUST use that information
+- If someone told you their name in a previous message, remember and use it in your response
+- If the user asks "What's my name?" and you have it in the conversation history, tell them their name
 - Use the search tool if the question requires current or factual information
 - Provide comprehensive answers with context
 - If you don't have enough information, say so clearly
 - Be helpful and informative
 - Structure your response logically
+- **Always acknowledge previous context when relevant**
+- **If the conversation history shows the user's name, always use it in your response**
 
-Generate a detailed response that directly answers the user's question."""
+Generate a detailed response that directly answers the user's question while maintaining conversation context."""
 )
 
 
@@ -82,9 +89,24 @@ def format_search_results(search_results: list) -> str:
     formatted = []
     for i, result in enumerate(search_results, 1):
         formatted.append(f"Result {i}:")
-        formatted.append(f"  Title: {result.get('title', 'N/A')}")
-        formatted.append(f"  Content: {result.get('content', 'N/A')}")
-        formatted.append(f"  Source: {result.get('source', 'N/A')}")
+        # Handle both dict and SearchResult objects
+        if hasattr(result, 'title'):
+            # SearchResult object
+            formatted.append(f"  Title: {result.title}")
+            formatted.append(f"  Content: {result.content}")
+            formatted.append(f"  Source: {result.source}")
+            if result.url:
+                formatted.append(f"  URL: {result.url}")
+        elif isinstance(result, dict):
+            # Dictionary object
+            formatted.append(f"  Title: {result.get('title', 'N/A')}")
+            formatted.append(f"  Content: {result.get('content', 'N/A')}")
+            formatted.append(f"  Source: {result.get('source', 'N/A')}")
+            if result.get('url'):
+                formatted.append(f"  URL: {result.get('url')}")
+        else:
+            # Fallback
+            formatted.append(f"  Content: {str(result)}")
         formatted.append("")
     
     return "\n".join(formatted) 

@@ -14,9 +14,10 @@ from fastapi.responses import JSONResponse
 from contextlib import asynccontextmanager
 
 from src.models import ChatRequest, ChatResponse, ErrorResponse, HealthResponse
-from src.chains.complete_chain import create_complete_chain
+from src.chains.advanced_chain import create_advanced_chain
 from src.config import get_settings
 from src.utils.logger import get_logger
+from src.middleware.enriched_middleware import create_middleware_stack
 
 
 # Global variables
@@ -34,8 +35,16 @@ async def lifespan(app: FastAPI):
     # Startup
     global chain, logger
     logger = get_logger()
-    chain = create_complete_chain(verbose=get_settings().debug)
-    logger.logger.info("Application started successfully")
+    
+    # Create advanced chain with configurable parameters
+    chain = create_advanced_chain(
+        curator_config={"temperature": 0.1, "max_tokens": 500},
+        processor_config={"temperature": 0.7, "max_tokens": 1000},
+        formatter_config={"temperature": 0.3, "max_tokens": 800},
+        verbose=get_settings().debug
+    )
+    
+    logger.logger.info("Application started successfully with advanced chain")
     
     yield
     
@@ -61,6 +70,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Add enriched middleware stack
+app = create_middleware_stack(app)
 
 
 @app.middleware("http")
