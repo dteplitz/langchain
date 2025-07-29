@@ -10,7 +10,7 @@ import re
 from typing import Dict, Any, Optional, List
 from langchain.schema.runnable import Runnable
 from src.utils.llm_client import create_llm_client
-from src.utils.logger import get_logger
+from src.utils.enhanced_logger import get_enhanced_logger
 from src.utils.tools import execute_tool, get_available_tools
 from src.prompts.processor_prompts import get_processor_prompt, format_tools_available, format_search_results
 from src.prompts.curator_prompts import format_chat_history
@@ -42,7 +42,7 @@ class ProcessorAgent(Runnable):
         self.temperature = temperature
         self.max_tokens = max_tokens
         self.verbose = verbose
-        self.logger = get_logger()
+        self.logger = get_enhanced_logger()
         
         # Initialize LLM and components
         self.llm = create_llm_client(
@@ -86,13 +86,14 @@ class ProcessorAgent(Runnable):
         
         return tools_needed
     
-    def _execute_tools(self, tools_needed: List[str], message: str) -> List[ToolExecutionResult]:
+    def _execute_tools(self, tools_needed: List[str], message: str, request_id: str = "unknown") -> List[ToolExecutionResult]:
         """
         Execute the needed tools.
         
         Args:
             tools_needed: List of tools to execute
             message: User message for context
+            request_id: Request identifier for logging
             
         Returns:
             List[ToolExecutionResult]: Results from tool executions
@@ -103,8 +104,9 @@ class ProcessorAgent(Runnable):
             start_time = time.time()
             
             try:
-                # Execute the tool with appropriate parameters
+                # Prepare input parameters
                 if tool_name == 'search_web':
+                    input_params = {"query": message}
                     result = execute_tool(tool_name, query=message)
                 elif tool_name == 'calculate':
                     # Extract mathematical expression from message
@@ -112,19 +114,27 @@ class ProcessorAgent(Runnable):
                     math_match = re.search(math_pattern, message)
                     if math_match:
                         expression = math_match.group(1)
+                        input_params = {"expression": expression}
                         result = execute_tool(tool_name, expression=expression)
                     else:
+                        input_params = {"expression": "none"}
                         result = {"error": "No mathematical expression found", "success": False}
                 elif tool_name == 'get_weather':
                     # Extract location from message (simplified)
                     location = "Paris"  # Default location
+                    input_params = {"location": location}
                     result = execute_tool(tool_name, location=location)
                 elif tool_name == 'get_time':
+                    input_params = {}
                     result = execute_tool(tool_name)
                 else:
+                    input_params = {"tool": tool_name}
                     result = {"error": f"Unknown tool: {tool_name}", "success": False}
                 
                 execution_time = time.time() - start_time
+                
+                # Log tool execution
+                self.logger.log_tool_execution(request_id, tool_name, input_params, result, execution_time)
                 
                 tool_result = ToolExecutionResult(
                     tool_name=tool_name,
@@ -138,6 +148,13 @@ class ProcessorAgent(Runnable):
                 
             except Exception as e:
                 execution_time = time.time() - start_time
+                
+                # Log tool error
+                self.logger.log_error(request_id, f"tool_{tool_name}", e, {
+                    "tool_name": tool_name,
+                    "input_params": input_params if 'input_params' in locals() else {}
+                })
+                
                 tool_result = ToolExecutionResult(
                     tool_name=tool_name,
                     success=False,
@@ -194,20 +211,19 @@ class ProcessorAgent(Runnable):
         start_time = time.time()
         request_id = input_data.chat_history[0].get("request_id", "unknown") if input_data.chat_history else "unknown"
         
-        # Log the request
-        self.logger.log_request(
-            request_id=request_id,
-            message=input_data.message,
-            agent="processor",
-            metadata={"temperature": self.temperature, "max_tokens": self.max_tokens}
-        )
+        # Log the request (using enhanced logger)
+        self.logger.start_agent(request_id, "processor", {
+            "message": input_data.message,
+            "temperature": self.temperature,
+            "max_tokens": self.max_tokens
+        })
         
         try:
             # Determine which tools are needed
             tools_needed = self._determine_tools_needed(input_data.message, input_data.curator_output)
             
             # Execute tools
-            tool_results = self._execute_tools(tools_needed, input_data.message)
+            tool_results = self._execute_tools(tools_needed, input_data.message, request_id)
             
             # Extract search results
             search_results = self._extract_search_results(tool_results)
@@ -244,18 +260,13 @@ class ProcessorAgent(Runnable):
                 processing_time=processing_time
             )
             
-            # Log the response
-            self.logger.log_agent_response(
-                request_id=request_id,
-                agent="processor",
-                response=raw_response,
-                processing_time=processing_time,
-                metadata={
-                    "tools_used": tools_needed,
-                    "search_performed": len(search_results) > 0,
-                    "response_quality": response_quality
-                }
-            )
+            # Log the response (using enhanced logger)
+            self.logger.end_agent(request_id, "processor", result, {
+                "tools_used": tools_needed,
+                "search_performed": len(search_results) > 0,
+                "response_quality": response_quality,
+                "processing_time": processing_time
+            })
             
             if self.verbose:
                 print(f"[Processor] Input: {input_data.message}")
@@ -266,12 +277,12 @@ class ProcessorAgent(Runnable):
             return result
             
         except Exception as e:
-            # Log error
+            # Log error (using enhanced logger)
             processing_time = time.time() - start_time
             self.logger.log_error(
                 request_id=request_id,
+                agent_name="processor",
                 error=e,
-                agent="processor",
                 context={"input": input_data.dict()}
             )
             

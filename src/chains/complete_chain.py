@@ -15,7 +15,7 @@ from src.agents.curator_agent import CuratorAgent, create_curator_agent
 from src.agents.processor_agent import ProcessorAgent, create_processor_agent
 from src.agents.formatter_agent import FormatterAgent, create_formatter_agent
 from src.memory.conversation_memory import create_memory, get_conversation_history
-from src.utils.logger import get_logger
+from src.utils.enhanced_logger import get_enhanced_logger
 from src.models.agent_interfaces import (
     CuratorOutput, ProcessorInput, ProcessorOutput, 
     FormatterInput, FormatterOutput, ChainMetadata
@@ -40,7 +40,7 @@ class CompleteChain(Runnable):
             verbose: Enable verbose logging
         """
         self.verbose = verbose
-        self.logger = get_logger()
+        self.logger = get_enhanced_logger()
         
         # Initialize all agents
         self.curator_agent = create_curator_agent(verbose=verbose)
@@ -80,21 +80,35 @@ class CompleteChain(Runnable):
         agents_used = []
         errors = []
         
+        # Start request tracking
+        self.logger.start_request(request_id, message, session_id)
+        
         try:
             # Step 1: Curator Agent
-            if self.verbose:
-                print(f"[CompleteChain] Step 1: Curator Agent")
+            self.logger.log_chain_step(request_id, "STEP_1", "Starting Curator Agent")
             
-            curator_result = self.curator_agent.invoke({
+            curator_input = {
                 "message": message,
                 "chat_history": chat_history,
                 "request_id": request_id
+            }
+            
+            self.logger.start_agent(request_id, "curator", curator_input)
+            
+            curator_result = self.curator_agent.invoke(curator_input)
+            
+            self.logger.end_agent(request_id, "curator", curator_result, {
+                "is_valid": curator_result.is_valid,
+                "confidence": curator_result.confidence,
+                "content_type": curator_result.content_type
             })
             
             agents_used.append("curator")
             
             # Check if curator validation failed
             if not curator_result.is_valid:
+                self.logger.log_chain_step(request_id, "VALIDATION_FAILED", "Curator validation failed")
+                
                 response = f"Message validation failed: {', '.join(curator_result.validation_errors)}"
                 
                 # Save to memory
@@ -106,7 +120,7 @@ class CompleteChain(Runnable):
                 # Calculate processing time
                 processing_time = time.time() - start_time
                 
-                return {
+                result = {
                     "response": response,
                     "session_id": session_id,
                     "request_id": request_id,
@@ -122,10 +136,12 @@ class CompleteChain(Runnable):
                         "errors": errors
                     }
                 }
+                
+                self.logger.end_request(request_id, response, result["metadata"])
+                return result
             
             # Step 2: Processor Agent
-            if self.verbose:
-                print(f"[CompleteChain] Step 2: Processor Agent")
+            self.logger.log_chain_step(request_id, "STEP_2", "Starting Processor Agent")
             
             processor_input = ProcessorInput(
                 message=message,
@@ -135,12 +151,20 @@ class CompleteChain(Runnable):
                 search_results=[]
             )
             
+            self.logger.start_agent(request_id, "processor", processor_input.dict())
+            
             processor_result = self.processor_agent.invoke(processor_input)
+            
+            self.logger.end_agent(request_id, "processor", processor_result, {
+                "tools_executed": len(processor_result.tools_executed),
+                "search_performed": processor_result.search_performed,
+                "response_quality": processor_result.response_quality
+            })
+            
             agents_used.append("processor")
             
             # Step 3: Formatter Agent
-            if self.verbose:
-                print(f"[CompleteChain] Step 3: Formatter Agent")
+            self.logger.log_chain_step(request_id, "STEP_3", "Starting Formatter Agent")
             
             formatter_input = FormatterInput(
                 raw_response=processor_result.raw_response,
@@ -149,7 +173,15 @@ class CompleteChain(Runnable):
                 processor_output=processor_result.dict()
             )
             
+            self.logger.start_agent(request_id, "formatter", formatter_input.dict())
+            
             formatter_result = self.formatter_agent.invoke(formatter_input)
+            
+            self.logger.end_agent(request_id, "formatter", formatter_result, {
+                "readability_score": formatter_result.readability_score,
+                "response_structure": formatter_result.response_structure
+            })
+            
             agents_used.append("formatter")
             
             # Save to memory
@@ -184,11 +216,7 @@ class CompleteChain(Runnable):
                 }
             }
             
-            if self.verbose:
-                print(f"[CompleteChain] Input: {message}")
-                print(f"[CompleteChain] Output: {result}")
-                print(f"[CompleteChain] Processing time: {processing_time:.2f}s")
-            
+            self.logger.end_request(request_id, formatter_result.formatted_response, result["metadata"])
             return result
             
         except Exception as e:
@@ -196,15 +224,15 @@ class CompleteChain(Runnable):
             processing_time = time.time() - start_time
             self.logger.log_error(
                 request_id=request_id,
+                agent_name="complete_chain",
                 error=e,
-                agent="complete_chain",
                 context={"input": input_data}
             )
             
             errors.append(str(e))
             
             # Return error response
-            return {
+            result = {
                 "response": f"Error processing message: {str(e)}",
                 "session_id": session_id,
                 "request_id": request_id,
@@ -220,6 +248,9 @@ class CompleteChain(Runnable):
                     "errors": errors
                 }
             }
+            
+            self.logger.end_request(request_id, result["response"], result["metadata"])
+            return result
     
     def debug(self, message: str, session_id: str = None) -> Dict[str, Any]:
         """

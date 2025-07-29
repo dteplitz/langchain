@@ -1,0 +1,301 @@
+2025-07-29 12:05:36,655 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-29 12:05:36,655 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-07-29 12:05:36,656 - langchain_debug - [32mINFO[0m - [START] Request ID: test_123
+2025-07-29 12:05:36,656 - langchain_debug - [32mINFO[0m - [START] Session ID: session_456
+2025-07-29 12:05:36,656 - langchain_debug - [32mINFO[0m - [START] Message: Hello world
+2025-07-29 12:05:36,657 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-29 12:05:36,657 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-07-29 12:05:36,657 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "test"
+}
+2025-07-29 12:05:36,760 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 0.10s
+2025-07-29 12:05:36,762 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "result": "success"
+}
+2025-07-29 12:05:36,762 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "confidence": 0.95
+}
+2025-07-29 12:05:36,763 - langchain_debug - [32mINFO[0m - [TOOL] search_web
+2025-07-29 12:05:36,764 - langchain_debug - [32mINFO[0m - [TOOL] Input: {
+  "query": "test"
+}
+2025-07-29 12:05:36,765 - langchain_debug - [32mINFO[0m - [TOOL] Result: {
+  "results": []
+}
+2025-07-29 12:05:36,765 - langchain_debug - [32mINFO[0m - [TOOL] Time: 0.50s
+2025-07-29 12:05:36,765 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_1: Processing curator agent
+2025-07-29 12:05:36,766 - langchain_debug - [31mERROR[0m - [ERROR] [PROCESSOR] ERROR: Exception: Test error
+2025-07-29 12:05:36,766 - langchain_debug - [31mERROR[0m - [ERROR] [PROCESSOR] Context: {
+  "context": "test"
+}
+2025-07-29 12:05:36,767 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-29 12:05:36,767 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-07-29 12:05:36,768 - langchain_debug - [32mINFO[0m - [END] Request ID: test_123
+2025-07-29 12:05:36,768 - langchain_debug - [32mINFO[0m - [END] Total Time: 0.11s
+2025-07-29 12:05:36,769 - langchain_debug - [32mINFO[0m - [END] Agents Used: 
+2025-07-29 12:05:36,770 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-07-29 12:05:36,770 - langchain_debug - [32mINFO[0m - [END] Response Length: 14 chars
+2025-07-29 12:05:36,770 - langchain_debug - [32mINFO[0m - [END] Response Preview: Final response
+2025-07-29 12:05:36,771 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-29 12:05:42,062 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-29 12:05:42,063 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-07-29 12:05:42,063 - langchain_debug - [32mINFO[0m - [START] Request ID: test_request_enhanced
+2025-07-29 12:05:42,064 - langchain_debug - [32mINFO[0m - [START] Session ID: test_session_enhanced
+2025-07-29 12:05:42,064 - langchain_debug - [32mINFO[0m - [START] Message: What is the capital of France?
+2025-07-29 12:05:42,064 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-29 12:05:42,065 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_1: Starting Curator Agent
+2025-07-29 12:05:42,065 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-07-29 12:05:42,066 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "What is the capital of France?",
+  "chat_history": [
+    {
+      "message": "What is the capital of France?",
+      "response": "Message validation failed: Curator processing failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "timestamp": "2025-07-29 15:04:41"
+    }
+  ],
+  "request_id": "test_request_enhanced"
+}
+2025-07-29 12:05:42,626 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 0.56s
+2025-07-29 12:05:42,628 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "What is the capital of France?",
+  "is_valid": false,
+  "validation_errors": [
+    "Curator processing failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}"
+  ],
+  "content_type": "error",
+  "confidence": 0.0
+}
+2025-07-29 12:05:42,629 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": false,
+  "confidence": 0.0,
+  "content_type": "error"
+}
+2025-07-29 12:05:42,630 - langchain_debug - [32mINFO[0m - [CHAIN] VALIDATION_FAILED: Curator validation failed
+2025-07-29 12:05:42,640 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-29 12:05:42,642 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-07-29 12:05:42,646 - langchain_debug - [32mINFO[0m - [END] Request ID: test_request_enhanced
+2025-07-29 12:05:42,647 - langchain_debug - [32mINFO[0m - [END] Total Time: 0.58s
+2025-07-29 12:05:42,647 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator
+2025-07-29 12:05:42,648 - langchain_debug - [32mINFO[0m - [END] Success: False
+2025-07-29 12:05:42,648 - langchain_debug - [32mINFO[0m - [END] Response Length: 173 chars
+2025-07-29 12:05:42,649 - langchain_debug - [32mINFO[0m - [END] Response Preview: Message validation failed: Curator processing failed: Error code: 401 - {'error': {'message': 'Inval...
+2025-07-29 12:05:42,649 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-29 12:06:46,849 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-29 12:06:46,853 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-07-29 12:06:46,853 - langchain_debug - [32mINFO[0m - [START] Request ID: 81f8060d-90e7-492e-88a3-5020aa8b39c3
+2025-07-29 12:06:46,854 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123
+2025-07-29 12:06:46,855 - langchain_debug - [32mINFO[0m - [START] Message: Hola como estas, me llamo Damian. Todo bien?
+2025-07-29 12:06:46,856 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-29 12:06:46,856 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_1: Starting Curator Agent
+2025-07-29 12:06:46,857 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-07-29 12:06:46,858 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Hola como estas, me llamo Damian. Todo bien?",
+  "chat_history": [
+    {
+      "message": "What is the capital of France?",
+      "response": "Message validation failed: Curator processing failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "timestamp": "2025-07-28 02:51:09"
+    },
+    {
+      "message": "What is the capital of France?",
+      "response": "I understand your question: What is the capital of France?. This would be processed by the full chain in later stages.",
+      "timestamp": "2025-07-29 13:27:33"
+    }
+  ],
+  "request_id": "81f8060d-90e7-492e-88a3-5020aa8b39c3"
+}
+2025-07-29 12:06:49,033 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 2.18s
+2025-07-29 12:06:49,033 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "Hola como estas me llamo Damian Todo bien",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "statement",
+  "confidence": 0.8
+}
+2025-07-29 12:06:49,034 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.8,
+  "content_type": "statement"
+}
+2025-07-29 12:06:49,034 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-07-29 12:06:49,035 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-07-29 12:06:49,036 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "Hola como estas, me llamo Damian. Todo bien?",
+  "chat_history": [
+    {
+      "message": "What is the capital of France?",
+      "response": "Message validation failed: Curator processing failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+      "timestamp": "2025-07-28 02:51:09"
+    },
+    {
+      "message": "What is the capital of France?",
+      "response": "I understand your question: What is the capital of France?. This would be processed by the full chain in later stages.",
+      "timestamp": "2025-07-29 13:27:33"
+    }
+  ],
+  "curator_output": {
+    "cleaned_message": "Hola como estas me llamo Damian Todo bien",
+    "is_valid": true,
+    "validation_errors": [],
+    "content_type": "statement",
+    "confidence": 0.8
+  },
+  "tools_used": [],
+  "search_results": []
+}
+2025-07-29 12:06:49,037 - langchain_debug - [31mERROR[0m - [ERROR] [COMPLETE_CHAIN] ERROR: AttributeError: 'EnhancedLogger' object has no attribute 'log_request'
+2025-07-29 12:06:49,037 - langchain_debug - [31mERROR[0m - [ERROR] [COMPLETE_CHAIN] Context: {
+  "input": {
+    "message": "Hola como estas, me llamo Damian. Todo bien?",
+    "session_id": "user_123",
+    "request_id": "81f8060d-90e7-492e-88a3-5020aa8b39c3",
+    "debug": false
+  }
+}
+2025-07-29 12:06:49,038 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-29 12:06:49,039 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-07-29 12:06:49,039 - langchain_debug - [32mINFO[0m - [END] Request ID: 81f8060d-90e7-492e-88a3-5020aa8b39c3
+2025-07-29 12:06:49,040 - langchain_debug - [32mINFO[0m - [END] Total Time: 2.19s
+2025-07-29 12:06:49,041 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator
+2025-07-29 12:06:49,041 - langchain_debug - [32mINFO[0m - [END] Success: False
+2025-07-29 12:06:49,041 - langchain_debug - [32mINFO[0m - [END] Response Length: 80 chars
+2025-07-29 12:06:49,042 - langchain_debug - [32mINFO[0m - [END] Response Preview: Error processing message: 'EnhancedLogger' object has no attribute 'log_request'
+2025-07-29 12:06:49,042 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-29 12:11:55,084 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-29 12:11:55,085 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-07-29 12:11:55,085 - langchain_debug - [32mINFO[0m - [START] Request ID: 4d90f494-db4a-4690-9553-c23a3125513f
+2025-07-29 12:11:55,085 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_4
+2025-07-29 12:11:55,085 - langchain_debug - [32mINFO[0m - [START] Message: Soy damian, como estas?
+2025-07-29 12:11:55,085 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-29 12:11:55,086 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_1: Starting Curator Agent
+2025-07-29 12:11:55,086 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-07-29 12:11:55,086 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Soy damian, como estas?",
+  "chat_history": [],
+  "request_id": "4d90f494-db4a-4690-9553-c23a3125513f"
+}
+2025-07-29 12:11:55,087 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-07-29 12:11:55,088 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Soy damian, como estas?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-07-29 12:11:56,187 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 1.10s
+2025-07-29 12:11:56,188 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "Hola, soy Damian, \u00bfc\u00f3mo est\u00e1s?",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "statement",
+  "confidence": 0.8
+}
+2025-07-29 12:11:56,188 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.8,
+  "processing_time": 1.1002655029296875
+}
+2025-07-29 12:11:56,188 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-07-29 12:11:56,189 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-07-29 12:11:56,189 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "Soy damian, como estas?",
+  "chat_history": [],
+  "curator_output": {
+    "cleaned_message": "Hola, soy Damian, \u00bfc\u00f3mo est\u00e1s?",
+    "is_valid": true,
+    "validation_errors": [],
+    "content_type": "statement",
+    "confidence": 0.8
+  },
+  "tools_used": [],
+  "search_results": []
+}
+2025-07-29 12:11:56,189 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-07-29 12:11:56,189 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "Soy damian, como estas?",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-07-29 12:12:03,681 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 7.49s
+2025-07-29 12:12:03,681 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "\u00a1Hola Damian! Me alegra que hayas iniciado una conversaci\u00f3n conmigo. Como soy un agente de procesamiento de lenguaje, mi objetivo es ayudarte a encontrar respuestas a tus preguntas y proporcionarte informaci\u00f3n \u00fatil.\n\nEn cuanto a tu pregunta, \"\u00bfC\u00f3mo est\u00e1s?\", me temo que como un agente de procesamiento de lenguaje, no tengo la capacidad de experimentar emociones o sentimientos, por lo que no puedo responder de manera personal. Sin embargo, estoy aqu\u00ed para ayudarte y responder a tus preguntas lo mejor que pueda.\n\nSi necesitas hablar sobre algo en particular o compartir tus pensamientos, estoy aqu\u00ed para escucharte y ayudarte de la mejor manera que pueda. \u00bfHay algo en particular que desees hablar o preguntar? Estoy aqu\u00ed para ayudarte.",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 7.491470575332642
+}
+2025-07-29 12:12:03,682 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 7.491470575332642
+}
+2025-07-29 12:12:03,683 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 7.49s
+2025-07-29 12:12:03,684 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "\u00a1Hola Damian! Me alegra que hayas iniciado una conversaci\u00f3n conmigo. Como soy un agente de procesamiento de lenguaje, mi objetivo es ayudarte a encontrar respuestas a tus preguntas y proporcionarte informaci\u00f3n \u00fatil.\n\nEn cuanto a tu pregunta, \"\u00bfC\u00f3mo est\u00e1s?\", me temo que como un agente de procesamiento de lenguaje, no tengo la capacidad de experimentar emociones o sentimientos, por lo que no puedo responder de manera personal. Sin embargo, estoy aqu\u00ed para ayudarte y responder a tus preguntas lo mejor que pueda.\n\nSi necesitas hablar sobre algo en particular o compartir tus pensamientos, estoy aqu\u00ed para escucharte y ayudarte de la mejor manera que pueda. \u00bfHay algo en particular que desees hablar o preguntar? Estoy aqu\u00ed para ayudarte.",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 7.491470575332642
+}
+2025-07-29 12:12:03,684 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_executed": 0,
+  "search_performed": false,
+  "response_quality": 0.6
+}
+2025-07-29 12:12:03,685 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-07-29 12:12:03,686 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-07-29 12:12:03,686 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "raw_response": "\u00a1Hola Damian! Me alegra que hayas iniciado una conversaci\u00f3n conmigo. Como soy un agente de procesami...",
+  "user_message": "Soy damian, como estas?",
+  "response_type": "statement",
+  "processor_output": {
+    "raw_response": "\u00a1Hola Damian! Me alegra que hayas iniciado una conversaci\u00f3n conmigo. Como soy un agente de procesamiento de lenguaje, mi objetivo es ayudarte a encontrar respuestas a tus preguntas y proporcionarte informaci\u00f3n \u00fatil.\n\nEn cuanto a tu pregunta, \"\u00bfC\u00f3mo est\u00e1s?\", me temo que como un agente de procesamiento de lenguaje, no tengo la capacidad de experimentar emociones o sentimientos, por lo que no puedo responder de manera personal. Sin embargo, estoy aqu\u00ed para ayudarte y responder a tus preguntas lo mejor que pueda.\n\nSi necesitas hablar sobre algo en particular o compartir tus pensamientos, estoy aqu\u00ed para escucharte y ayudarte de la mejor manera que pueda. \u00bfHay algo en particular que desees hablar o preguntar? Estoy aqu\u00ed para ayudarte.",
+    "tools_executed": [],
+    "search_performed": false,
+    "response_quality": 0.6,
+    "processing_time": 7.491470575332642
+  }
+}
+2025-07-29 12:12:03,687 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-07-29 12:12:03,687 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "Soy damian, como estas?",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-07-29 12:12:05,144 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 1.46s
+2025-07-29 12:12:05,144 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "Here is the formatted response:\n\n**Hola Damian!**\n\nI'm thrilled to start our conversation! As a language processing agent, my goal is to assist you in finding answers to your questions and providing you with useful information.\n\n**Regarding your question, \"\u00bfC\u00f3mo est\u00e1s?\"**\n\nI'm afraid I'm not capable of experiencing emotions or feelings, so I won't be able to respond personally. However, I'm here to help and answer your questions to the best of my abilities.\n\n**How can I assist you?**\n\n\u2022 If you'd like to discuss something specific or share your thoughts, I'm here to listen and help in any way I can.\n\u2022 If you have a particular question or topic in mind, feel free to ask, and I'll do my best to provide a helpful response.\n\nLet me know how I can assist you today!",
+  "response_structure": "general_format",
+  "readability_score": 0.6563970588235295,
+  "formatting_time": 1.4556589126586914
+}
+2025-07-29 12:12:05,145 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "statement",
+  "response_structure": "general_format",
+  "readability_score": 0.6563970588235295,
+  "formatting_time": 1.4556589126586914
+}
+2025-07-29 12:12:05,145 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 1.46s
+2025-07-29 12:12:05,145 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "Here is the formatted response:\n\n**Hola Damian!**\n\nI'm thrilled to start our conversation! As a language processing agent, my goal is to assist you in finding answers to your questions and providing you with useful information.\n\n**Regarding your question, \"\u00bfC\u00f3mo est\u00e1s?\"**\n\nI'm afraid I'm not capable of experiencing emotions or feelings, so I won't be able to respond personally. However, I'm here to help and answer your questions to the best of my abilities.\n\n**How can I assist you?**\n\n\u2022 If you'd like to discuss something specific or share your thoughts, I'm here to listen and help in any way I can.\n\u2022 If you have a particular question or topic in mind, feel free to ask, and I'll do my best to provide a helpful response.\n\nLet me know how I can assist you today!",
+  "response_structure": "general_format",
+  "readability_score": 0.6563970588235295,
+  "formatting_time": 1.4556589126586914
+}
+2025-07-29 12:12:05,145 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "readability_score": 0.6563970588235295,
+  "response_structure": "general_format"
+}
+2025-07-29 12:12:05,149 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-29 12:12:05,149 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-07-29 12:12:05,149 - langchain_debug - [32mINFO[0m - [END] Request ID: 4d90f494-db4a-4690-9553-c23a3125513f
+2025-07-29 12:12:05,150 - langchain_debug - [32mINFO[0m - [END] Total Time: 10.06s
+2025-07-29 12:12:05,150 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-07-29 12:12:05,150 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-07-29 12:12:05,150 - langchain_debug - [32mINFO[0m - [END] Response Length: 769 chars
+2025-07-29 12:12:05,150 - langchain_debug - [32mINFO[0m - [END] Response Preview: Here is the formatted response:
+
+**Hola Damian!**
+
+I'm thrilled to start our conversation! As a lang...
+2025-07-29 12:12:05,150 - langchain_debug - [32mINFO[0m - ============================================================

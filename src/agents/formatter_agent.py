@@ -9,7 +9,7 @@ import time
 from typing import Dict, Any, Optional
 from langchain.schema.runnable import Runnable
 from src.utils.llm_client import create_llm_client
-from src.utils.logger import get_logger
+from src.utils.enhanced_logger import get_enhanced_logger
 from src.prompts.formatter_prompts import get_formatter_prompt, determine_response_type
 from src.models.agent_interfaces import FormatterInput, FormatterOutput, ProcessorOutput
 
@@ -39,7 +39,7 @@ class FormatterAgent(Runnable):
         self.temperature = temperature
         self.max_tokens = max_tokens
         self.verbose = verbose
-        self.logger = get_logger()
+        self.logger = get_enhanced_logger()
         
         # Initialize LLM and components
         self.llm = create_llm_client(
@@ -128,13 +128,12 @@ class FormatterAgent(Runnable):
         start_time = time.time()
         request_id = "unknown"  # Will be extracted from processor output if available
         
-        # Log the request
-        self.logger.log_request(
-            request_id=request_id,
-            message=f"Formatting response for: {input_data.user_message}",
-            agent="formatter",
-            metadata={"temperature": self.temperature, "max_tokens": self.max_tokens}
-        )
+        # Log the request (using enhanced logger)
+        self.logger.start_agent(request_id, "formatter", {
+            "user_message": input_data.user_message,
+            "temperature": self.temperature,
+            "max_tokens": self.max_tokens
+        })
         
         try:
             # Prepare input for the chain
@@ -168,18 +167,13 @@ class FormatterAgent(Runnable):
                 formatting_time=formatting_time
             )
             
-            # Log the response
-            self.logger.log_agent_response(
-                request_id=request_id,
-                agent="formatter",
-                response=formatted_response,
-                processing_time=formatting_time,
-                metadata={
-                    "response_type": input_data.response_type,
-                    "response_structure": response_structure,
-                    "readability_score": readability_score
-                }
-            )
+            # Log the response (using enhanced logger)
+            self.logger.end_agent(request_id, "formatter", result, {
+                "response_type": input_data.response_type,
+                "response_structure": response_structure,
+                "readability_score": readability_score,
+                "formatting_time": formatting_time
+            })
             
             if self.verbose:
                 print(f"[Formatter] Input: {input_data.user_message}")
@@ -191,12 +185,12 @@ class FormatterAgent(Runnable):
             return result
             
         except Exception as e:
-            # Log error
+            # Log error (using enhanced logger)
             formatting_time = time.time() - start_time
             self.logger.log_error(
                 request_id=request_id,
+                agent_name="formatter",
                 error=e,
-                agent="formatter",
                 context={"input": input_data.dict()}
             )
             

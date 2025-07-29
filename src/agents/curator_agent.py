@@ -12,7 +12,7 @@ from pydantic import BaseModel, Field
 from langchain.schema import BaseOutputParser
 from langchain.schema.runnable import Runnable
 from src.utils.llm_client import create_llm_client
-from src.utils.logger import get_logger
+from src.utils.enhanced_logger import get_enhanced_logger
 from src.prompts.curator_prompts import get_curator_prompt, format_chat_history
 
 
@@ -102,7 +102,7 @@ class CuratorAgent(Runnable):
         self.temperature = temperature
         self.max_tokens = max_tokens
         self.verbose = verbose
-        self.logger = get_logger()
+        self.logger = get_enhanced_logger()
         
         # Initialize LLM and components
         self.llm = create_llm_client(
@@ -135,13 +135,12 @@ class CuratorAgent(Runnable):
         message = input_data.get("message", "")
         chat_history = input_data.get("chat_history", [])
         
-        # Log the request
-        self.logger.log_request(
-            request_id=request_id,
-            message=message,
-            agent="curator",
-            metadata={"temperature": self.temperature, "max_tokens": self.max_tokens}
-        )
+        # Log the request (using enhanced logger)
+        self.logger.start_agent(request_id, "curator", {
+            "message": message,
+            "temperature": self.temperature,
+            "max_tokens": self.max_tokens
+        })
         
         try:
             # Format chat history
@@ -156,15 +155,13 @@ class CuratorAgent(Runnable):
             # Run the chain
             result = self.chain.invoke(chain_input, config or {})
             
-            # Log the response
+            # Log the response (using enhanced logger)
             processing_time = time.time() - start_time
-            self.logger.log_agent_response(
-                request_id=request_id,
-                agent="curator",
-                response=str(result),
-                processing_time=processing_time,
-                metadata={"is_valid": result.is_valid, "confidence": result.confidence}
-            )
+            self.logger.end_agent(request_id, "curator", result, {
+                "is_valid": result.is_valid,
+                "confidence": result.confidence,
+                "processing_time": processing_time
+            })
             
             if self.verbose:
                 print(f"[Curator] Input: {message}")
@@ -174,12 +171,12 @@ class CuratorAgent(Runnable):
             return result
             
         except Exception as e:
-            # Log the error
+            # Log the error (using enhanced logger)
             processing_time = time.time() - start_time
             self.logger.log_error(
                 request_id=request_id,
+                agent_name="curator",
                 error=e,
-                agent="curator",
                 context={"input": input_data}
             )
             
