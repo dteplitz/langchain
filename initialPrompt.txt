@@ -1,0 +1,69 @@
+El siguiente prompt lo tenes que dividir en 3 etapas iterativas.
+Las 3 deben ser 100% funcionales con FastApi para poder validar su funcionamiento mediante swagger.
+Describime que harias en cada etapa primero sin desarrolllar una linea de codigo,
+
+--
+
+Quiero que me generes un proyecto base en **Python** usando **LangChain** (siguiendo la documentación oficial https://python.langchain.com/docs/introduction/) con la **API más reciente (LCEL / Runnable)**.  
+El proyecto debe cumplir con lo siguiente:  
+
+---
+
+### 1. **Arquitectura y calidad de código**  
+- Carpeta `src/` con módulos separados:  
+  - `agents/`: cada agente en un archivo separado.  
+  - `chains/`: definición de la orquestación (`RunnableSequence`).  
+  - `utils/`: logs, manejo de errores, cliente LLM.  
+  - `config.py`: configuración (leer variables de entorno).  
+  - `memory/`: memoria persistente (`ConversationBufferMemory` + `ConversationSummaryMemory`).  
+  - `prompts/`: todos los PromptTemplates en archivos separados.  
+- Usar **type hints exhaustivos** y `pydantic v2` para inputs/outputs.  
+- Cada clase y función debe tener **docstrings detallados** (para que se lean en el hover en Cursor).  
+
+---
+
+### 2. **Agentes inteligentes**  
+- **Agente 1 (Curador)**: limpia y valida la pregunta. Detecta contenido inválido o fuera de dominio.  
+- **Agente 2 (Procesador central)**: genera respuesta con Groq y usa **Tools dummy** (ej. API falsa de búsqueda).  
+- **Agente 3 (Procesador de respuesta)**: formatea el output final.  
+- Cada agente debe:  
+  - Tener **PromptTemplate** con roles (`system`, `user`, `assistant`) cargado desde `prompts/`.  
+  - Validar y devolver un **JSON estricto** usando `OutputParser`.  
+  - Implementarse con **`Runnable`** o **`AgentExecutor`** (evitar deprecated).  
+  - Manejar **fallbacks**: si falla, devolver un error manejado.  
+  - Definir **interfaces claras** (contratos Pydantic) entre ellos.  
+  - Permitir `verbose=True` o un método `debug()` para inspección paso a paso.  
+
+---
+
+### 3. **Cadena de orquestación**  
+- Usar `RunnableSequence` y `RunnableWithFallbacks` para conectar los agentes.  
+- La cadena debe:  
+  - Mantener **memoria persistente** (SQLite por ahora).  
+  - Inyectar la memoria en el chain mediante una **factory function** o un `DependencyInjector` para facilitar cambios.  
+  - Ser **async**.  
+  - Tener **callbacks** (`ConsoleCallbackHandler`) para debuggear el flujo.  
+
+---
+
+### 4. **FastAPI + API REST**  
+- Endpoint POST `/chat`:  
+  - Input: modelo Pydantic `ChatRequest(message: str)`  
+  - Output: modelo Pydantic `ChatResponse(response: str)`  
+- Habilitar CORS.  
+- Middleware para manejo de errores y logs enriquecidos (con metadata de cada agente).  
+- Generar documentación OpenAPI detallada (FastAPI ya lo hace, pero agregar descripciones de cada modelo).  
+
+---
+
+### 5. **Prompt Engineering & Ajustes LLM**  
+- Cada agente debe tener parámetros configurables: `temperature`, `max_tokens`, `top_p`.  
+- Añadir tests de prompts con ejemplos usando `FakeLLM` de LangChain.  
+
+- Incluir un `README.md` con instrucciones y un diagrama ASCII de la arquitectura.  
+
+---
+
+> Importante: Quiero que generes el **código completo de cada archivo**, en bloques separados (archivo por archivo).  
+> El proyecto debe ser 100% funcional: levantar el server, ejecutar la cadena con memoria persistente, usar prompts claros.
+
