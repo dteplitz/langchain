@@ -144,6 +144,10 @@ Editar `.env`:
 GROQ_API_KEY=tu_api_key_de_groq
 DATABASE_URL=sqlite:///chat_memory.db
 LOG_LEVEL=INFO
+
+# Configuración de Idioma (Español por defecto)
+LANGUAGE=spanish
+LOCALE=es-ES
 ```
 
 ### **4. Ejecutar el Servidor:**
@@ -154,6 +158,33 @@ python -m src.main
 El servidor estará disponible en: `http://localhost:8000`
 - **API Docs**: `http://localhost:8000/docs`
 - **Health Check**: `http://localhost:8000/health`
+
+### **5. Verificar Configuración en Español:**
+```bash
+python test_spanish_config.py
+```
+
+Este script verifica que:
+- ✅ Los prompts están configurados en español
+- ✅ La detección de tipos de respuesta funciona con palabras en español
+- ✅ Los mensajes de error y éxito están en español
+- ✅ Las variables de entorno están configuradas correctamente
+
+### **6. Verificar Sistema de Memoria:**
+```bash
+# Pruebas de memoria básicas
+python test_memory_fix.py
+
+# Pruebas de integración con el servidor (requiere servidor ejecutándose)
+python test_memory_integration.py
+```
+
+Estos scripts verifican que:
+- ✅ La memoria SQLite funciona correctamente
+- ✅ El historial de conversación se guarda y carga
+- ✅ El formato del historial es correcto para los agentes
+- ✅ La memoria persiste entre sesiones
+- ✅ Las sesiones están correctamente separadas
 
 ---
 
@@ -782,7 +813,37 @@ GROQ_API_KEY=tu_api_key
 DATABASE_URL=sqlite:///chat_memory.db
 LOG_LEVEL=INFO
 DEBUG_MODE=false
+
+# Configuración de Idioma
+LANGUAGE=spanish
+LOCALE=es-ES
 ```
+
+### **Configuración de Idioma:**
+
+El sistema está configurado por defecto para responder en **español**. Puedes cambiar el idioma modificando las variables de entorno:
+
+```env
+# Para español (por defecto)
+LANGUAGE=spanish
+LOCALE=es-ES
+
+# Para inglés
+LANGUAGE=english
+LOCALE=en-US
+
+# Para otros idiomas
+LANGUAGE=french
+LOCALE=fr-FR
+```
+
+**Características del idioma español:**
+- ✅ Prompts configurados en español
+- ✅ Detección de preguntas en español (¿qué?, ¿cómo?, ¿por qué?, etc.)
+- ✅ Mensajes de error y éxito en español
+- ✅ Formato de fecha español (DD/MM/YYYY)
+- ✅ Separador decimal español (coma)
+- ✅ Puntuación española (¿, ¡, etc.)
 
 ### **Parámetros de Agentes:**
 ```python
@@ -821,6 +882,30 @@ lsof -ti:8000 | xargs kill -9
 # Reiniciar el servidor
 # O eliminar el archivo de base de datos
 rm chat_memory.db
+```
+
+### **Error: "Memory not working"**
+```bash
+# Verificar que la base de datos existe
+ls -la chat_memory.db
+
+# Ejecutar pruebas de memoria
+python test_memory_fix.py
+
+# Si hay problemas, recrear la base de datos
+rm chat_memory.db
+python test_memory_fix.py
+```
+
+### **Error: "System doesn't remember conversations"**
+```bash
+# Verificar formato del historial
+python test_memory_fix.py
+
+# Verificar integración con el servidor
+python test_memory_integration.py
+
+# Asegurarse de usar el mismo session_id en conversaciones relacionadas
 ```
 
 ---

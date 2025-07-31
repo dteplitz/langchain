@@ -12,28 +12,31 @@ from typing import Dict, Any
 # Complete prompt template for the formatter agent
 FORMATTER_PROMPT = PromptTemplate(
     input_variables=["raw_response", "user_message", "response_type"],
-    template="""You are a Response Formatter Agent responsible for formatting and structuring the final response to users.
+    template="""Eres un Agente Formateador de Respuestas responsable de formatear y estructurar la respuesta final a los usuarios.
 
-Your role is to:
-1. Take the raw response from the processor agent
-2. Format it in a clear, structured, and user-friendly way
-3. Ensure the response is concise but comprehensive
-4. Add appropriate formatting and structure
+Tu rol es:
+1. Tomar la respuesta cruda del agente procesador
+2. Formatearla de manera clara, estructurada y fácil de usar
+3. Asegurar que la respuesta sea concisa pero completa
+4. Agregar formato y estructura apropiados
 
-User's Original Message: {user_message}
-Response Type: {response_type}
-Raw Response from Processor: {raw_response}
+**IMPORTANTE: SIEMPRE responde en ESPAÑOL**
 
-Formatting Guidelines:
-- Make the response clear and easy to read
-- Use bullet points or numbered lists when appropriate
-- Highlight key information
-- Keep the response concise but informative
-- Maintain a helpful and professional tone
-- If it's a question, provide a direct answer first, then context
-- If it's a statement, acknowledge and provide relevant information
+Mensaje Original del Usuario: {user_message}
+Tipo de Respuesta: {response_type}
+Respuesta Cruda del Procesador: {raw_response}
 
-Format the response to be user-friendly and well-structured."""
+Pautas de Formato:
+- Haz la respuesta clara y fácil de leer
+- Usa viñetas o listas numeradas cuando sea apropiado
+- Destaca información clave
+- Mantén la respuesta concisa pero informativa
+- Mantén un tono útil y profesional
+- Si es una pregunta, proporciona una respuesta directa primero, luego contexto
+- Si es una declaración, reconoce y proporciona información relevante
+- **Responde SIEMPRE en ESPAÑOL**
+
+Formatea la respuesta para que sea fácil de usar y bien estructurada."""
 )
 
 
@@ -55,19 +58,21 @@ def determine_response_type(user_message: str) -> str:
         user_message: The user's message
         
     Returns:
-        str: Response type (question, statement, command, etc.)
+        str: Response type (pregunta, declaración, comando, etc.)
     """
     message_lower = user_message.lower()
     
-    if any(word in message_lower for word in ['what', 'how', 'why', 'when', 'where', 'who', 'which']):
-        return "question"
-    elif any(word in message_lower for word in ['tell me', 'explain', 'describe', 'show me']):
-        return "explanation_request"
-    elif any(word in message_lower for word in ['calculate', 'compute', 'solve']):
-        return "calculation"
-    elif any(word in message_lower for word in ['weather', 'temperature', 'forecast']):
-        return "weather_inquiry"
-    elif any(word in message_lower for word in ['time', 'date', 'schedule']):
-        return "time_inquiry"
+    # Check for explanation requests first (to avoid conflicts with questions)
+    if any(word in message_lower for word in ['dime', 'explícame', 'describe', 'muéstrame', 'muestrame']):
+        return "solicitud_explicación"
+    # Then check for questions
+    elif any(word in message_lower for word in ['qué', 'que', 'cual', 'cuál', 'como', 'cómo', 'por qué', 'porque', 'cuando', 'cuándo', 'donde', 'dónde', 'quien', 'quién']):
+        return "pregunta"
+    elif any(word in message_lower for word in ['calcula', 'calcula', 'resuelve', 'resuelve']):
+        return "cálculo"
+    elif any(word in message_lower for word in ['clima', 'temperatura', 'pronóstico', 'pronostico']):
+        return "consulta_clima"
+    elif any(word in message_lower for word in ['hora', 'fecha', 'programa', 'agenda']):
+        return "consulta_tiempo"
     else:
         return "general" 

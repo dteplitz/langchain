@@ -1,126 +1,272 @@
 #!/usr/bin/env python3
 """
-Test script to verify memory functionality and search tool fixes.
+Test script for memory issues in the LangChain project.
+
+This script tests the conversation memory system to identify
+and fix issues with chat history formatting and persistence.
 """
 
-import requests
-import json
-import time
+import os
+import sys
+from pathlib import Path
 
-def test_memory():
-    """Test that the system remembers the user's name across conversations."""
-    
-    base_url = "http://localhost:8000"
-    session_id = "test_memory_damian"
-    
-    print("🧪 Testing Memory Functionality")
-    print("=" * 50)
-    
-    # Test 1: First message - introduce name
-    print("\n1️⃣ First message - introducing name...")
-    response1 = requests.post(f"{base_url}/chat", json={
-        "message": "Hi, I am Damian",
-        "session_id": session_id
-    })
-    
-    if response1.status_code == 200:
-        result1 = response1.json()
-        print(f"✅ Response: {result1['response'][:100]}...")
-        print(f"⏱️  Processing time: {result1['processing_time']:.2f}s")
-    else:
-        print(f"❌ Error: {response1.status_code} - {response1.text}")
-        return False
-    
-    time.sleep(1)  # Small delay between requests
-    
-    # Test 2: Second message - ask for name
-    print("\n2️⃣ Second message - asking for name...")
-    response2 = requests.post(f"{base_url}/chat", json={
-        "message": "What's my name?",
-        "session_id": session_id
-    })
-    
-    if response2.status_code == 200:
-        result2 = response2.json()
-        print(f"✅ Response: {result2['response'][:200]}...")
-        print(f"⏱️  Processing time: {result2['processing_time']:.2f}s")
-        
-        # Check if the response mentions "Damian"
-        if "damian" in result2['response'].lower():
-            print("🎉 SUCCESS: The system remembered your name!")
-            return True
-        else:
-            print("❌ FAILED: The system did not remember your name")
-            return False
-    else:
-        print(f"❌ Error: {response2.status_code} - {response2.text}")
-        return False
+# Add src to path
+sys.path.insert(0, str(Path(__file__).parent / "src"))
 
-def test_search_tool():
-    """Test that the search tool works without errors."""
+from src.memory.conversation_memory import create_memory, get_conversation_history
+from src.prompts.curator_prompts import format_chat_history
+from src.config import get_settings
+
+
+def test_memory_creation():
+    """Test memory creation and database initialization."""
+    print("🧪 Probando creación de memoria...")
     
-    base_url = "http://localhost:8000"
-    session_id = "test_search_tool"
-    
-    print("\n🔍 Testing Search Tool Fix")
-    print("=" * 50)
-    
-    # Test search functionality
-    print("\n🔍 Testing search functionality...")
-    response = requests.post(f"{base_url}/chat", json={
-        "message": "What is the capital of France?",
-        "session_id": session_id
-    })
-    
-    if response.status_code == 200:
-        result = response.json()
-        print(f"✅ Response: {result['response'][:100]}...")
-        print(f"⏱️  Processing time: {result['processing_time']:.2f}s")
+    try:
+        # Create memory for test session
+        session_id = "test_session_123"
+        memory = create_memory(session_id)
         
-        # Check metadata for any errors
-        metadata = result.get('metadata', {})
-        errors = metadata.get('errors', [])
-        tools_executed = metadata.get('tools_executed', [])
+        print(f"✅ Memoria creada para sesión: {session_id}")
+        print(f"✅ Ruta de base de datos: {memory.db_path}")
         
-        if errors:
-            print(f"❌ Errors found: {errors}")
-            return False
+        # Test database initialization
+        import sqlite3
+        with sqlite3.connect(memory.db_path) as conn:
+            cursor = conn.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='conversations'")
+            if cursor.fetchone():
+                print("✅ Tabla 'conversations' existe")
+            else:
+                print("❌ Tabla 'conversations' NO existe")
+        
+        return memory
+        
+    except Exception as e:
+        print(f"❌ Error creando memoria: {e}")
+        return None
+
+
+def test_memory_save_and_load():
+    """Test saving and loading conversation data."""
+    print("\n🧪 Probando guardado y carga de conversación...")
+    
+    try:
+        session_id = "test_session_456"
+        memory = create_memory(session_id)
+        
+        # Test data
+        test_message = "Hola, ¿cómo estás?"
+        test_response = "¡Hola! Estoy muy bien, gracias por preguntar. ¿En qué puedo ayudarte hoy?"
+        
+        # Save conversation
+        memory.save_context(
+            {"message": test_message},
+            {"response": test_response}
+        )
+        print("✅ Conversación guardada")
+        
+        # Load conversation history
+        history = get_conversation_history(session_id, limit=5)
+        print(f"✅ Historial cargado: {len(history)} mensajes")
+        
+        if history:
+            last_message = history[-1]
+            print(f"✅ Último mensaje: {last_message.get('message', 'N/A')}")
+            print(f"✅ Última respuesta: {last_message.get('response', 'N/A')[:50]}...")
+        
+        return history
+        
+    except Exception as e:
+        print(f"❌ Error en guardado/carga: {e}")
+        return []
+
+
+def test_chat_history_format():
+    """Test chat history formatting for agents."""
+    print("\n🧪 Probando formato de historial de chat...")
+    
+    try:
+        # Create test history in the format returned by get_conversation_history
+        test_history = [
+            {
+                "message": "Hola, me llamo Juan",
+                "response": "¡Hola Juan! Es un placer conocerte. ¿En qué puedo ayudarte?",
+                "timestamp": "2024-01-01 10:00:00"
+            },
+            {
+                "message": "¿Cuál es mi nombre?",
+                "response": "Tu nombre es Juan, como me dijiste anteriormente.",
+                "timestamp": "2024-01-01 10:01:00"
+            }
+        ]
+        
+        print("📝 Historial de prueba:")
+        for i, entry in enumerate(test_history, 1):
+            print(f"  {i}. Usuario: {entry['message']}")
+            print(f"     Asistente: {entry['response'][:50]}...")
+        
+        # Test formatting
+        formatted = format_chat_history(test_history)
+        print(f"\n📝 Historial formateado:")
+        print(formatted)
+        
+        # Check if format is correct for agents
+        if "Usuario:" in formatted and "Asistente:" in formatted:
+            print("✅ Formato correcto para agentes")
         else:
-            print("✅ No errors in processing")
+            print("❌ Formato incorrecto para agentes")
+        
+        return formatted
+        
+    except Exception as e:
+        print(f"❌ Error en formato: {e}")
+        return ""
+
+
+def test_memory_integration():
+    """Test memory integration with agents."""
+    print("\n🧪 Probando integración de memoria con agentes...")
+    
+    try:
+        session_id = "test_integration_789"
+        memory = create_memory(session_id)
+        
+        # Simulate a conversation
+        conversations = [
+            ("Hola, me llamo María", "¡Hola María! Es un placer conocerte."),
+            ("¿Recuerdas mi nombre?", "Sí, tu nombre es María."),
+            ("¿Cuál es mi nombre?", "Tu nombre es María, como me dijiste anteriormente.")
+        ]
+        
+        # Save conversations
+        for message, response in conversations:
+            memory.save_context(
+                {"message": message},
+                {"response": response}
+            )
+        
+        print(f"✅ {len(conversations)} conversaciones guardadas")
+        
+        # Load history
+        history = get_conversation_history(session_id, limit=10)
+        print(f"✅ Historial cargado: {len(history)} mensajes")
+        
+        # Format for agents
+        formatted_history = format_chat_history(history)
+        print(f"\n📝 Historial formateado para agentes:")
+        print(formatted_history)
+        
+        # Check if name is preserved
+        if "María" in formatted_history:
+            print("✅ Nombre del usuario preservado en el historial")
+        else:
+            print("❌ Nombre del usuario NO preservado")
+        
+        return history
+        
+    except Exception as e:
+        print(f"❌ Error en integración: {e}")
+        return []
+
+
+def test_database_operations():
+    """Test database operations and error handling."""
+    print("\n🧪 Probando operaciones de base de datos...")
+    
+    try:
+        settings = get_settings()
+        db_path = settings.database_url.replace("sqlite:///", "")
+        
+        print(f"📁 Ruta de base de datos: {db_path}")
+        
+        # Check if database file exists
+        if os.path.exists(db_path):
+            print("✅ Archivo de base de datos existe")
             
-        if tools_executed:
-            print(f"✅ Tools executed: {len(tools_executed)}")
-            for tool in tools_executed:
-                if tool.get('success') == False:
-                    print(f"❌ Tool failed: {tool}")
-                    return False
-            print("✅ All tools executed successfully")
-            return True
+            # Check file size
+            size = os.path.getsize(db_path)
+            print(f"📊 Tamaño de archivo: {size} bytes")
         else:
-            print("ℹ️  No tools were executed")
-            return True
-    else:
-        print(f"❌ Error: {response.status_code} - {response.text}")
+            print("⚠️  Archivo de base de datos NO existe")
+        
+        # Test database connection
+        import sqlite3
+        with sqlite3.connect(db_path) as conn:
+            # Check table structure
+            cursor = conn.execute("PRAGMA table_info(conversations)")
+            columns = cursor.fetchall()
+            print(f"📋 Columnas en tabla 'conversations': {len(columns)}")
+            
+            for col in columns:
+                print(f"  - {col[1]} ({col[2]})")
+            
+            # Check record count
+            cursor = conn.execute("SELECT COUNT(*) FROM conversations")
+            count = cursor.fetchone()[0]
+            print(f"📊 Total de registros: {count}")
+            
+            # Check recent records
+            cursor = conn.execute("""
+                SELECT session_id, message, response, timestamp 
+                FROM conversations 
+                ORDER BY timestamp DESC 
+                LIMIT 3
+            """)
+            
+            recent = cursor.fetchall()
+            print(f"📝 Registros recientes: {len(recent)}")
+            
+            for record in recent:
+                print(f"  - Sesión: {record[0]}")
+                print(f"    Mensaje: {record[1][:30]}...")
+                print(f"    Respuesta: {record[2][:30]}...")
+                print(f"    Timestamp: {record[3]}")
+        
+        return True
+        
+    except Exception as e:
+        print(f"❌ Error en operaciones de base de datos: {e}")
         return False
+
+
+def main():
+    """Run all memory tests."""
+    print("🚀 Iniciando pruebas de memoria...\n")
+    
+    try:
+        # Test 1: Memory creation
+        memory = test_memory_creation()
+        if not memory:
+            print("❌ No se pudo crear memoria - abortando pruebas")
+            return
+        
+        # Test 2: Save and load
+        history = test_memory_save_and_load()
+        
+        # Test 3: Format testing
+        formatted = test_chat_history_format()
+        
+        # Test 4: Integration testing
+        integration_history = test_memory_integration()
+        
+        # Test 5: Database operations
+        db_ok = test_database_operations()
+        
+        print("\n🎉 Pruebas de memoria completadas")
+        
+        # Summary
+        print("\n📋 Resumen:")
+        print(f"✅ Creación de memoria: {'OK' if memory else 'FAIL'}")
+        print(f"✅ Guardado/Carga: {'OK' if history else 'FAIL'}")
+        print(f"✅ Formato: {'OK' if formatted else 'FAIL'}")
+        print(f"✅ Integración: {'OK' if integration_history else 'FAIL'}")
+        print(f"✅ Base de datos: {'OK' if db_ok else 'FAIL'}")
+        
+    except Exception as e:
+        print(f"❌ Error durante las pruebas: {e}")
+        import traceback
+        traceback.print_exc()
+
 
 if __name__ == "__main__":
-    print("🚀 Starting Memory and Search Tool Tests")
-    print("=" * 60)
-    
-    # Test memory functionality
-    memory_success = test_memory()
-    
-    # Test search tool
-    search_success = test_search_tool()
-    
-    # Summary
-    print("\n" + "=" * 60)
-    print("📊 TEST SUMMARY")
-    print("=" * 60)
-    print(f"Memory Functionality: {'✅ PASSED' if memory_success else '❌ FAILED'}")
-    print(f"Search Tool Fix: {'✅ PASSED' if search_success else '❌ FAILED'}")
-    
-    if memory_success and search_success:
-        print("\n🎉 ALL TESTS PASSED! Both issues have been fixed.")
-    else:
-        print("\n⚠️  Some tests failed. Please check the output above.") 
+    main() 

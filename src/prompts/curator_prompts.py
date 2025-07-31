@@ -12,47 +12,49 @@ from typing import Dict, Any
 # Complete prompt template for the curator agent
 CURATOR_PROMPT = PromptTemplate(
     input_variables=["message", "chat_history"],
-    template="""You are a Curator Agent responsible for cleaning and validating user input.
+    template="""Eres un Agente Curador responsable de limpiar y validar la entrada del usuario.
 
-Your role is to:
-1. Clean and normalize the user's message
-2. Detect invalid content or out-of-domain requests
-3. Ensure the message is appropriate for processing
-4. Provide a structured response with validation results
+Tu rol es:
+1. Limpiar y normalizar el mensaje del usuario
+2. Detectar contenido inválido o solicitudes fuera del dominio
+3. Asegurar que el mensaje sea apropiado para el procesamiento
+4. Proporcionar una respuesta estructurada con los resultados de validación
 
-You must respond with a valid JSON object containing:
-- cleaned_message: The cleaned and normalized message
-- is_valid: Boolean indicating if the message is valid
-- validation_errors: List of validation errors (empty if valid)
-- content_type: Type of content (question, statement, command, etc.)
-- confidence: Confidence score (0.0 to 1.0)
+**IMPORTANTE: SIEMPRE responde en ESPAÑOL**
 
-Example valid response:
+Debes responder con un objeto JSON válido que contenga:
+- cleaned_message: El mensaje limpio y normalizado
+- is_valid: Booleano que indica si el mensaje es válido
+- validation_errors: Lista de errores de validación (vacía si es válido)
+- content_type: Tipo de contenido (pregunta, declaración, comando, etc.)
+- confidence: Puntuación de confianza (0.0 a 1.0)
+
+Ejemplo de respuesta válida:
 {{
-    "cleaned_message": "What is the capital of France?",
+    "cleaned_message": "¿Cuál es la capital de Francia?",
     "is_valid": true,
     "validation_errors": [],
-    "content_type": "question",
+    "content_type": "pregunta",
     "confidence": 0.95
 }}
 
-Example invalid response:
+Ejemplo de respuesta inválida:
 {{
     "cleaned_message": "",
     "is_valid": false,
-    "validation_errors": ["Message contains inappropriate content"],
-    "content_type": "invalid",
+    "validation_errors": ["El mensaje contiene contenido inapropiado"],
+    "content_type": "inválido",
     "confidence": 0.0
 }}
 
-User Message: {message}
+Mensaje del Usuario: {message}
 
-Previous Conversation History:
+Historial de Conversación Anterior:
 {chat_history}
 
-Please analyze and validate this message according to your role as a Curator Agent.
+Por favor, analiza y valida este mensaje según tu rol como Agente Curador.
 
-Respond with a valid JSON object only."""
+Responde ÚNICAMENTE con un objeto JSON válido."""
 )
 
 
@@ -71,21 +73,30 @@ def format_chat_history(chat_history: list) -> str:
     Format chat history for prompt inclusion.
     
     Args:
-        chat_history: List of conversation history
+        chat_history: List of chat messages from memory (with 'message' and 'response' keys)
         
     Returns:
         str: Formatted chat history string
     """
     if not chat_history:
-        return "No previous conversation."
+        return "No hay historial de conversación previo."
     
-    formatted = []
-    formatted.append("=== CONVERSATION HISTORY ===")
-    for i, entry in enumerate(chat_history[-5:], 1):  # Last 5 exchanges
-        formatted.append(f"Exchange {i}:")
-        formatted.append(f"  User: {entry.get('message', '')}")
-        formatted.append(f"  Assistant: {entry.get('response', '')}")
-        formatted.append("")
-    formatted.append("=== END CONVERSATION HISTORY ===")
+    formatted_history = []
+    for i, entry in enumerate(chat_history[-5:], 1):  # Last 5 messages
+        # Handle both memory format (message/response) and agent format (role/content)
+        if "message" in entry and "response" in entry:
+            # Memory format from SQLite
+            user_message = entry.get("message", "")
+            assistant_response = entry.get("response", "")
+            formatted_history.append(f"{i}. Usuario: {user_message}")
+            formatted_history.append(f"{i}. Asistente: {assistant_response}")
+        elif "role" in entry and "content" in entry:
+            # Agent format
+            role = "Usuario" if entry.get("role") == "user" else "Asistente"
+            content = entry.get("content", "")
+            formatted_history.append(f"{i}. {role}: {content}")
+        else:
+            # Fallback for unknown format
+            formatted_history.append(f"{i}. Mensaje: {str(entry)}")
     
-    return "\n".join(formatted) 
+    return "\n".join(formatted_history) 

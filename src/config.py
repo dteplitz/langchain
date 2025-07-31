@@ -20,6 +20,8 @@ class Settings(BaseSettings):
         database_url: SQLite database URL for memory storage
         log_level: Logging level for the application
         debug: Debug mode flag
+        language: Language for responses (default: spanish)
+        locale: Locale for formatting (default: es-ES)
     """
     
     groq_api_key: str = Field(..., env="GROQ_API_KEY", description="Groq API key")
@@ -30,6 +32,18 @@ class Settings(BaseSettings):
     )
     log_level: str = Field(default="INFO", env="LOG_LEVEL", description="Logging level")
     debug: bool = Field(default=False, env="DEBUG", description="Debug mode")
+    
+    # Language Configuration
+    language: str = Field(
+        default="spanish", 
+        env="LANGUAGE", 
+        description="Language for responses (spanish, english, etc.)"
+    )
+    locale: str = Field(
+        default="es-ES", 
+        env="LOCALE", 
+        description="Locale for formatting (es-ES, en-US, etc.)"
+    )
     
     # LLM Configuration
     model_name: str = Field(
