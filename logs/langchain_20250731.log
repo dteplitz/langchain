@@ -1366,3 +1366,236 @@ Me alegra que hayas compartido tus preferencias y objetivos...
   "x-performance-warning": "slow",
   "x-request-id": "5213ffb2-d376-4935-90d5-245ca6a8168f"
 }
+2025-07-31 19:33:20,819 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: POST http://localhost:8000/chat
+2025-07-31 19:33:20,820 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: 6d0f5407-be6e-46d5-b68c-851d86f6d90e
+2025-07-31 19:33:20,820 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-07-31 19:33:20,820 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-07-31 19:33:20,821 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "content-length": "122",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:8000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-07-31 19:33:20,846 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-07-31 19:33:20,846 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Hola, me ayudas a entender porque la tierra es redonda?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-07-31 19:33:21,704 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 0.86s
+2025-07-31 19:33:21,704 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "\u00bfPor qu\u00e9 la Tierra es redonda?",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "pregunta",
+  "confidence": 0.85
+}
+2025-07-31 19:33:21,705 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.85,
+  "processing_time": 0.8578600883483887
+}
+2025-07-31 19:33:21,705 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-31 19:33:21,705 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-07-31 19:33:21,706 - langchain_debug - [32mINFO[0m - [START] Request ID: 226c599b-51eb-4448-8aeb-a91454e34f3e
+2025-07-31 19:33:21,706 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_33
+2025-07-31 19:33:21,706 - langchain_debug - [32mINFO[0m - [START] Message: Hola, me ayudas a entender porque la tierra es redonda?
+2025-07-31 19:33:21,706 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-31 19:33:21,708 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 0
+2025-07-31 19:33:21,708 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-07-31 19:33:21,708 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-07-31 19:33:21,709 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "Hola, me ayudas a entender porque la tierra es redonda?",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-07-31 19:33:27,232 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 5.52s
+2025-07-31 19:33:27,232 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "**An\u00e1lisis del Mensaje:**\n\n* El tipo de consulta es una pregunta.\n* La herramienta necesaria es la b\u00fasqueda en la base de conocimientos.\n* No hay historial de conversaci\u00f3n previo.\n\n**Respuesta:**\n\nLa pregunta sobre por qu\u00e9 la Tierra es redonda es una de las m\u00e1s comunes y fascinantes en el \u00e1mbito de la astronom\u00eda y la f\u00edsica. La respuesta a esta pregunta es compleja, pero es importante entender que la forma esf\u00e9rica de la Tierra se debe a su formaci\u00f3n y evoluci\u00f3n.\n\n**Explicaci\u00f3n detallada:**\n\nLa Tierra se form\u00f3 hace aproximadamente 4.5 mil millones de a\u00f1os a partir del material que se encontraba en el cintur\u00f3n de asteroides. Este material, compuesto principalmente por silicatos y met\u00e1licos, se fusion\u00f3 y se condens\u00f3 a temperaturas muy altas, lo que dio lugar a la formaci\u00f3n de una esfera. La esfera se enfri\u00f3 y se condens\u00f3 a\u00fan m\u00e1s, lo que llev\u00f3 a la formaci\u00f3n de la corteza y la litosfera que conocemos hoy en d\u00eda.\n\nLa forma esf\u00e9rica de la Tierra tambi\u00e9n se debe a factores como la gravedad y la rotaci\u00f3n. La gravedad atrae hacia el centro de la Tierra y mantiene la forma esf\u00e9rica, mientras que la rotaci\u00f3n hace que la Tierra se deformen ligeramente en la direcci\u00f3n opuesta a su movimiento.\n\n**Informaci\u00f3n contextual:**\n\nLa forma esf\u00e9rica de la Tierra es importante para nuestra supervivencia y para la vida en general. La gravedad, que se debe a la forma esf\u00e9rica de la Tierra, mantiene el aire en la atm\u00f3sfera y permite que los seres vivos se sientan en la superficie. Adem\u00e1s, la forma esf\u00e9rica de la Tierra da lugar a la existencia de los climas y las estaciones, lo que es fundamental para la vida en la Tierra.\n\n**Ejemplos:**\n\nLa forma esf\u00e9rica de la Tierra se puede ver en la forma en que el sol y la luna se ponen en el horizonte. La Tierra es esf\u00e9rica, por lo que el sol y la luna aparecen como c\u00edrculos en el cielo. Tambi\u00e9n se puede ver en la forma en que los objetos caen hacia el centro de la Tierra, lo que es debido a la gravedad.\n\n**Conclusi\u00f3n:**\n\nEn conclusi\u00f3n, la forma esf\u00e9rica de la Tierra se debe a su formaci\u00f3n y evoluci\u00f3n, y es fundamental para nuestra supervivencia y para la vida en general. La gravedad y la rotaci\u00f3n tambi\u00e9n juegan un papel importante en la forma esf\u00e9rica de la Tierra.\n\n**Formato de respuesta:**\n\n* **Explicaci\u00f3n detallada:** La forma esf\u00e9rica de la Tierra se debe a su formaci\u00f3n y evoluci\u00f3n.\n* **Informaci\u00f3n contextual:** La forma esf\u00e9rica de la Tierra es importante para nuestra supervivencia y para la vida en general.\n* **Ejemplos:** La forma esf\u00e9rica de la Tierra se puede ver en la forma en que el sol y la luna se ponen en el horizonte y en la forma en que los objetos caen hacia el centro de la Tierra.\n\nEspero que esta respuesta sea \u00fatil y completa.",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 5.523271799087524
+}
+2025-07-31 19:33:27,233 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 5.523271799087524
+}
+2025-07-31 19:33:27,234 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-07-31 19:33:27,235 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-07-31 19:33:27,235 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "Hola, me ayudas a entender porque la tierra es redonda?",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-07-31 19:33:36,755 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 9.52s
+2025-07-31 19:33:36,756 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "**\ud83c\udf0e \u00bfPor qu\u00e9 la Tierra es redonda?**\n\n**\ud83d\udd0d Respuesta Directa**\nLa Tierra es redonda debido a su formaci\u00f3n y evoluci\u00f3n.\n\n**\ud83c\udf10 Explicaci\u00f3n Detallada**\nLa Tierra se form\u00f3 hace aproximadamente 4.5 mil millones de a\u00f1os a partir del material que se encontraba en el cintur\u00f3n de asteroides. Este material, compuesto principalmente por silicatos y met\u00e1licos, se fusion\u00f3 y se condens\u00f3 a temperaturas muy altas, lo que dio lugar a la formaci\u00f3n de una esfera. La esfera se enfri\u00f3 y se condens\u00f3 a\u00fan m\u00e1s, lo que llev\u00f3 a la formaci\u00f3n de la corteza y la litosfera que conocemos hoy en d\u00eda.\n\n**\ud83c\udf08 Factores que influyen en la forma esf\u00e9rica**\nLa gravedad y la rotaci\u00f3n tambi\u00e9n juegan un papel importante en la forma esf\u00e9rica de la Tierra. La gravedad atrae hacia el centro de la Tierra y mantiene la forma esf\u00e9rica, mientras que la rotaci\u00f3n hace que la Tierra se deformen ligeramente en la direcci\u00f3n opuesta a su movimiento.\n\n**\ud83c\udf0e Importancia de la forma esf\u00e9rica**\nLa forma esf\u00e9rica de la Tierra es fundamental para nuestra supervivencia y para la vida en general. La gravedad, que se debe a la forma esf\u00e9rica de la Tierra, mantiene el aire en la atm\u00f3sfera y permite que los seres vivos se sientan en la superficie. Adem\u00e1s, la forma esf\u00e9rica de la Tierra da lugar a la existencia de los climas y las estaciones, lo que es fundamental para la vida en la Tierra.\n\n**\ud83d\udcf8 Ejemplos**\nLa forma esf\u00e9rica de la Tierra se puede ver en la forma en que el sol y la luna se ponen en el horizonte. La Tierra es esf\u00e9rica, por lo que el sol y la luna aparecen como c\u00edrculos en el cielo. Tambi\u00e9n se puede ver en la forma en que los objetos caen hacia el centro de la Tierra, lo que es debido a la gravedad.\n\n**\ud83c\udf1f Conclusi\u00f3n**\nEn conclusi\u00f3n, la forma esf\u00e9rica de la Tierra se debe a su formaci\u00f3n y evoluci\u00f3n, y es fundamental para nuestra supervivencia y para la vida en general.",
+  "response_structure": "general_format",
+  "readability_score": 0.2601696606786428,
+  "formatting_time": 9.520275354385376
+}
+2025-07-31 19:33:36,757 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "pregunta",
+  "response_structure": "general_format",
+  "readability_score": 0.2601696606786428,
+  "formatting_time": 9.520275354385376
+}
+2025-07-31 19:33:36,763 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-31 19:33:36,764 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-07-31 19:33:36,764 - langchain_debug - [32mINFO[0m - [END] Request ID: 226c599b-51eb-4448-8aeb-a91454e34f3e
+2025-07-31 19:33:36,764 - langchain_debug - [32mINFO[0m - [END] Total Time: 15.06s
+2025-07-31 19:33:36,765 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-07-31 19:33:36,766 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-07-31 19:33:36,766 - langchain_debug - [32mINFO[0m - [END] Response Length: 1839 chars
+2025-07-31 19:33:37,096 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-31 19:33:37,098 - langchain_debug - [33mWARNING[0m - [PERFORMANCE] Slow request detected: POST http://localhost:8000/chat took 16.277s (threshold: 5.0s)
+2025-07-31 19:33:37,100 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: POST http://localhost:8000/chat -> 200
+2025-07-31 19:33:37,100 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: 6d0f5407-be6e-46d5-b68c-851d86f6d90e
+2025-07-31 19:33:37,100 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 16.280s
+2025-07-31 19:33:37,101 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "2386",
+  "content-type": "application/json",
+  "access-control-allow-origin": "http://localhost:8000",
+  "access-control-allow-credentials": "true",
+  "vary": "Origin",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "16.280221462249756",
+  "x-performance-warning": "slow",
+  "x-request-id": "6d0f5407-be6e-46d5-b68c-851d86f6d90e"
+}
+2025-07-31 19:34:16,711 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: POST http://localhost:8000/chat
+2025-07-31 19:34:16,711 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: e3b0a41b-278e-48b1-ade6-ee4b21548b3e
+2025-07-31 19:34:16,712 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-07-31 19:34:16,712 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-07-31 19:34:16,712 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "content-length": "102",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:8000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-07-31 19:34:16,714 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-07-31 19:34:16,714 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Pero me dijo mi cura que es plana!!",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-07-31 19:34:17,421 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 0.71s
+2025-07-31 19:34:17,422 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "Mi cura me dijo que algo es plana",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "declaraci\u00f3n",
+  "confidence": 0.8
+}
+2025-07-31 19:34:17,422 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.8,
+  "processing_time": 0.7068758010864258
+}
+2025-07-31 19:34:17,423 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-31 19:34:17,424 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-07-31 19:34:17,424 - langchain_debug - [32mINFO[0m - [START] Request ID: 0c5b640d-af3e-4336-a5bd-e19385ba7471
+2025-07-31 19:34:17,425 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_33
+2025-07-31 19:34:17,425 - langchain_debug - [32mINFO[0m - [START] Message: Pero me dijo mi cura que es plana!!
+2025-07-31 19:34:17,426 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-31 19:34:17,431 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 1
+2025-07-31 19:34:17,431 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Last message: Hola, me ayudas a entender porque la tierra es redonda?
+2025-07-31 19:34:17,441 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-07-31 19:34:17,441 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-07-31 19:34:17,442 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "Pero me dijo mi cura que es plana!!",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-07-31 19:34:39,526 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 22.08s
+2025-07-31 19:34:39,526 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "**An\u00e1lisis del Mensaje:**\n\n* Tipo de consulta: Pregunta\n* Herramientas necesarias: Ninguno\n* Revisi\u00f3n del historial: El usuario anteriormente pregunt\u00f3 por la forma de la Tierra y se le proporcion\u00f3 una explicaci\u00f3n detallada sobre la raz\u00f3n por la que la Tierra es redonda.\n* Planificaci\u00f3n de la estructura: La respuesta se centrar\u00e1 en responder la pregunta del usuario y proporcionar m\u00e1s informaci\u00f3n sobre la forma esf\u00e9rica de la Tierra.\n\n**Respuesta:**\n\n**\u00bfPor qu\u00e9 mi cura dice que la Tierra es plana?**\n\nEs com\u00fan que algunas personas tengan creencias err\u00f3neas sobre la forma de la Tierra, especialmente si no tienen acceso a informaci\u00f3n actualizada y verificada. Es importante recordar que la forma esf\u00e9rica de la Tierra ha sido verificada a trav\u00e9s de m\u00faltiples m\u00e9todos y evidencias, incluyendo las mediciones de la curvatura terrestre, las im\u00e1genes espaciales y las misiones espaciales.\n\n**La forma esf\u00e9rica de la Tierra es una verdad cient\u00edfica bien establecida**\n\nLa forma esf\u00e9rica de la Tierra se debe a su formaci\u00f3n y evoluci\u00f3n. La Tierra se form\u00f3 hace aproximadamente 4.5 mil millones de a\u00f1os a partir del material que se encontraba en el cintur\u00f3n de asteroides. Este material, compuesto principalmente por silicatos y met\u00e1licos, se fusion\u00f3 y se condens\u00f3 a temperaturas muy altas, lo que dio lugar a la formaci\u00f3n de una esfera. La esfera se enfri\u00f3 y se condens\u00f3 a\u00fan m\u00e1s, lo que llev\u00f3 a la formaci\u00f3n de la corteza y la litosfera que conocemos hoy en d\u00eda.\n\n**La evidencia cient\u00edfica no apoya la idea de que la Tierra es plana**\n\nLa evidencia cient\u00edfica es abundante y se basa en m\u00faltiples disciplinas, incluyendo la astronom\u00eda, la geolog\u00eda, la f\u00edsica y la biolog\u00eda. Algunos ejemplos de esta evidencia incluyen:\n\n* Las im\u00e1genes espaciales que muestran la curvatura de la Tierra\n* Las mediciones de la curvatura terrestre realizadas por astr\u00f3nomos y ge\u00f3logos\n* Las misiones espaciales que han orbitado la Tierra y han recopilado datos sobre su forma y tama\u00f1o\n* La forma en que los objetos caen hacia el centro de la Tierra, lo que se debe a la gravedad\n\n**Conclusi\u00f3n**\n\nEs importante recordar que la forma esf\u00e9rica de la Tierra es una verdad cient\u00edfica bien establecida y que la evidencia cient\u00edfica no apoya la idea de que la Tierra es plana. Es importante estar informados y mantener una mente abierta para considerar la informaci\u00f3n y las evidencias disponibles.",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 22.084210872650146
+}
+2025-07-31 19:34:39,527 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 22.084210872650146
+}
+2025-07-31 19:34:39,528 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-07-31 19:34:39,528 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-07-31 19:34:39,529 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "Pero me dijo mi cura que es plana!!",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-07-31 19:34:41,131 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 1.60s
+2025-07-31 19:34:41,132 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "**\ud83c\udf0e \u00bfPor qu\u00e9 mi cura dice que la Tierra es plana?**\n\n**No, la Tierra no es plana**\n\nEs com\u00fan que algunas personas tengan creencias err\u00f3neas sobre la forma de la Tierra, especialmente si no tienen acceso a informaci\u00f3n actualizada y verificada. **La forma esf\u00e9rica de la Tierra es una verdad cient\u00edfica bien establecida**.\n\n**La forma esf\u00e9rica de la Tierra se debe a su formaci\u00f3n y evoluci\u00f3n**\n\nLa Tierra se form\u00f3 hace aproximadamente 4.5 mil millones de a\u00f1os a partir del material que se encontraba en el cintur\u00f3n de asteroides. Este material, compuesto principalmente por silicatos y met\u00e1licos, se fusion\u00f3 y se condens\u00f3 a temperaturas muy altas, lo que dio lugar a la formaci\u00f3n de una esfera. La esfera se enfri\u00f3 y se condens\u00f3 a\u00fan m\u00e1s, lo que llev\u00f3 a la formaci\u00f3n de la corteza y la litosfera que conocemos hoy en d\u00eda.\n\n**La evidencia cient\u00edfica no apoya la idea de que la Tierra es plana**\n\nLa evidencia cient\u00edfica es abundante y se basa en m\u00faltiples disciplinas, incluyendo la astronom\u00eda, la geolog\u00eda, la f\u00edsica y la biolog\u00eda. Algunos ejemplos de esta evidencia incluyen:\n\n\u2022 **Im\u00e1genes espaciales que muestran la curvatura de la Tierra**\n\u2022 **Mediciones de la curvatura terrestre realizadas por astr\u00f3nomos y ge\u00f3logos**\n\u2022 **Misiones espaciales que han orbitado la Tierra y han recopilado datos sobre su forma y tama\u00f1o**\n\u2022 **La forma en que los objetos caen hacia el centro de la Tierra, lo que se debe a la gravedad**\n\n**Conclusi\u00f3n**\n\nEs importante recordar que la forma esf\u00e9rica de la Tierra es una verdad cient\u00edfica bien establecida y que la evidencia cient\u00edfica no apoya la idea de que la Tierra es plana. **Es importante estar informados y mantener una mente abierta para considerar la informaci\u00f3n y las evidencias disponibles**.",
+  "response_structure": "general_format",
+  "readability_score": 0.0060344827586207295,
+  "formatting_time": 1.602510690689087
+}
+2025-07-31 19:34:41,132 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "declaraci\u00f3n",
+  "response_structure": "general_format",
+  "readability_score": 0.0060344827586207295,
+  "formatting_time": 1.602510690689087
+}
+2025-07-31 19:34:41,139 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-31 19:34:41,141 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-07-31 19:34:41,141 - langchain_debug - [32mINFO[0m - [END] Request ID: 0c5b640d-af3e-4336-a5bd-e19385ba7471
+2025-07-31 19:34:41,141 - langchain_debug - [32mINFO[0m - [END] Total Time: 23.72s
+2025-07-31 19:34:41,142 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-07-31 19:34:41,142 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-07-31 19:34:41,142 - langchain_debug - [32mINFO[0m - [END] Response Length: 1733 chars
+2025-07-31 19:34:41,149 - langchain_debug - [32mINFO[0m - ============================================================
+2025-07-31 19:34:41,151 - langchain_debug - [33mWARNING[0m - [PERFORMANCE] Slow request detected: POST http://localhost:8000/chat took 24.439s (threshold: 5.0s)
+2025-07-31 19:34:41,152 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: POST http://localhost:8000/chat -> 200
+2025-07-31 19:34:41,152 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: e3b0a41b-278e-48b1-ade6-ee4b21548b3e
+2025-07-31 19:34:41,153 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 24.441s
+2025-07-31 19:34:41,153 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "2278",
+  "content-type": "application/json",
+  "access-control-allow-origin": "http://localhost:8000",
+  "access-control-allow-credentials": "true",
+  "vary": "Origin",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "24.441157579421997",
+  "x-performance-warning": "slow",
+  "x-request-id": "e3b0a41b-278e-48b1-ade6-ee4b21548b3e"
+}
