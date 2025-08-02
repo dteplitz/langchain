@@ -201,7 +201,7 @@ async def chat(request: ChatRequest):
         HTTPException: If processing fails
     """
     try:
-        # Generate request ID
+        # Esto genera un identificador único para la solicitud actual
         request_id = str(uuid.uuid4())
         
         # Prepare input for the chain

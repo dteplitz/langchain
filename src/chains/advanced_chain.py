@@ -46,12 +46,12 @@ class AdvancedChain(Runnable):
         Initialize the advanced chain.
         
         Args:
-            curator_config: Configuration for curator agent
-            processor_config: Configuration for processor agent
-            formatter_config: Configuration for formatter agent
-            verbose: Enable verbose logging
+            curator_config: Configuration dictionary for the curator agent (e.g., temperature, max_tokens)
+            processor_config: Configuration dictionary for the processor agent
+            formatter_config: Configuration dictionary for the formatter agent
+            verbose: Boolean flag. If True, enables detailed logging and debugging output throughout the chain.
         """
-        self.verbose = verbose
+        self.verbose = verbose  # If True, enables detailed logging and debugging output
         self.logger = get_enhanced_logger()
         
         # Default configurations
@@ -73,7 +73,17 @@ class AdvancedChain(Runnable):
     def _build_chain(self):
         """Build the RunnableSequence with fallbacks."""
         
+        # ¿Qué es RunnableSequence?
+        # Es una utilidad de LangChain que permite encadenar múltiples runnables (agentes o funciones ejecutables)
+        # en una secuencia. Cada runnable se ejecuta en orden, y el resultado de cada uno se pasa como entrada al siguiente.
+        # Esto es útil para crear flujos de procesamiento complejos.
+        # Basiamente aca se arma la cadena de agentes
+
         # Step 1: Curator Agent with fallback
+        # ¿Qué es RunnableWithFallbacks?
+        # Es una utilidad de LangChain que permite envolver un "runnable" (un agente o función ejecutable)
+        # y especificar una o más funciones de respaldo (fallbacks) que se ejecutan si el runnable principal falla.
+        # Así, si el agente principal lanza una excepción o no responde correctamente, se intenta con el fallback.
         curator_with_fallback = RunnableWithFallbacks(
             runnable=self.curator_agent,
             fallbacks=[
@@ -97,7 +107,12 @@ class AdvancedChain(Runnable):
             ]
         )
         
-        # Create the complete chain directly
+        # ¿Qué es RunnableLambda?
+        # RunnableLambda es una utilidad de LangChain que permite envolver una función Python (lambda o función normal)
+        # como un "runnable" compatible con la cadena de procesamiento de LangChain. Esto significa que puedes usar
+        # cualquier función personalizada como un eslabón dentro de una secuencia de agentes o pasos, integrándola
+        # fácilmente en el flujo de procesamiento.
+        # En este caso, se utiliza para envolver el método _process_complete_chain como el runnable principal de la cadena.
         self.chain = RunnableLambda(self._process_complete_chain)
     
     def _curator_fallback(self, input_data: Dict[str, Any], config: Dict[str, Any]) -> CuratorOutput:
@@ -142,6 +157,10 @@ class AdvancedChain(Runnable):
             "Processor agent failed, using fallback"
         )
         
+        # Este es el fallback que se ejecuta si el agente procesador falla
+        # En este caso, se devuelve una respuesta de fallback que indica que se entiende el mensaje del usuario
+        # y que se está usando un fallback
+
         return ProcessorOutput(
             raw_response=f"I understand your message: {input_data.message}. This is a fallback response.",
             tools_executed=[],
@@ -166,6 +185,9 @@ class AdvancedChain(Runnable):
             "FALLBACK",
             "Formatter agent failed, using fallback"
         )
+        # Este es el fallback que se ejecuta si el agente formateador falla
+        # En este caso, se devuelve una respuesta de fallback que indica que se entiende el mensaje del usuario
+        # y que se está usando un fallback
         
         return FormatterOutput(
             formatted_response=input_data.raw_response,
@@ -173,6 +195,13 @@ class AdvancedChain(Runnable):
             readability_score=0.5,
             formatting_time=0.1
         )
+    
+    #Porque la funcion arranca con _?
+    # Porque es una función privada, es decir, no está disponible fuera del módulo.
+    # En Python, los nombres que comienzan con un guión bajo se consideran "privados" o "internos"
+    # y se usan para indicar que son parte de la implementación interna de un módulo.
+    # Esto es útil para evitar conflictos con nombres de funciones o variables que podrían estar
+    # definidos en otros módulos o librerías.
     
     def _orchestrate_wrapper(self, data: Any) -> Dict[str, Any]:
         """
@@ -184,20 +213,29 @@ class AdvancedChain(Runnable):
         Returns:
             Dict[str, Any]: Final result
         """
-        # Handle different data structures
+        
+        # Que se espera recibir en la variable data?
+        # data es un diccionario que contiene el resultado del agente curador y el input_data
+        # que es un diccionario que contiene el mensaje del usuario, la sesión y el request_id
+        
         if isinstance(data, dict):
-            # If data is a dict, it might contain both curator_result and input_data
+            # Si data es un diccionario, puede contener tanto curator_result como input_data
             if len(data) == 2:
-                # Extract curator_result and input_data
+                # Extrae curator_result y input_data
                 items = list(data.items())
                 curator_result = items[0][1]
                 input_data = items[1][1]
             else:
-                # Assume data is input_data
+                # Asume que data es input_data
                 curator_result = None
                 input_data = data
         else:
-            # If data is not a dict, assume it's curator_result and we need to get input_data from context
+            # Si data no es un diccionario, asume que es curator_result y necesitas obtener input_data del contexto
+            # Cuando pasaria esto?
+            # Cuando el agente curador falla y se ejecuta el fallback
+            # En este caso, data es el resultado del fallback y se asume que es curator_result
+            # y se obtiene input_data del contexto
+            
             curator_result = data
             input_data = {"message": "Unknown", "session_id": "unknown", "request_id": "unknown"}
         
@@ -219,6 +257,8 @@ class AdvancedChain(Runnable):
             
             # Step 2: Process through the complete orchestration
             return self._orchestrate_agents(curator_result, input_data)
+
+            
             
         except Exception as e:
             # Fallback if curator fails
@@ -272,8 +312,9 @@ class AdvancedChain(Runnable):
         
         # Create memory for this session
         memory = create_memory(session_id)
-        chat_history = get_conversation_history(session_id, limit=5)
-        
+        #Esto es para que el agente procesador tenga en cuenta el historial de conversaciones, el limit es para limitar la cantidad de mensajes que se guardan en la memoria
+        chat_history = get_conversation_history(session_id, limit=5) 
+
         # Debug: Log chat history
         self.logger.log_chain_step(request_id, "MEMORY_DEBUG", f"Chat history length: {len(chat_history)}")
         if chat_history:
@@ -322,6 +363,14 @@ class AdvancedChain(Runnable):
             # Step 2: Processor Agent
             self.logger.log_chain_step(request_id, "STEP_2", "Starting Processor Agent")
             
+            # Paso 2.1: Crear el input para el agente procesador
+            # ¿Qué es ProcessorInput?
+            # Es el input que se le pasa al agente procesador
+            # ¿Qué es chat_history?
+            # Es el historial de conversaciones que se guarda en la memoria
+            # ¿Qué es curator_output?
+            # Es el resultado del agente curador, el agente anterior
+
             processor_input = ProcessorInput(
                 message=message,
                 chat_history=chat_history,

@@ -1,0 +1,539 @@
+2025-08-02 19:27:46,120 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: GET http://localhost:8000/docs
+2025-08-02 19:27:46,120 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: 0203fd9b-02d6-43bd-afba-b306006aaeef
+2025-08-02 19:27:46,121 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-08-02 19:27:46,121 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-08-02 19:27:46,121 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "none",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-08-02 19:27:46,126 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: GET http://localhost:8000/docs -> 200
+2025-08-02 19:27:46,126 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: 0203fd9b-02d6-43bd-afba-b306006aaeef
+2025-08-02 19:27:46,127 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 0.006s
+2025-08-02 19:27:46,127 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "942",
+  "content-type": "text/html; charset=utf-8",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "0.0063860416412353516",
+  "x-performance-warning": "normal",
+  "x-request-id": "0203fd9b-02d6-43bd-afba-b306006aaeef"
+}
+2025-08-02 19:27:46,463 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: GET http://localhost:8000/openapi.json
+2025-08-02 19:27:46,463 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: b6491f66-e86e-4d13-9cd6-19fee4119a30
+2025-08-02 19:27:46,464 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-08-02 19:27:46,464 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-08-02 19:27:46,465 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json,*/*",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-08-02 19:27:46,496 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: GET http://localhost:8000/openapi.json -> 200
+2025-08-02 19:27:46,496 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: b6491f66-e86e-4d13-9cd6-19fee4119a30
+2025-08-02 19:27:46,496 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 0.032s
+2025-08-02 19:27:46,497 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "4704",
+  "content-type": "application/json",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "0.03238725662231445",
+  "x-performance-warning": "normal",
+  "x-request-id": "b6491f66-e86e-4d13-9cd6-19fee4119a30"
+}
+2025-08-02 19:28:09,743 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: POST http://localhost:8000/chat
+2025-08-02 19:28:09,743 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: f78af96f-e88e-4465-a3b1-5e852f0eafdc
+2025-08-02 19:28:09,743 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-08-02 19:28:09,744 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-08-02 19:28:09,744 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "content-length": "73",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:8000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-08-02 19:47:52,314 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 19:47:52,315 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Hola!!",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 19:47:56,602 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 4.29s
+2025-08-02 19:47:56,603 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "Hola",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "saludo",
+  "confidence": 0.8
+}
+2025-08-02 19:47:56,604 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.8,
+  "processing_time": 4.287863254547119
+}
+2025-08-02 19:48:01,009 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 19:48:01,010 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 19:48:01,010 - langchain_debug - [32mINFO[0m - [START] Request ID: 9b78238f-af44-4d8f-9d75-1c6d27a3ea36
+2025-08-02 19:48:01,011 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_40
+2025-08-02 19:48:01,013 - langchain_debug - [32mINFO[0m - [START] Message: Hola!!
+2025-08-02 19:48:01,014 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 19:48:01,034 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 0
+2025-08-02 19:48:01,034 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 19:48:01,035 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 19:48:01,035 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "Hola!!",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 19:48:02,715 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 1.68s
+2025-08-02 19:48:02,716 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "\u00a1Hola! Me alegra poder ayudarte. No hay historial de conversaci\u00f3n previo, as\u00ed que podemos empezar de cero.\n\n**An\u00e1lisis del Mensaje:**\nIdentifico que el mensaje del usuario es una solicitud, ya que es un \"Hola!!\" que no parece tener un prop\u00f3sito espec\u00edfico. No hay herramientas necesarias para responder esta consulta.\n\n**Respuesta:**\n\u00a1Hola! Me alegra que hayas iniciado la conversaci\u00f3n. Estoy aqu\u00ed para ayudarte en lo que necesites. \u00bfEn qu\u00e9 puedo apoyarte? \u00bfTienes alg\u00fan tema en particular que quieras discutir o preguntas que tengas? Estoy aqu\u00ed para escucharte y ayudarte lo mejor que pueda.\n\n**Estructura de Respuesta:**\nMi respuesta es una solicitud de clarificaci\u00f3n y orientaci\u00f3n, ya que no hay informaci\u00f3n espec\u00edfica que pueda ser proporcionada en este momento. Mi objetivo es establecer un di\u00e1logo y determinar c\u00f3mo puedo ayudarte mejor.\n\n**Formato de Respuesta:**\nMi respuesta es una pregunta abierta y orientadora, dise\u00f1ada para mantener el di\u00e1logo y obtener m\u00e1s informaci\u00f3n sobre tus necesidades y preferencias. Estoy dispuesto a adaptarme a tus necesidades y proporcionarte informaci\u00f3n \u00fatil y relevante seg\u00fan sea necesario.",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 1.68013596534729
+}
+2025-08-02 19:48:02,717 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 1.68013596534729
+}
+2025-08-02 19:48:02,717 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 19:48:02,718 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 19:48:02,718 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "Hola!!",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 19:48:03,266 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 0.55s
+2025-08-02 19:48:03,267 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "\u00a1Hola! Me alegra que hayas iniciado la conversaci\u00f3n. Estoy aqu\u00ed para ayudarte en lo que necesites. \u00bfEn qu\u00e9 puedo apoyarte? \u00bfTienes alg\u00fan tema en particular que quieras discutir o preguntas que tengas? Estoy aqu\u00ed para escucharte y ayudarte lo mejor que pueda.\n\n**Estructura de Respuesta:**\nMi respuesta es una solicitud de clarificaci\u00f3n y orientaci\u00f3n, ya que no hay informaci\u00f3n espec\u00edfica que pueda ser proporcionada en este momento. Mi objetivo es establecer un di\u00e1logo y determinar c\u00f3mo puedo ayudarte mejor.\n\n**Formato de Respuesta:**\nMi respuesta es una pregunta abierta y orientadora, dise\u00f1ada para mantener el di\u00e1logo y obtener m\u00e1s informaci\u00f3n sobre tus necesidades y preferencias. Estoy dispuesto a adaptarme a tus necesidades y proporcionarte informaci\u00f3n \u00fatil y relevante seg\u00fan sea necesario.\n\n\u00a1Espero tu respuesta!",
+  "response_structure": "general_format",
+  "readability_score": 0.6909090909090909,
+  "formatting_time": 0.5466611385345459
+}
+2025-08-02 19:48:03,268 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "saludo",
+  "response_structure": "general_format",
+  "readability_score": 0.6909090909090909,
+  "formatting_time": 0.5466611385345459
+}
+2025-08-02 19:48:03,273 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 19:48:03,273 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 19:48:03,274 - langchain_debug - [32mINFO[0m - [END] Request ID: 9b78238f-af44-4d8f-9d75-1c6d27a3ea36
+2025-08-02 19:48:03,274 - langchain_debug - [32mINFO[0m - [END] Total Time: 2.26s
+2025-08-02 19:48:03,274 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 19:48:03,275 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 19:48:03,275 - langchain_debug - [32mINFO[0m - [END] Response Length: 822 chars
+2025-08-02 19:48:03,276 - langchain_debug - [32mINFO[0m - [END] Response Preview: ¡Hola! Me alegra que hayas iniciado la conversación. Estoy aquí para ayudarte en lo que necesites. ¿...
+2025-08-02 19:48:03,277 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 19:48:03,284 - langchain_debug - [33mWARNING[0m - [PERFORMANCE] Slow request detected: POST http://localhost:8000/chat took 1193.539s (threshold: 5.0s)
+2025-08-02 19:48:03,285 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: POST http://localhost:8000/chat -> 200
+2025-08-02 19:48:03,285 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: f78af96f-e88e-4465-a3b1-5e852f0eafdc
+2025-08-02 19:48:03,286 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 1193.542s
+2025-08-02 19:48:03,286 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "1316",
+  "content-type": "application/json",
+  "access-control-allow-origin": "http://localhost:8000",
+  "access-control-allow-credentials": "true",
+  "vary": "Origin",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "1193.5420787334442",
+  "x-performance-warning": "slow",
+  "x-request-id": "f78af96f-e88e-4465-a3b1-5e852f0eafdc"
+}
+2025-08-02 19:50:21,672 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: POST http://localhost:8000/chat
+2025-08-02 19:50:21,673 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: 8fd4fb32-7e6f-43b8-b8ee-b104569ef90e
+2025-08-02 19:50:21,674 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-08-02 19:50:21,675 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-08-02 19:50:21,676 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "content-length": "73",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:8000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-08-02 19:51:07,091 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 19:51:07,096 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Hola!!",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 19:52:13,640 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 66.55s
+2025-08-02 19:52:13,641 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "Hola",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "saludo",
+  "confidence": 0.8
+}
+2025-08-02 19:52:13,643 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.8,
+  "processing_time": 68.68040299415588
+}
+2025-08-02 19:53:17,710 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 19:53:18,034 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 19:53:18,458 - langchain_debug - [32mINFO[0m - [START] Request ID: e4103864-09d1-4a31-8f8a-fb7f6b0ada97
+2025-08-02 19:53:18,831 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_41
+2025-08-02 19:53:19,231 - langchain_debug - [32mINFO[0m - [START] Message: Hola!!
+2025-08-02 19:53:19,728 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 19:54:36,978 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 0
+2025-08-02 19:54:57,116 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 19:54:57,117 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 19:54:57,117 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "Hola!!",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 19:54:59,109 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 1.99s
+2025-08-02 19:54:59,109 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "\u00a1Hola!\n\nMe alegra que hayas iniciado nuestra conversaci\u00f3n. Como Agente Procesador, mi objetivo es brindarte respuestas completas, informativas y bien estructuradas.\n\n**An\u00e1lisis del Mensaje:**\nEl mensaje del usuario es una introducci\u00f3n sin contenido espec\u00edfico. No hay una pregunta, solicitud o declaraci\u00f3n expl\u00edcita.\n\n**Planificaci\u00f3n de la Respuesta:**\nPreviamente, revisar\u00e9 el historial de conversaci\u00f3n para obtener contexto relevante. Como no hay historial previo, comenzar\u00e9 con una respuesta general.\n\n**Respuesta:**\n\u00a1Bienvenido a nuestra conversaci\u00f3n! Estoy aqu\u00ed para ayudarte en lo que necesites. No hay un tema espec\u00edfico que est\u00e9s abordando, as\u00ed que te propongo una pregunta: \u00bfEn qu\u00e9 \u00e1rea te gustar\u00eda hablar o necesitas ayuda? \u00bfTienes un tema en mente o prefieres que te sugiera algunas opciones?\n\n**Estructura de la Respuesta:**\nMi respuesta es una invitaci\u00f3n a abrir la conversaci\u00f3n y establecer un tema de discusi\u00f3n. Ofrezco una oportunidad para el usuario para expresar sus necesidades o preguntas.\n\n**Formato de la Respuesta:**\nHe organizado la informaci\u00f3n en una secci\u00f3n clara y breve. Destaco la invitaci\u00f3n a abrir la conversaci\u00f3n y la oportunidad para el usuario para expresar sus necesidades o preguntas.\n\n**Reglas Importantes:**\nComo Agente Procesador, siempre respondo en espa\u00f1ol, reviso el historial de conversaci\u00f3n y uso herramientas cuando sea apropiado. Me esfuerzo por proporcionar respuestas completas y \u00fatiles, manteniendo el contexto de la conversaci\u00f3n.\n\nEspero tu respuesta y estar\u00e9 encantado de ayudarte en lo que necesites.",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 1.9917919635772705
+}
+2025-08-02 19:54:59,110 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 1.9917919635772705
+}
+2025-08-02 19:54:59,110 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 19:54:59,111 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 19:54:59,111 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "Hola!!",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 19:55:06,871 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 7.76s
+2025-08-02 19:55:06,872 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "\u00a1Hola!\n\n**Bienvenido a nuestra conversaci\u00f3n!**\n\nEstoy aqu\u00ed para ayudarte en lo que necesites. No hay un tema espec\u00edfico que est\u00e9s abordando, as\u00ed que te propongo una pregunta: \u00bfEn qu\u00e9 \u00e1rea te gustar\u00eda hablar o necesitas ayuda? \u00bfTienes un tema en mente o prefieres que te sugiera algunas opciones?\n\n**\u00bfQu\u00e9 necesitas?**\n\n\u2022 Discutir un tema espec\u00edfico\n\u2022 Obtener ayuda con un problema\n\u2022 Conocer m\u00e1s sobre un tema\n\u2022 Otra cosa (\u00bfcu\u00e1l?)\n\n**Estoy aqu\u00ed para ayudarte.**\n\nEspero tu respuesta y estar\u00e9 encantado de ayudarte en lo que necesites.\n\n\ud83c\udfaf",
+  "response_structure": "general_format",
+  "readability_score": 0.7611111111111111,
+  "formatting_time": 7.760302782058716
+}
+2025-08-02 19:55:06,872 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "saludo",
+  "response_structure": "general_format",
+  "readability_score": 0.7611111111111111,
+  "formatting_time": 7.760302782058716
+}
+2025-08-02 19:55:06,877 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 19:55:06,878 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 19:55:06,878 - langchain_debug - [32mINFO[0m - [END] Request ID: e4103864-09d1-4a31-8f8a-fb7f6b0ada97
+2025-08-02 19:55:06,878 - langchain_debug - [32mINFO[0m - [END] Total Time: 109.54s
+2025-08-02 19:55:06,879 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 19:55:06,879 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 19:55:06,879 - langchain_debug - [32mINFO[0m - [END] Response Length: 535 chars
+2025-08-02 19:55:06,879 - langchain_debug - [32mINFO[0m - [END] Response Preview: ¡Hola!
+
+**Bienvenido a nuestra conversación!**
+
+Estoy aquí para ayudarte en lo que necesites. No hay...
+2025-08-02 19:55:06,880 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 19:55:06,889 - langchain_debug - [33mWARNING[0m - [PERFORMANCE] Slow request detected: POST http://localhost:8000/chat took 285.211s (threshold: 5.0s)
+2025-08-02 19:55:06,892 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: POST http://localhost:8000/chat -> 200
+2025-08-02 19:55:06,892 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: 8fd4fb32-7e6f-43b8-b8ee-b104569ef90e
+2025-08-02 19:55:06,892 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 285.220s
+2025-08-02 19:55:06,893 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "1046",
+  "content-type": "application/json",
+  "access-control-allow-origin": "http://localhost:8000",
+  "access-control-allow-credentials": "true",
+  "vary": "Origin",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "285.2196798324585",
+  "x-performance-warning": "slow",
+  "x-request-id": "8fd4fb32-7e6f-43b8-b8ee-b104569ef90e"
+}
+2025-08-02 19:55:27,434 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: POST http://localhost:8000/chat
+2025-08-02 19:55:27,435 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: 9992f5e3-9d16-4b3d-bffd-6bf06ac445bf
+2025-08-02 19:55:27,435 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-08-02 19:55:27,435 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-08-02 19:55:27,436 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "content-length": "73",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:8000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-08-02 19:55:42,922 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 19:55:42,923 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Hola!!",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 19:55:45,158 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 2.24s
+2025-08-02 19:55:45,159 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "Hola",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "saludo",
+  "confidence": 0.8
+}
+2025-08-02 19:55:45,160 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.8,
+  "processing_time": 2.2362635135650635
+}
+2025-08-02 19:55:51,480 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 19:55:51,480 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 19:55:51,481 - langchain_debug - [32mINFO[0m - [START] Request ID: d5a18504-075d-4cd8-8d50-93116f6c255a
+2025-08-02 19:55:51,481 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_42
+2025-08-02 19:55:51,482 - langchain_debug - [32mINFO[0m - [START] Message: Hola!!
+2025-08-02 19:55:51,482 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 19:55:54,176 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 0
+2025-08-02 19:56:15,422 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 19:59:01,918 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 19:59:01,919 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "Hola!!",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 19:59:05,852 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 3.93s
+2025-08-02 19:59:05,853 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "\u00a1Hola!\n\nMe alegra que hayas iniciado la conversaci\u00f3n. Como Agente Procesador, mi misi\u00f3n es brindarte respuestas completas, informativas y bien estructuradas. No hay historial de conversaci\u00f3n previo, por lo que comenzaremos desde cero.\n\n**An\u00e1lisis del mensaje:**\nTu mensaje es una simple saludo, por lo que no hay una pregunta o solicitud espec\u00edfica. Sin embargo, mi objetivo es responder de manera amigable y profesional, manteniendo el contexto de la conversaci\u00f3n.\n\n**Planificaci\u00f3n de la estructura:**\nMi respuesta ser\u00e1 una bienvenida y un resumen de mis habilidades como Agente Procesador.\n\n**Respuesta:**\n\u00a1Bienvenido! Me alegra que hayas decidido iniciar la conversaci\u00f3n conmigo. Como Agente Procesador, estoy aqu\u00ed para ayudarte con cualquier pregunta o solicitud que tengas. Puedo buscar informaci\u00f3n en la web, acceder a una base de conocimientos interna, realizar c\u00e1lculos, obtener informaci\u00f3n meteorol\u00f3gica o de tiempo, y mucho m\u00e1s.\n\nSi necesitas ayuda con algo en particular, no dudes en preguntar. Estoy aqu\u00ed para asistirte y brindarte respuestas completas y \u00fatiles.\n\n**Formato de respuesta:**\nHe organizado la informaci\u00f3n en secciones l\u00f3gicas y he usado un tono amigable y profesional. Espero que esta respuesta te haya sido \u00fatil y te haya dado una idea de lo que puedo hacer como Agente Procesador.",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 3.9345438480377197
+}
+2025-08-02 19:59:05,854 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 3.9345438480377197
+}
+2025-08-02 19:59:05,854 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 19:59:17,611 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 19:59:17,612 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "Hola!!",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 19:59:19,321 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 1.71s
+2025-08-02 19:59:19,322 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "**\u00a1Bienvenido!** \ud83c\udf89\n\nMe alegra que hayas decidido iniciar la conversaci\u00f3n conmigo. Como Agente Procesador, estoy aqu\u00ed para ayudarte con cualquier pregunta o solicitud que tengas. Puedo buscar informaci\u00f3n en la web, acceder a una base de conocimientos interna, realizar c\u00e1lculos, obtener informaci\u00f3n meteorol\u00f3gica o de tiempo, y mucho m\u00e1s.\n\n**\u00bfQu\u00e9 puedo hacer por ti?** \ud83e\udd14\n\n* Buscar informaci\u00f3n en la web\n* Acceder a una base de conocimientos interna\n* Realizar c\u00e1lculos\n* Obtener informaci\u00f3n meteorol\u00f3gica o de tiempo\n* Y mucho m\u00e1s...\n\n**\u00bfNecesitas ayuda con algo en particular?** \ud83e\udd14\n\nNo dudes en preguntar. Estoy aqu\u00ed para asistirte y brindarte respuestas completas y \u00fatiles.\n\n**Formato de respuesta:**\nHe organizado la informaci\u00f3n en secciones l\u00f3gicas y he usado un tono amigable y profesional. Espero que esta respuesta te haya sido \u00fatil y te haya dado una idea de lo que puedo hacer como Agente Procesador.",
+  "response_structure": "general_format",
+  "readability_score": 0.6961538461538461,
+  "formatting_time": 1.7102711200714111
+}
+2025-08-02 19:59:19,322 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "saludo",
+  "response_structure": "general_format",
+  "readability_score": 0.6961538461538461,
+  "formatting_time": 1.7102711200714111
+}
+2025-08-02 19:59:19,327 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 19:59:19,327 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 19:59:19,327 - langchain_debug - [32mINFO[0m - [END] Request ID: d5a18504-075d-4cd8-8d50-93116f6c255a
+2025-08-02 19:59:19,328 - langchain_debug - [32mINFO[0m - [END] Total Time: 207.85s
+2025-08-02 19:59:19,328 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 19:59:19,328 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 19:59:19,328 - langchain_debug - [32mINFO[0m - [END] Response Length: 907 chars
+2025-08-02 19:59:19,786 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 19:59:19,793 - langchain_debug - [33mWARNING[0m - [PERFORMANCE] Slow request detected: POST http://localhost:8000/chat took 232.356s (threshold: 5.0s)
+2025-08-02 19:59:19,794 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: POST http://localhost:8000/chat -> 200
+2025-08-02 19:59:19,794 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: 9992f5e3-9d16-4b3d-bffd-6bf06ac445bf
+2025-08-02 19:59:19,795 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 232.360s
+2025-08-02 19:59:19,795 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "1417",
+  "content-type": "application/json",
+  "access-control-allow-origin": "http://localhost:8000",
+  "access-control-allow-credentials": "true",
+  "vary": "Origin",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "232.3600251674652",
+  "x-performance-warning": "slow",
+  "x-request-id": "9992f5e3-9d16-4b3d-bffd-6bf06ac445bf"
+}
+2025-08-02 19:59:49,925 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: POST http://localhost:8000/chat
+2025-08-02 19:59:49,926 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: 3fb6b5e7-2227-4529-bf93-51be46e1c044
+2025-08-02 19:59:49,926 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-08-02 19:59:49,927 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-08-02 19:59:49,928 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "content-length": "77",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:8000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-08-02 19:59:53,947 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 19:59:53,949 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "QUien sos?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 19:59:55,175 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 1.23s
+2025-08-02 19:59:55,176 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "\u00bfQui\u00e9n es?",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "pregunta",
+  "confidence": 0.9
+}
+2025-08-02 19:59:55,177 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.9,
+  "processing_time": 1.22825288772583
+}
+2025-08-02 19:59:59,341 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 19:59:59,341 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 19:59:59,342 - langchain_debug - [32mINFO[0m - [START] Request ID: c377aaca-9309-48fe-9594-0cdf10a167fc
+2025-08-02 19:59:59,342 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_43
+2025-08-02 19:59:59,342 - langchain_debug - [32mINFO[0m - [START] Message: QUien sos?
+2025-08-02 19:59:59,342 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 19:59:59,350 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 0
+2025-08-02 19:59:59,350 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 20:00:24,018 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 20:00:24,019 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "QUien sos?",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 20:02:06,526 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 102.51s
+2025-08-02 20:02:06,527 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "**Respuesta:**\n\nHola! Soy un Agente Procesador experto en generar respuestas completas, informativas y bien estructuradas. Estoy aqu\u00ed para ayudarte con cualquier pregunta o solicitud que tengas. \u00a1No dudes en preguntar!\n\n**An\u00e1lisis del mensaje:**\nEl mensaje del usuario es una pregunta que busca informaci\u00f3n sobre qui\u00e9n soy. No hay informaci\u00f3n previa en el historial de conversaci\u00f3n.\n\n**Uso del historial de conversaci\u00f3n:**\nNo hay historial de conversaci\u00f3n previo, por lo que no hay informaci\u00f3n relevante que revisar.\n\n**Estructura de respuesta:**\nPara responder a la pregunta del usuario, voy a proporcionar una respuesta directa y clara que incluya informaci\u00f3n contextual.\n\n**Respuesta:**\nSoy un Agente Procesador experto en generar respuestas completas, informativas y bien estructuradas. Mi misi\u00f3n es crear respuestas que sean informativas y completas, bien organizadas con estructura clara, con informaci\u00f3n contextual relevante y que utilicen herramientas cuando sea necesario. Estoy aqu\u00ed para ayudarte con cualquier pregunta o solicitud que tengas.",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 95.74276852607727
+}
+2025-08-02 20:02:06,527 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 95.74276852607727
+}
+2025-08-02 20:02:10,728 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 20:02:17,222 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 20:02:17,223 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "QUien sos?",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 20:02:19,304 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 2.08s
+2025-08-02 20:02:19,305 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "**\ud83e\udd14 \u00bfQui\u00e9n soy?**\nSoy un Agente Formateador de Respuestas experto en crear respuestas claras, estructuradas y f\u00e1ciles de leer. Estoy aqu\u00ed para ayudarte con cualquier pregunta o solicitud que tengas.\n\n**\ud83d\udcdd Mis habilidades:**\nEstoy capacitado para generar respuestas completas, informativas y bien estructuradas. Mi misi\u00f3n es crear respuestas que sean informativas y completas, bien organizadas con estructura clara, con informaci\u00f3n contextual relevante y que utilicen herramientas cuando sea necesario.\n\n**\ud83c\udfaf Pautas de formato:**\nPara crear respuestas claras y estructuradas, uso una estructura general que incluye un t\u00edtulo principal con emoji, una respuesta directa al inicio, una explicaci\u00f3n detallada organizada en secciones y un resumen o conclusi\u00f3n al final. Tambi\u00e9n uso negritas para conceptos importantes, cursivas para \u00e9nfasis, c\u00f3digo para t\u00e9rminos t\u00e9cnicos y emojis para hacer la respuesta m\u00e1s amigable.\n\n**\ud83d\udccb Organizaci\u00f3n y listas:**\nUtilizo listas con vi\u00f1etas para enumeraciones simples, listas numeradas para pasos o secuencias, t\u00edtulos de secci\u00f3n con emojis descriptivos y separadores entre secciones importantes.\n\n**\ud83c\udfa8 Tipos de respuesta espec\u00edficos:**\nPara preguntas, uso una estructura que incluye una respuesta directa, una explicaci\u00f3n detallada y informaci\u00f3n adicional. Para explicaciones, uso una estructura que incluye un tema principal, puntos clave y un resumen. Para c\u00e1lculos, uso una estructura que incluye el resultado del c\u00e1lculo, el proceso detallado y una explicaci\u00f3n. Para informaci\u00f3n general, uso una estructura que incluye informaci\u00f3n principal, detalles relacionados y datos r\u00e1pidos.\n\n**\ud83d\udeab Evitar:**\nEvito p\u00e1rrafos largos sin estructura, informaci\u00f3n sin organizar, falta de t\u00edtulos o secciones, texto plano sin formato y respuestas sin emojis o elementos visuales.\n\n**\ud83c\udfaf Reglas espec\u00edficas:**\nSiempre comienzo con un t\u00edtulo con emoji, siempre organizo la informaci\u00f3n en secciones claras, siempre uso listas cuando hay m\u00faltiples elementos, siempre destaco informaci\u00f3n importante con **negritas**, siempre mantengo un tono amigable y profesional y nunca dejo la respuesta como texto plano sin estructura.",
+  "response_structure": "general_format",
+  "readability_score": 0.18571428571428578,
+  "formatting_time": 2.081584930419922
+}
+2025-08-02 20:02:19,306 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "pregunta",
+  "response_structure": "general_format",
+  "readability_score": 0.18571428571428578,
+  "formatting_time": 2.081584930419922
+}
+2025-08-02 20:02:51,714 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 20:02:51,715 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 20:02:51,715 - langchain_debug - [32mINFO[0m - [END] Request ID: c377aaca-9309-48fe-9594-0cdf10a167fc
+2025-08-02 20:02:51,717 - langchain_debug - [32mINFO[0m - [END] Total Time: 172.37s
+2025-08-02 20:02:51,719 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 20:02:51,720 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 20:02:51,721 - langchain_debug - [32mINFO[0m - [END] Response Length: 2128 chars
+2025-08-02 20:02:51,751 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 20:03:03,901 - langchain_debug - [33mWARNING[0m - [PERFORMANCE] Slow request detected: POST http://localhost:8000/chat took 193.972s (threshold: 5.0s)
+2025-08-02 20:03:03,908 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: POST http://localhost:8000/chat -> 200
+2025-08-02 20:03:03,908 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: 3fb6b5e7-2227-4529-bf93-51be46e1c044
+2025-08-02 20:03:03,909 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 193.984s
+2025-08-02 20:03:03,909 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "2671",
+  "content-type": "application/json",
+  "access-control-allow-origin": "http://localhost:8000",
+  "access-control-allow-credentials": "true",
+  "vary": "Origin",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "193.98376393318176",
+  "x-performance-warning": "slow",
+  "x-request-id": "3fb6b5e7-2227-4529-bf93-51be46e1c044"
+}

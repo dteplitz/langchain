@@ -82,6 +82,24 @@ def format_chat_history(chat_history: list) -> str:
         return "No hay historial de conversación previo."
     
     formatted_history = []
+    # Que hace este for?
+    # Este for es para recorrer el historial de conversaciones y formatearlo
+    # chat_history[-5:] es para obtener los últimos 5 mensajes
+    # enumerate(chat_history[-5:], 1) es para obtener el índice y el mensaje
+    # i, entry es para obtener el índice y el mensaje
+    # entry.get("message", "") es para obtener el mensaje del usuario
+    # entry.get("response", "") es para obtener la respuesta del asistente
+
+    #Que implica formatear el historial?
+    # Formatear el historial implica convertir el historial de conversaciones a un formato que pueda ser leído por el agente curador
+    # En este caso, el historial de conversaciones es una lista de diccionarios con las claves "message" y "response"
+    # y se formatea para que el agente curador pueda entenderlo
+
+    #Que se tiene en cuenta para formatear el historial?
+    # Se tiene en cuenta el historial de conversaciones, el limit es para limitar la cantidad de mensajes que se guardan en la memoria
+    # Se tiene en cuenta el formato del historial de conversaciones, el formato es el siguiente:
+    # [{"message": "Hola", "response": "Hola"}, {"message": "¿Cómo estás?", "response": "Estoy bien"}]
+
     for i, entry in enumerate(chat_history[-5:], 1):  # Last 5 messages
         # Handle both memory format (message/response) and agent format (role/content)
         if "message" in entry and "response" in entry:
@@ -92,6 +110,7 @@ def format_chat_history(chat_history: list) -> str:
             formatted_history.append(f"{i}. Asistente: {assistant_response}")
         elif "role" in entry and "content" in entry:
             # Agent format
+            # La conversacion es entre 2 partes solamente, Usuario y Asistente
             role = "Usuario" if entry.get("role") == "user" else "Asistente"
             content = entry.get("content", "")
             formatted_history.append(f"{i}. {role}: {content}")
