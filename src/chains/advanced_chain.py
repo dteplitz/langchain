@@ -19,7 +19,7 @@ from langchain.schema.output_parser import StrOutputParser
 from src.agents.curator_agent import create_curator_agent
 from src.agents.processor_agent import create_processor_agent
 from src.agents.formatter_agent import create_formatter_agent
-from src.memory.conversation_memory import create_memory, get_conversation_history
+from src.memory.hybrid_conversation_memory import create_hybrid_memory, get_hybrid_conversation_history
 from src.utils.enhanced_logger import get_enhanced_logger
 from src.models.agent_interfaces import (
     CuratorOutput, ProcessorInput, ProcessorOutput, 
@@ -311,9 +311,11 @@ class AdvancedChain(Runnable):
         self.logger.start_request(request_id, message, session_id)
         
         # Create memory for this session
-        memory = create_memory(session_id)
+        memory = create_hybrid_memory(session_id)
         #Esto es para que el agente procesador tenga en cuenta el historial de conversaciones, el limit es para limitar la cantidad de mensajes que se guardan en la memoria
-        chat_history = get_conversation_history(session_id, limit=5) 
+        chat_history_data = get_hybrid_conversation_history(session_id, limit=5, include_summary=True) 
+        chat_history = chat_history_data["recent_messages"]
+        conversation_summary = chat_history_data["conversation_summary"]
 
         # Debug: Log chat history
         self.logger.log_chain_step(request_id, "MEMORY_DEBUG", f"Chat history length: {len(chat_history)}")
@@ -371,9 +373,11 @@ class AdvancedChain(Runnable):
             # ¿Qué es curator_output?
             # Es el resultado del agente curador, el agente anterior
 
+            #todo, podriamos mandar directo chat_history_data
             processor_input = ProcessorInput(
                 message=message,
-                chat_history=chat_history,
+                chat_history=chat_history, 
+                conversation_summary=conversation_summary,
                 curator_output=curator_result.dict(),
                 tools_used=[],
                 search_results=[]
@@ -386,7 +390,7 @@ class AdvancedChain(Runnable):
             # Step 3: Formatter Agent
             self.logger.log_chain_step(request_id, "STEP_3", "Starting Formatter Agent")
             
-            formatter_input = FormatterInput(
+            formatter_input = FormatterInput( 
                 raw_response=processor_result.raw_response,
                 user_message=message,
                 response_type=curator_result.content_type,

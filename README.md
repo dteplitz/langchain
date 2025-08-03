@@ -2,16 +2,17 @@
 
 ## 📋 **Resumen del Proyecto**
 
-Este es un sistema de chat inteligente basado en **LangChain** que implementa una arquitectura de **3 agentes especializados** conectados mediante **RunnableSequence** y **RunnableWithFallbacks**. El sistema procesa mensajes del usuario a través de un pipeline inteligente que incluye validación, procesamiento con herramientas, y formateo de respuestas, todo mientras mantiene memoria persistente de las conversaciones.
+Este es un sistema de chat inteligente basado en **LangChain** que implementa una arquitectura de **3 agentes especializados** conectados mediante **RunnableSequence** y **RunnableWithFallbacks**. El sistema procesa mensajes del usuario a través de un pipeline inteligente que incluye validación, procesamiento con herramientas, y formateo de respuestas, todo mientras mantiene **memoria híbrida persistente** de las conversaciones.
 
 ### **🎯 Características Principales:**
 - **3 Agentes Inteligentes**: Curator (validación), Processor (procesamiento), Formatter (formateo)
 - **Herramientas Dummy**: Búsqueda web, calculadora, clima, tiempo
-- **Memoria Persistente**: SQLite para historial de conversaciones
+- **Memoria Híbrida**: Combina ConversationBufferMemory y ConversationSummaryMemory
 - **API REST**: FastAPI con documentación OpenAPI/Swagger
 - **Logging Avanzado**: Logs estructurados y legibles
 - **Manejo de Errores**: Fallbacks robustos en cada agente
 - **Configuración Flexible**: Parámetros configurables por agente
+- **Gestión de Metadatos**: Sistema flexible para información de sesión
 
 ---
 
@@ -91,12 +92,20 @@ Este es un sistema de chat inteligente basado en **LangChain** que implementa un
 │                              MEMORY LAYER                                  │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │  ┌─────────────────────────────────────────────────────────────────────────┐ │
-│  │                    SQLite Conversation Memory                          │ │
+│  │                    Hybrid Conversation Memory                          │ │
 │  │                                                                         │ │
-│  │  • Session Management                                                   │ │
-│  │  • Conversation History                                                 │ │
-│  │  • Persistent Storage                                                   │ │
-│  │  • Context Retrieval                                                    │ │
+│  │  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐        │ │
+│  │  │   Buffer Memory │  │  Summary Memory │  │  Metadata Store │        │ │
+│  │  │                 │  │                 │  │                 │        │ │
+│  │  │ • Recent History│  │ • Long-term     │  │ • Session Info  │        │ │
+│  │  │ • Fast Access   │  │   Context       │  │ • User Data     │        │ │
+│  │  │ • Token Efficient│  │ • LLM Summaries │  │ • State Mgmt    │        │ │
+│  │  │ • Real-time     │  │ • Token Savings │  │ • Persistence   │        │ │
+│  │  └─────────────────┘  └─────────────────┘  └─────────────────┘        │ │
+│  │                                                                         │ │
+│  │  • Automatic Mode Switching (Buffer ↔ Summary)                         │ │
+│  │  • SQLite Persistence                                                  │ │
+│  │  • Configurable Thresholds                                             │ │
 │  └─────────────────────────────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────────────────────┘
                                     │
@@ -773,6 +782,376 @@ Documentación interactiva de la API (Swagger UI).
 
 ---
 
+## 🗄️ **Sistema de Gestión de Metadatos**
+
+### **📋 Descripción General**
+
+El sistema incluye un **sistema avanzado de gestión de metadatos** que permite almacenar y gestionar información contextual de las conversaciones de forma persistente. Los metadatos se almacenan en formato JSON en la base de datos SQLite y proporcionan un contexto rico para personalizar las respuestas de los agentes.
+
+### **🏗️ Arquitectura de Metadatos**
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           METADATA SYSTEM                                   │
+│                                                                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  ┌─────────────────────────────────────────────────────────────────────────┐ │
+│  │                    SQLite Database                                      │ │
+│  │                                                                         │ │
+│  │  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐        │ │
+│  │  │   sessions      │  │ conversations   │  │   metadata      │        │ │
+│  │  │     table       │  │     table       │  │   (JSON)        │        │ │
+│  │  │                 │  │                 │  │                 │        │ │
+│  │  │ • session_id    │  │ • session_id    │  │ • user_info     │        │ │
+│  │  │ • metadata      │  │ • message       │  │ • objective     │        │ │
+│  │  │ • created_at    │  │ • response      │  │ • state         │        │ │
+│  │  │ • updated_at    │  │ • timestamp     │  │ • welcome_done  │        │ │
+│  │  │                 │  │                 │  │ • reasons       │        │ │
+│  │  │                 │  │                 │  │ • vars          │        │ │
+│  │  └─────────────────┘  └─────────────────┘  └─────────────────┘        │ │
+│  └─────────────────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        MEMORY INTERFACE                                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐              │
+│  │   Direct        │  │   Generic       │  │   Utility       │              │
+│  │   Methods       │  │   Access        │  │   Methods       │              │ │
+│  │                 │  │                 │  │                 │              │ │
+│  │ • set_user_info │  │ • get_metadata_ │  │ • is_loan_info_ │              │ │
+│  │ • get_user_info │  │   value()       │  │   complete()    │              │ │
+│  │ • set_objective │  │ • update_session│  │ • reset_loan_   │              │ │
+│  │ • get_objective │  │   _metadata()   │  │   variables()   │              │ │
+│  │ • set_reasons   │  │ • set_session_  │  │ • add_reason()  │              │ │
+│  │ • get_reasons   │  │   metadata()    │  │ • remove_reason │              │ │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘              │ │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### **📊 Tipos de Metadatos**
+
+#### **1. Metadatos Básicos**
+- **`user_info`**: Información del usuario (nombre, edad, preferencias, etc.)
+- **`conversation_objective`**: Objetivo principal de la conversación
+- **`conversation_state`**: Estado actual de la conversación (tópico, progreso, etc.)
+
+#### **2. Metadatos Extendidos**
+- **`welcome_done`**: Control del flujo de bienvenida (boolean)
+- **`reasons`**: Lista de motivos/razones de la conversación (array de strings)
+- **`reasons_confirmed`**: Confirmación de los motivos (boolean)
+- **`vars_info_given`**: Estado de información de variables (boolean)
+- **`vars`**: Variables específicas (monthly, duration, rate para préstamos)
+
+### **🔧 Métodos de Gestión de Metadatos**
+
+#### **Gestión de Información del Usuario**
+```python
+from src.memory.conversation_memory import create_memory
+
+memory = create_memory("session_123")
+
+# Establecer información del usuario
+user_info = {
+    "name": "Juan Pérez",
+    "age": 25,
+    "language": "español",
+    "preferences": {
+        "learning_style": "visual",
+        "difficulty_level": "intermediate",
+        "topics_of_interest": ["programación", "matemáticas"]
+    }
+}
+memory.set_user_info(user_info)
+
+# Obtener información del usuario
+user_data = memory.get_user_info()
+print(f"Usuario: {user_data['name']}")
+```
+
+#### **Gestión de Objetivo de Conversación**
+```python
+# Establecer objetivo
+memory.set_conversation_objective("Ayudar al usuario a aprender Python")
+
+# Obtener objetivo
+objective = memory.get_conversation_objective()
+print(f"Objetivo: {objective}")
+
+# Actualizar objetivo
+memory.update_conversation_objective("Ayudar con programación web")
+
+# Limpiar objetivo
+memory.clear_objective()
+```
+
+#### **Gestión de Estado de Conversación**
+```python
+# Establecer estado
+conversation_state = {
+    "current_topic": "variables en Python",
+    "progress": {
+        "completed_topics": ["introducción", "tipos de datos"],
+        "current_lesson": "variables",
+        "score": 85
+    }
+}
+memory.set_conversation_state(conversation_state)
+
+# Obtener estado
+state = memory.get_conversation_state()
+print(f"Tópico actual: {state['current_topic']}")
+
+# Actualizar elemento específico
+memory.update_conversation_state("progress.score", 90)
+```
+
+#### **Gestión de Flujo de Bienvenida**
+```python
+# Verificar si se mostró la bienvenida
+if not memory.get_welcome_status():
+    # Mostrar mensaje de bienvenida
+    print("¡Bienvenido al sistema!")
+    memory.set_welcome_status(True)
+else:
+    print("¡Hola de nuevo!")
+```
+
+#### **Gestión de Motivos**
+```python
+# Agregar motivos
+memory.add_reason("Necesito ayuda con programación")
+memory.add_reason("Quiero aprender Python")
+memory.add_reason("Tengo un proyecto en mente")
+
+# Obtener todos los motivos
+reasons = memory.get_reasons()
+print(f"Motivos: {reasons}")
+
+# Confirmar motivos
+memory.set_reasons_confirmed(True)
+
+# Verificar confirmación
+if memory.get_reasons_confirmed():
+    print("Motivos confirmados, procediendo...")
+
+# Remover motivo específico
+memory.remove_reason("Tengo un proyecto en mente")
+```
+
+#### **Gestión de Variables Específicas**
+```python
+# Establecer variables de préstamo
+memory.set_loan_variables(
+    monthly=1500.0,
+    duration=36,
+    rate=5.5
+)
+
+# Obtener variables
+vars_data = memory.get_vars()
+print(f"Pago mensual: ${vars_data['monthly']}")
+
+# Actualizar variable específica
+memory.update_var("monthly", 2000.0)
+
+# Obtener variable específica
+monthly = memory.get_var("monthly")
+print(f"Nuevo pago mensual: ${monthly}")
+
+# Verificar si la información está completa
+if memory.is_loan_info_complete():
+    print("Información de préstamo completa")
+else:
+    print("Falta información del préstamo")
+
+# Marcar que se proporcionó información
+memory.set_vars_info_given(True)
+
+# Resetear variables
+memory.reset_loan_variables()
+```
+
+#### **Acceso Genérico a Metadatos**
+```python
+# Acceso con notación de punto para estructuras anidadas
+user_name = memory.get_metadata_value("user_info.name")
+learning_style = memory.get_metadata_value("user_info.preferences.learning_style")
+current_topic = memory.get_metadata_value("conversation_state.current_topic")
+
+# Con valores por defecto
+non_existent = memory.get_metadata_value("non.existent.key", "valor_por_defecto")
+
+# Actualizar metadatos específicos
+memory.update_session_metadata("user_info.age", 26)
+
+# Establecer metadatos completos
+all_metadata = {
+    "user_info": {"name": "María", "age": 30},
+    "conversation_objective": "Aprender JavaScript",
+    "welcome_done": True,
+    "reasons": ["Desarrollo web", "Carrera profesional"]
+}
+memory.set_session_metadata(all_metadata)
+```
+
+### **🎯 Casos de Uso Prácticos**
+
+#### **1. Asistente de Préstamos**
+```python
+class LoanAssistant:
+    def __init__(self, session_id: str):
+        self.memory = create_memory(session_id)
+    
+    def start_conversation(self) -> str:
+        if not self.memory.get_welcome_status():
+            self.memory.set_welcome_status(True)
+            return "¡Hola! Soy tu asistente de préstamos. ¿Por qué necesitas un préstamo?"
+        return "¡Hola de nuevo! ¿En qué puedo ayudarte?"
+    
+    def process_reason(self, user_message: str) -> str:
+        self.memory.add_reason(user_message)
+        reasons = self.memory.get_reasons()
+        
+        if len(reasons) == 1:
+            return f"Entiendo, necesitas un préstamo para: {user_message}\n¿Hay otra razón?"
+        else:
+            return f"Perfecto, tus motivos son:\n" + "\n".join([f"• {r}" for r in reasons])
+    
+    def collect_variables(self, user_message: str) -> str:
+        # Parsear mensaje para extraer variables
+        # ... lógica de parsing ...
+        
+        self.memory.set_loan_variables(monthly=1500, duration=36, rate=5.5)
+        
+        if self.memory.is_loan_info_complete():
+            return self.calculate_loan()
+        else:
+            return "Aún necesito más información..."
+```
+
+#### **2. Asistente Educativo Personalizado**
+```python
+class EducationalAssistant:
+    def __init__(self, session_id: str):
+        self.memory = create_memory(session_id)
+    
+    def personalize_response(self, message: str) -> str:
+        user_info = self.memory.get_user_info()
+        objective = self.memory.get_conversation_objective()
+        state = self.memory.get_conversation_state()
+        
+        # Personalizar respuesta basada en metadatos
+        if user_info.get("preferences", {}).get("learning_style") == "visual":
+            return f"Te ayudo con {message} usando ejemplos visuales..."
+        elif user_info.get("preferences", {}).get("learning_style") == "practical":
+            return f"Te ayudo con {message} con ejercicios prácticos..."
+        else:
+            return f"Te ayudo con {message} de forma general..."
+    
+    def update_progress(self, topic: str, score: int):
+        self.memory.update_conversation_state("current_topic", topic)
+        self.memory.update_conversation_state("progress.score", score)
+```
+
+### **🔍 Monitoreo y Debugging**
+
+#### **Verificar Estado de Metadatos**
+```python
+# Obtener todos los metadatos
+all_metadata = memory.get_session_metadata()
+print(json.dumps(all_metadata, indent=2, ensure_ascii=False))
+
+# Verificar variables específicas
+print(f"Welcome done: {memory.get_welcome_status()}")
+print(f"Reasons confirmed: {memory.get_reasons_confirmed()}")
+print(f"Vars info given: {memory.get_vars_info_given()}")
+print(f"Loan complete: {memory.is_loan_info_complete()}")
+```
+
+#### **Persistencia de Metadatos**
+```python
+# Los metadatos persisten entre instancias de memoria
+memory1 = create_memory("session_123")
+memory1.set_user_info({"name": "Juan"})
+
+memory2 = create_memory("session_123")  # Misma sesión
+user_info = memory2.get_user_info()
+print(f"Usuario: {user_info['name']}")  # Imprime: "Usuario: Juan"
+```
+
+### **🧪 Testing de Metadatos**
+
+#### **Ejecutar Tests Completos**
+```bash
+# Test de funcionalidad básica
+python test_metadata_functionality.py
+
+# Test de metadatos extendidos
+python test_extended_metadata.py
+
+# Ejemplo de flujo completo
+python example_complete_flow.py
+```
+
+#### **Test de Persistencia**
+```python
+import uuid
+from src.memory.conversation_memory import create_memory
+
+# Crear memoria y establecer datos
+session_id = str(uuid.uuid4())
+memory1 = create_memory(session_id)
+memory1.set_welcome_status(True)
+memory1.add_reason("Test reason")
+memory1.set_loan_variables(monthly=1000, duration=24, rate=3.5)
+
+# Crear nueva instancia con misma sesión
+memory2 = create_memory(session_id)
+
+# Verificar persistencia
+assert memory2.get_welcome_status() == True
+assert "Test reason" in memory2.get_reasons()
+assert memory2.get_var("monthly") == 1000
+print("✅ Persistencia verificada")
+```
+
+### **📈 Beneficios del Sistema de Metadatos**
+
+1. **Contexto Rico**: Los agentes tienen acceso a información detallada del usuario y la conversación
+2. **Personalización**: Respuestas adaptadas al perfil y preferencias del usuario
+3. **Control de Flujo**: Gestión de estados de conversación y progreso
+4. **Persistencia**: Información que sobrevive entre sesiones
+5. **Flexibilidad**: Estructura JSON permite cualquier tipo de metadatos
+6. **Escalabilidad**: Fácil agregar nuevos tipos de metadatos
+7. **Debugging**: Fácil monitoreo y verificación del estado del sistema
+
+### **🔗 Integración con Agentes**
+
+Los agentes pueden acceder a los metadatos a través de la memoria:
+
+```python
+def process_with_context(self, message: str, memory):
+    # Obtener contexto
+    user_info = memory.get_user_info()
+    objective = memory.get_conversation_objective()
+    state = memory.get_conversation_state()
+    
+    # Personalizar procesamiento
+    if user_info.get("preferences", {}).get("learning_style") == "visual":
+        # Usar prompts con ejemplos visuales
+        pass
+    elif objective == "préstamo":
+        # Usar lógica específica para préstamos
+        pass
+    
+    # Actualizar estado
+    memory.update_conversation_state("last_interaction", datetime.now().isoformat())
+```
+
+---
+
 ## 🧪 **Testing**
 
 ### **Ejecutar Tests de Etapas:**
@@ -912,8 +1291,267 @@ El sistema ahora genera respuestas **mucho más legibles y estructuradas**:
 • Punto 2
 • Punto 3
 
-## 📝 Resumen
-[Conclusión breve]
+## 🧠 **Sistema de Memoria Híbrida**
+
+### **📋 Descripción General**
+
+El sistema implementa una **memoria híbrida inteligente** que combina las mejores características de `ConversationBufferMemory` y `ConversationSummaryMemory` de LangChain, junto con un sistema de metadatos personalizado para máxima flexibilidad y eficiencia.
+
+### **🏗️ Arquitectura de la Memoria Híbrida**
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        HYBRID CONVERSATION MEMORY                          │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐              │
+│  │   Buffer Memory │  │  Summary Memory │  │  Metadata Store │              │
+│  │                 │  │                 │  │                 │              │
+│  │ • Recent History│  │ • Long-term     │  │ • Session Info  │              │
+│  │ • Fast Access   │  │   Context       │  │ • User Data     │              │
+│  │ • Token Efficient│  │ • LLM Summaries │  │ • State Mgmt    │              │
+│  │ • Real-time     │  │ • Token Savings │  │ • Persistence   │              │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘              │
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────────┐ │
+│  │                    Automatic Mode Switching                            │ │
+│  │                                                                         │ │
+│  │  Short Conversations (< threshold) → Buffer Mode                       │ │
+│  │  Long Conversations (≥ threshold) → Summary Mode                       │ │
+│  │                                                                         │ │
+│  └─────────────────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### **🎯 Características Principales**
+
+#### **1. Modo Buffer (Conversaciones Cortas)**
+- **Acceso rápido** a historial reciente
+- **Bajo uso de tokens** para conversaciones cortas
+- **Respuesta en tiempo real** sin procesamiento adicional
+- **Ideal para**: Preguntas simples, cálculos rápidos, interacciones breves
+
+#### **2. Modo Summary (Conversaciones Largas)**
+- **Resúmenes automáticos** generados por LLM
+- **Reducción significativa** de tokens (50-80%)
+- **Contexto preservado** en conversaciones largas
+- **Ideal para**: Conversaciones complejas, consultas detalladas, sesiones largas
+
+#### **3. Metadatos Flexibles**
+- **Información de sesión** personalizable
+- **Estado de conversación** persistente
+- **Datos de usuario** estructurados
+- **Compatibilidad total** con el sistema existente
+
+### **⚙️ Configuración y Uso**
+
+#### **Creación de Memoria Híbrida**
+```python
+from src.memory.hybrid_conversation_memory import create_hybrid_memory
+
+# Configuración básica
+memory = create_hybrid_memory(
+    session_id="user_123",
+    buffer_window=10,        # Mensajes recientes a mantener
+    summary_threshold=15,    # Umbral para cambiar a summary
+    verbose=True             # Logging detallado
+)
+```
+
+#### **Configuración Avanzada**
+```python
+# Configuración personalizada
+memory = create_hybrid_memory(
+    session_id="user_123",
+    buffer_window=5,         # Buffer más pequeño
+    summary_threshold=8,     # Cambio más temprano a summary
+    verbose=True
+)
+
+# Configuración para conversaciones largas
+memory = create_hybrid_memory(
+    session_id="user_123",
+    buffer_window=20,        # Buffer más grande
+    summary_threshold=25,    # Cambio más tardío
+    verbose=False
+)
+```
+
+### **🔄 Funcionamiento Automático**
+
+#### **Carga de Variables de Memoria**
+```python
+# El sistema decide automáticamente qué modo usar
+vars = memory.load_memory_variables({})
+
+if memory._should_use_summary():
+    # Modo Summary: resumen + historial reciente
+    recent_history = vars.get('recent_history', [])
+    conversation_summary = vars.get('conversation_summary', '')
+    session_metadata = vars.get('session_metadata', {})
+else:
+    # Modo Buffer: solo historial reciente
+    recent_history = vars.get('recent_history', [])
+    conversation_summary = ''
+    session_metadata = vars.get('session_metadata', {})
+```
+
+#### **Guardado de Contexto**
+```python
+# Guarda automáticamente en ambos sistemas
+memory.save_context(
+    {"message": "Hola, ¿cómo estás?"},
+    {"response": "¡Hola! Estoy muy bien, gracias."}
+)
+
+# Actualiza contador de conversación
+# Decide si usar summary basado en threshold
+# Persiste en SQLite
+```
+
+### **📊 Monitoreo y Estadísticas**
+
+#### **Estadísticas de Memoria**
+```python
+stats = memory.get_memory_stats()
+print(f"Session ID: {stats['session_id']}")
+print(f"Conversation Length: {stats['conversation_length']}")
+print(f"Using Summary: {stats['using_summary']}")
+print(f"Buffer Window: {stats['buffer_window']}")
+print(f"Summary Threshold: {stats['summary_threshold']}")
+```
+
+#### **Historial de Conversación**
+```python
+from src.memory.hybrid_conversation_memory import get_hybrid_conversation_history
+
+history = get_hybrid_conversation_history(
+    session_id="user_123",
+    limit=10,
+    include_summary=True
+)
+
+print(f"Recent Messages: {len(history['recent_messages'])}")
+print(f"Summary: {history['conversation_summary']}")
+print(f"Total Messages: {history['total_messages']}")
+```
+
+### **🧪 Pruebas y Validación**
+
+#### **Pruebas Básicas**
+```bash
+# Probar funcionalidad básica
+python test_hybrid_memory.py
+
+# Probar integración con cadenas
+python example_hybrid_chain_integration.py
+```
+
+#### **Pruebas Específicas**
+```python
+# Probar modo buffer
+def test_buffer_mode():
+    memory = create_hybrid_memory(session_id="test", summary_threshold=5)
+    # Agregar < 5 mensajes
+    # Verificar que usa buffer mode
+
+# Probar modo summary
+def test_summary_mode():
+    memory = create_hybrid_memory(session_id="test", summary_threshold=3)
+    # Agregar ≥ 3 mensajes
+    # Verificar que usa summary mode
+```
+
+### **📈 Beneficios y Ventajas**
+
+#### **Eficiencia de Tokens**
+- **Conversaciones cortas**: Sin overhead de resúmenes
+- **Conversaciones largas**: Reducción de 50-80% en tokens
+- **Escalabilidad**: Manejo eficiente de sesiones largas
+
+#### **Rendimiento**
+- **Respuestas más rápidas** en conversaciones cortas
+- **Contexto preservado** en conversaciones largas
+- **Uso optimizado** de recursos del LLM
+
+#### **Flexibilidad**
+- **Configuración adaptable** según necesidades
+- **Compatibilidad total** con sistema existente
+- **Metadatos personalizables** para casos específicos
+
+#### **Persistencia**
+- **Datos persistentes** en SQLite
+- **Recuperación de sesiones** entre reinicios
+- **Backup y restauración** simplificados
+
+### **🔧 Integración con Cadenas Existentes**
+
+#### **Uso en CompleteChain**
+```python
+from src.chains.complete_chain import create_complete_chain
+from src.memory.hybrid_conversation_memory import create_hybrid_memory
+
+# Crear cadena con memoria híbrida
+chain = create_complete_chain(verbose=True)
+memory = create_hybrid_memory(session_id="user_123", verbose=True)
+
+# Procesar mensaje
+input_data = {
+    "message": "Hola, necesito ayuda",
+    "session_id": "user_123",
+    "request_id": str(uuid.uuid4())
+}
+
+result = chain.invoke(input_data)
+```
+
+#### **Compatibilidad con Agentes**
+```python
+# Los agentes pueden acceder a memoria híbrida
+curator_input = {
+    "message": message,
+    "chat_history": memory.load_memory_variables({}),
+    "request_id": request_id
+}
+
+curator_result = curator_agent.invoke(curator_input)
+```
+
+### **🚀 Casos de Uso Prácticos**
+
+#### **1. Asistente de Préstamos**
+```python
+# Configuración para conversaciones largas
+memory = create_hybrid_memory(
+    session_id="loan_user_123",
+    buffer_window=10,
+    summary_threshold=8,
+    verbose=True
+)
+
+# Metadatos específicos del dominio
+memory.set_welcome_status(True)
+memory.add_reason("Solicitud de préstamo hipotecario")
+memory.set_loan_variables(monthly=1500, duration=30, rate=4.5)
+```
+
+#### **2. Asistente Educativo**
+```python
+# Configuración para sesiones de estudio
+memory = create_hybrid_memory(
+    session_id="student_456",
+    buffer_window=15,
+    summary_threshold=12,
+    verbose=False
+)
+
+# Metadatos educativos
+memory.update_session_metadata("subject", "mathematics")
+memory.update_session_metadata("difficulty", "intermediate")
+memory.update_session_metadata("session_type", "tutoring")
+```
+
+### **📝 Resumen**
 ```
 
 #### **✅ Beneficios de las Mejoras:**

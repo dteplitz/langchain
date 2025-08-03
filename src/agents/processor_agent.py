@@ -250,6 +250,7 @@ class ProcessorAgent(Runnable):
             chain_input = {
                 "message": input_data.message,
                 "chat_history": formatted_history,
+                "conversation_summary": input_data.conversation_summary,
                 "search_results": search_results_text,
                 "tools_available": tools_available
             }

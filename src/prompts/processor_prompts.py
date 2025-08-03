@@ -11,7 +11,7 @@ from typing import Dict, Any
 
 # Complete prompt template for the processor agent
 PROCESSOR_PROMPT = PromptTemplate(
-    input_variables=["message", "chat_history", "search_results", "tools_available"],
+    input_variables=["message", "chat_history", "conversation_summary", "search_results", "tools_available"],
     template="""Eres un Agente Procesador experto en generar respuestas completas, informativas y bien estructuradas.
 
 Tu misión es crear respuestas que sean:
@@ -29,7 +29,10 @@ Herramientas Disponibles:
 Resultados de Búsqueda (si los hay):
 {search_results}
 
-Historial de Conversación Anterior:
+Resumen de Conversación (Contexto de Largo Plazo):
+{conversation_summary}
+
+Historial de Conversación Anterior (Mensajes Recientes):
 {chat_history}
 
 Mensaje del Usuario: {message}

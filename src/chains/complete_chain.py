@@ -14,7 +14,7 @@ from langchain.schema.runnable import Runnable
 from src.agents.curator_agent import CuratorAgent, create_curator_agent
 from src.agents.processor_agent import ProcessorAgent, create_processor_agent
 from src.agents.formatter_agent import FormatterAgent, create_formatter_agent
-from src.memory.conversation_memory import create_memory, get_conversation_history
+from src.memory.hybrid_conversation_memory import create_hybrid_memory, get_hybrid_conversation_history
 from src.utils.enhanced_logger import get_enhanced_logger
 from src.models.agent_interfaces import (
     CuratorOutput, ProcessorInput, ProcessorOutput, 
@@ -71,10 +71,12 @@ class CompleteChain(Runnable):
         debug = input_data.get("debug", False)
         
         # Create memory for this session
-        memory = create_memory(session_id)
+        memory = create_hybrid_memory(session_id)
         
-        # Get conversation history
-        chat_history = get_conversation_history(session_id, limit=5)
+        # Get conversation history and summary
+        chat_history_data = get_hybrid_conversation_history(session_id, limit=5, include_summary=True)
+        chat_history = chat_history_data["recent_messages"]
+        conversation_summary = chat_history_data["conversation_summary"]
         
         # Track agents used and errors
         agents_used = []
@@ -90,6 +92,7 @@ class CompleteChain(Runnable):
             curator_input = {
                 "message": message,
                 "chat_history": chat_history,
+                "conversation_summary": conversation_summary,
                 "request_id": request_id
             }
             
@@ -146,6 +149,7 @@ class CompleteChain(Runnable):
             processor_input = ProcessorInput(
                 message=message,
                 chat_history=chat_history,
+                conversation_summary=conversation_summary,
                 curator_output=curator_result.dict(),
                 tools_used=[],
                 search_results=[]

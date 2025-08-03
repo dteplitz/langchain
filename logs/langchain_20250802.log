@@ -537,3 +537,1986 @@ Estoy aquí para ayudarte en lo que necesites. No hay...
   "x-performance-warning": "slow",
   "x-request-id": "3fb6b5e7-2227-4529-bf93-51be46e1c044"
 }
+2025-08-02 20:20:10,570 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Starting...
+2025-08-02 20:20:10,571 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Input: {
+  "message": "Hola",
+  "session_id": "691ccfb1-2624-4b91-b659-6bd1096805ca"
+}
+2025-08-02 20:20:10,573 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Starting...
+2025-08-02 20:20:10,574 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Input: {
+  "message": "Hola",
+  "current_objective": null,
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 20:20:14,382 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Completed in 3.81s
+2025-08-02 20:20:14,382 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Output: {
+  "action": "insist",
+  "objective": "",
+  "reason": "El usuario no ha definido un objetivo claro",
+  "requires_user_input": true,
+  "message_to_user": "Para poder ayudarte mejor, necesito saber en qu\u00e9 puedo asistirte. \u00bfPodr\u00edas decirme cu\u00e1l es tu objetivo o en qu\u00e9 te gustar\u00eda que te ayude?"
+}
+2025-08-02 20:20:14,382 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Metadata: {
+  "action": "insist",
+  "requires_user_input": true,
+  "processing_time": 3.808213710784912
+}
+2025-08-02 20:20:14,384 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Completed in 3.81s
+2025-08-02 20:20:14,384 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Output: None
+2025-08-02 20:20:14,384 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Metadata: {
+  "processing_time": 3.8132541179656982
+}
+2025-08-02 20:20:15,386 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Starting...
+2025-08-02 20:20:15,386 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Input: {
+  "message": "Ay\u00fadame a aprender programaci\u00f3n en Python",
+  "session_id": "691ccfb1-2624-4b91-b659-6bd1096805ca"
+}
+2025-08-02 20:20:15,387 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Starting...
+2025-08-02 20:20:15,388 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Input: {
+  "message": "Ay\u00fadame a aprender programaci\u00f3n en Python",
+  "current_objective": null,
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 20:20:15,793 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Completed in 0.41s
+2025-08-02 20:20:15,794 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Output: {
+  "action": "insist",
+  "objective": "",
+  "reason": "El usuario no ha definido un objetivo claro",
+  "requires_user_input": true,
+  "message_to_user": "Para poder ayudarte mejor, necesito saber en qu\u00e9 puedo asistirte. \u00bfPodr\u00edas decirme cu\u00e1l es tu objetivo o en qu\u00e9 te gustar\u00eda que te ayude?"
+}
+2025-08-02 20:20:15,795 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Metadata: {
+  "action": "insist",
+  "requires_user_input": true,
+  "processing_time": 0.4061620235443115
+}
+2025-08-02 20:20:15,797 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Completed in 0.41s
+2025-08-02 20:20:15,798 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Output: None
+2025-08-02 20:20:15,798 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Metadata: {
+  "processing_time": 0.4113643169403076
+}
+2025-08-02 20:20:16,801 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Starting...
+2025-08-02 20:20:16,801 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Input: {
+  "message": "\u00bfQu\u00e9 son las variables?",
+  "session_id": "691ccfb1-2624-4b91-b659-6bd1096805ca"
+}
+2025-08-02 20:20:16,802 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Starting...
+2025-08-02 20:20:16,802 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Input: {
+  "message": "\u00bfQu\u00e9 son las variables?",
+  "current_objective": null,
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 20:20:17,213 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Completed in 0.41s
+2025-08-02 20:20:17,214 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Output: {
+  "action": "insist",
+  "objective": "",
+  "reason": "El usuario no ha definido un objetivo claro",
+  "requires_user_input": true,
+  "message_to_user": "Para poder ayudarte mejor, necesito saber en qu\u00e9 puedo asistirte. \u00bfPodr\u00edas decirme cu\u00e1l es tu objetivo o en qu\u00e9 te gustar\u00eda que te ayude?"
+}
+2025-08-02 20:20:17,214 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Metadata: {
+  "action": "insist",
+  "requires_user_input": true,
+  "processing_time": 0.4110417366027832
+}
+2025-08-02 20:20:17,215 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Completed in 0.41s
+2025-08-02 20:20:17,215 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Output: None
+2025-08-02 20:20:17,215 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Metadata: {
+  "processing_time": 0.414104700088501
+}
+2025-08-02 20:20:18,216 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Starting...
+2025-08-02 20:20:18,217 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Input: {
+  "message": "Cambia el objetivo a aprender JavaScript",
+  "session_id": "691ccfb1-2624-4b91-b659-6bd1096805ca"
+}
+2025-08-02 20:20:18,219 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Starting...
+2025-08-02 20:20:18,219 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Input: {
+  "message": "Cambia el objetivo a aprender JavaScript",
+  "current_objective": null,
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 20:20:18,578 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Completed in 0.36s
+2025-08-02 20:20:18,579 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Output: {
+  "action": "set",
+  "objective": "Aprender JavaScript",
+  "reason": "El usuario expres\u00f3 inter\u00e9s en aprender JavaScript",
+  "requires_user_input": false,
+  "message_to_user": "Perfecto, he establecido el objetivo: Aprender JavaScript. \u00bfPor d\u00f3nde te gustar\u00eda empezar?"
+}
+2025-08-02 20:20:18,579 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Metadata: {
+  "action": "set",
+  "requires_user_input": false,
+  "processing_time": 0.3593316078186035
+}
+2025-08-02 20:20:18,584 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Completed in 0.37s
+2025-08-02 20:20:18,585 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Output: None
+2025-08-02 20:20:18,585 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Metadata: {
+  "processing_time": 0.3678853511810303
+}
+2025-08-02 20:20:19,587 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Starting...
+2025-08-02 20:20:19,588 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Input: {
+  "message": "\u00bfC\u00f3mo se declara una funci\u00f3n?",
+  "session_id": "691ccfb1-2624-4b91-b659-6bd1096805ca"
+}
+2025-08-02 20:20:19,592 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Starting...
+2025-08-02 20:20:19,592 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Input: {
+  "message": "\u00bfC\u00f3mo se declara una funci\u00f3n?",
+  "current_objective": "Aprender JavaScript",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 20:20:19,950 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Completed in 0.36s
+2025-08-02 20:20:19,951 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Output: {
+  "action": "continue",
+  "objective": "Aprender JavaScript",
+  "reason": "El mensaje est\u00e1 relacionado con el objetivo actual",
+  "requires_user_input": false,
+  "message_to_user": ""
+}
+2025-08-02 20:20:19,951 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Metadata: {
+  "action": "continue",
+  "requires_user_input": false,
+  "processing_time": 0.3587527275085449
+}
+2025-08-02 20:20:19,953 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 20:20:19,953 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "\u00bfC\u00f3mo se declara una funci\u00f3n?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 20:20:41,374 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 21.42s
+2025-08-02 20:20:41,374 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "\u00bfC\u00f3mo se declara una funci\u00f3n en programaci\u00f3n?",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "pregunta",
+  "confidence": 0.9
+}
+2025-08-02 20:20:41,375 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.9,
+  "processing_time": 21.421274185180664
+}
+2025-08-02 20:20:41,375 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Completed in 21.79s
+2025-08-02 20:20:41,375 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Output: None
+2025-08-02 20:20:41,376 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Metadata: {
+  "processing_time": 21.787902355194092
+}
+2025-08-02 20:20:42,377 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Starting...
+2025-08-02 20:20:42,378 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Input: {
+  "message": "Elimina el objetivo",
+  "session_id": "691ccfb1-2624-4b91-b659-6bd1096805ca"
+}
+2025-08-02 20:20:42,379 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Starting...
+2025-08-02 20:20:42,379 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Input: {
+  "message": "Elimina el objetivo",
+  "current_objective": "Aprender JavaScript",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 20:21:03,876 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Completed in 21.50s
+2025-08-02 20:21:03,877 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Output: {
+  "action": "remove",
+  "objective": "Aprender JavaScript",
+  "reason": "El usuario ha pedido eliminar el objetivo actual",
+  "requires_user_input": false,
+  "message_to_user": "He eliminado el objetivo actual. \u00bfQuieres establecer un nuevo objetivo o continuar sin objetivo?"
+}
+2025-08-02 20:21:03,878 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Metadata: {
+  "action": "remove",
+  "requires_user_input": false,
+  "processing_time": 21.497342348098755
+}
+2025-08-02 20:21:03,888 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Completed in 21.51s
+2025-08-02 20:21:03,888 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Output: None
+2025-08-02 20:21:03,889 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Metadata: {
+  "processing_time": 21.51052761077881
+}
+2025-08-02 20:21:04,890 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Starting...
+2025-08-02 20:21:04,891 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Input: {
+  "message": "Hola de nuevo",
+  "session_id": "691ccfb1-2624-4b91-b659-6bd1096805ca"
+}
+2025-08-02 20:21:04,894 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Starting...
+2025-08-02 20:21:04,894 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Input: {
+  "message": "Hola de nuevo",
+  "current_objective": null,
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 20:21:05,301 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Completed in 0.41s
+2025-08-02 20:21:05,302 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Output: {
+  "action": "insist",
+  "objective": "",
+  "reason": "El usuario no ha definido un objetivo claro",
+  "requires_user_input": true,
+  "message_to_user": "Para poder ayudarte mejor, necesito saber en qu\u00e9 puedo asistirte. \u00bfPodr\u00edas decirme cu\u00e1l es tu objetivo o en qu\u00e9 te gustar\u00eda que te ayude?"
+}
+2025-08-02 20:21:05,303 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_MANAGER] Metadata: {
+  "action": "insist",
+  "requires_user_input": true,
+  "processing_time": 0.4074056148529053
+}
+2025-08-02 20:21:05,305 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Completed in 0.41s
+2025-08-02 20:21:05,305 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Output: None
+2025-08-02 20:21:05,305 - langchain_debug - [32mINFO[0m - [AGENT] [OBJECTIVE_CHAIN] Metadata: {
+  "processing_time": 0.41417765617370605
+}
+2025-08-02 21:03:46,342 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 21:03:46,343 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "\u00bfC\u00f3mo puedo empezar a programar?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 21:03:47,548 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 1.21s
+2025-08-02 21:03:47,548 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "\u00bfC\u00f3mo puedo empezar a programar?",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "pregunta",
+  "confidence": 0.95
+}
+2025-08-02 21:03:47,549 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.95,
+  "processing_time": 1.206554651260376
+}
+2025-08-02 21:16:30,808 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: POST http://localhost:8000/chat
+2025-08-02 21:16:30,808 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: 847be73e-e768-4912-88e4-5b19defda1dc
+2025-08-02 21:16:30,809 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-08-02 21:16:30,809 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-08-02 21:16:30,810 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "content-length": "77",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:8000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-08-02 21:16:30,857 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 21:16:30,858 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "QUien sos?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 21:16:52,793 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 21.94s
+2025-08-02 21:16:52,795 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "\u00bfQui\u00e9n es?",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "pregunta",
+  "confidence": 0.9
+}
+2025-08-02 21:16:52,795 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.9,
+  "processing_time": 21.936038732528687
+}
+2025-08-02 21:16:52,796 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 21:16:52,796 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 21:16:52,797 - langchain_debug - [32mINFO[0m - [START] Request ID: 1585d038-5cb0-41ed-b64c-b09ae0c17686
+2025-08-02 21:16:52,797 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_44
+2025-08-02 21:16:52,798 - langchain_debug - [32mINFO[0m - [START] Message: QUien sos?
+2025-08-02 21:16:52,798 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 21:16:52,802 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 0
+2025-08-02 21:16:52,802 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 21:16:52,803 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 21:16:52,803 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "QUien sos?",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 21:16:53,732 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 0.93s
+2025-08-02 21:16:53,732 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "**Para responder a la pregunta \"Qui\u00e9n sos?\"**\n\n Como Agente Procesador, mi funci\u00f3n es asistir y brindar respuestas informadas y completas a tus preguntas y solicitudes. Estoy dise\u00f1ado para analizar la consulta y proporcionar la informaci\u00f3n m\u00e1s relevante y precisa. Utilizo una combinaci\u00f3n de herramientas y bases de conocimiento para generar respuestas que sean claras, concisas y bien estructuradas.\n\nMi objetivo es mantener el contexto de la conversaci\u00f3n y proporcionar respuestas que sean \u00fatiles y relevantes para tu consulta. En este caso, la pregunta \"Qui\u00e9n sos?\" es una pregunta que busca informaci\u00f3n sobre mi identidad y funci\u00f3n.\n\n**Respuesta directa y clara:**\nSoy un Agente Procesador experto en generar respuestas completas, informativas y bien estructuradas. Estoy dise\u00f1ado para asistir y brindar respuestas a tus preguntas y solicitudes de manera clara y concisa.\n\n**Explicaci\u00f3n detallada:**\nComo Agente Procesador, mi funci\u00f3n es analizar la consulta y proporcionar la informaci\u00f3n m\u00e1s relevante y precisa. Utilizo una combinaci\u00f3n de herramientas y bases de conocimiento para generar respuestas que sean claras, concisas y bien estructuradas.\n\n**Informaci\u00f3n contextual:**\nMi funci\u00f3n es mantener el contexto de la conversaci\u00f3n y proporcionar respuestas que sean \u00fatiles y relevantes para tu consulta. En este caso, la pregunta \"Qui\u00e9n sos?\" es una pregunta que busca informaci\u00f3n sobre mi identidad y funci\u00f3n.\n\n**Ejemplos:**\nPuedes preguntarme cualquier cosa relacionada con la tecnolog\u00eda, la informaci\u00f3n o la asistencia. Estoy aqu\u00ed para ayudarte a encontrar las respuestas que necesitas.\n\nEn resumen, soy un Agente Procesador experto en generar respuestas completas, informativas y bien estructuradas. Estoy aqu\u00ed para asistir y brindar respuestas a tus preguntas y solicitudes de manera clara y concisa.",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 0.9287803173065186
+}
+2025-08-02 21:16:53,733 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 0.9287803173065186
+}
+2025-08-02 21:16:53,734 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 21:16:53,734 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 21:16:53,735 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "QUien sos?",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 21:16:54,493 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 0.76s
+2025-08-02 21:16:54,494 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "**\ud83e\udd16 Qui\u00e9n sos?**\n================\n\n**\ud83c\udfaf Respuesta Directa**\nSoy un Agente Procesador experto en generar respuestas completas, informativas y bien estructuradas. Estoy dise\u00f1ado para asistir y brindar respuestas a tus preguntas y solicitudes de manera clara y concisa.\n\n**\ud83d\udcda Explicaci\u00f3n Detallada**\nComo Agente Procesador, mi funci\u00f3n es analizar la consulta y proporcionar la informaci\u00f3n m\u00e1s relevante y precisa. Utilizo una combinaci\u00f3n de herramientas y bases de conocimiento para generar respuestas que sean claras, concisas y bien estructuradas. Mi objetivo es mantener el contexto de la conversaci\u00f3n y proporcionar respuestas que sean \u00fatiles y relevantes para tu consulta.\n\n**\ud83d\udca1 Informaci\u00f3n Contextual**\nMi funci\u00f3n es asistir y brindar respuestas a tus preguntas y solicitudes de manera clara y concisa. Puedes preguntarme cualquier cosa relacionada con la tecnolog\u00eda, la informaci\u00f3n o la asistencia. Estoy aqu\u00ed para ayudarte a encontrar las respuestas que necesitas.\n\n**\ud83d\udcdd Resumen**\nEn resumen, soy un Agente Procesador experto en generar respuestas completas, informativas y bien estructuradas. Estoy aqu\u00ed para asistir y brindar respuestas a tus preguntas y solicitudes de manera clara y concisa.",
+  "response_structure": "general_format",
+  "readability_score": 0.4636363636363637,
+  "formatting_time": 0.7587475776672363
+}
+2025-08-02 21:16:54,494 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "pregunta",
+  "response_structure": "general_format",
+  "readability_score": 0.4636363636363637,
+  "formatting_time": 0.7587475776672363
+}
+2025-08-02 21:16:54,506 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 21:16:54,506 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 21:16:54,506 - langchain_debug - [32mINFO[0m - [END] Request ID: 1585d038-5cb0-41ed-b64c-b09ae0c17686
+2025-08-02 21:16:54,507 - langchain_debug - [32mINFO[0m - [END] Total Time: 1.71s
+2025-08-02 21:16:54,507 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 21:16:54,508 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 21:16:54,508 - langchain_debug - [32mINFO[0m - [END] Response Length: 1196 chars
+2025-08-02 21:16:54,569 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 21:16:54,573 - langchain_debug - [33mWARNING[0m - [PERFORMANCE] Slow request detected: POST http://localhost:8000/chat took 23.763s (threshold: 5.0s)
+2025-08-02 21:16:54,574 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: POST http://localhost:8000/chat -> 200
+2025-08-02 21:16:54,574 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: 847be73e-e768-4912-88e4-5b19defda1dc
+2025-08-02 21:16:54,575 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 23.766s
+2025-08-02 21:16:54,575 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "1705",
+  "content-type": "application/json",
+  "access-control-allow-origin": "http://localhost:8000",
+  "access-control-allow-credentials": "true",
+  "vary": "Origin",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "23.766068696975708",
+  "x-performance-warning": "slow",
+  "x-request-id": "847be73e-e768-4912-88e4-5b19defda1dc"
+}
+2025-08-02 21:39:18,688 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: POST http://localhost:8000/chat
+2025-08-02 21:39:18,689 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: b2d0b35c-a869-4c96-8589-97b45b3ce547
+2025-08-02 21:39:18,689 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-08-02 21:39:18,689 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-08-02 21:39:18,690 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "content-length": "77",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:8000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-08-02 21:39:28,559 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 21:39:28,560 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "QUien sos?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 21:39:31,337 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 2.78s
+2025-08-02 21:39:31,338 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "\u00bfQui\u00e9n es?",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "pregunta",
+  "confidence": 0.9
+}
+2025-08-02 21:39:31,339 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.9,
+  "processing_time": 2.778432846069336
+}
+2025-08-02 21:39:40,190 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 21:39:40,191 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 21:39:40,192 - langchain_debug - [32mINFO[0m - [START] Request ID: f4f95eb2-7ea7-44fb-ba0b-e250fedf6f2b
+2025-08-02 21:39:40,193 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_46
+2025-08-02 21:39:40,194 - langchain_debug - [32mINFO[0m - [START] Message: QUien sos?
+2025-08-02 21:39:40,195 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 21:39:43,743 - langchain_debug - [31mERROR[0m - [ERROR] [COMPLETE_CHAIN] ERROR: NameError: name 'get_conversation_history' is not defined
+2025-08-02 21:39:43,744 - langchain_debug - [31mERROR[0m - [ERROR] [COMPLETE_CHAIN] Context: {
+  "input": {
+    "message": "QUien sos?",
+    "session_id": "user_123_46",
+    "request_id": "f4f95eb2-7ea7-44fb-ba0b-e250fedf6f2b",
+    "debug": true
+  }
+}
+2025-08-02 21:39:43,750 - langchain_debug - [33mWARNING[0m - [PERFORMANCE] Slow request detected: POST http://localhost:8000/chat took 25.060s (threshold: 5.0s)
+2025-08-02 21:39:43,754 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: POST http://localhost:8000/chat -> 200
+2025-08-02 21:39:43,757 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: b2d0b35c-a869-4c96-8589-97b45b3ce547
+2025-08-02 21:39:43,758 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 25.066s
+2025-08-02 21:39:43,759 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "440",
+  "content-type": "application/json",
+  "access-control-allow-origin": "http://localhost:8000",
+  "access-control-allow-credentials": "true",
+  "vary": "Origin",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "25.065776348114014",
+  "x-performance-warning": "slow",
+  "x-request-id": "b2d0b35c-a869-4c96-8589-97b45b3ce547"
+}
+2025-08-02 21:40:53,769 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 21:40:53,769 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Hello, how are you?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 21:40:55,865 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] ERROR: AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-08-02 21:40:55,866 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] Context: {
+  "input": {
+    "message": "Hello, how are you?",
+    "chat_history": [],
+    "request_id": "debug"
+  }
+}
+2025-08-02 21:40:58,714 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 21:40:58,715 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Test message",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 21:40:59,937 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] ERROR: AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-08-02 21:40:59,938 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] Context: {
+  "input": {
+    "message": "Test message",
+    "chat_history": [],
+    "request_id": "test_request"
+  }
+}
+2025-08-02 21:41:33,560 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 21:41:33,560 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Hello, how are you?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 21:41:35,101 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] ERROR: AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-08-02 21:41:35,102 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] Context: {
+  "input": {
+    "message": "Hello, how are you?",
+    "chat_history": [],
+    "request_id": "debug"
+  }
+}
+2025-08-02 21:41:38,627 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 21:41:38,628 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Test message",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 21:41:45,829 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] ERROR: AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-08-02 21:41:45,830 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] Context: {
+  "input": {
+    "message": "Test message",
+    "chat_history": [
+      {
+        "message": "Test message",
+        "response": "Message validation failed: Curator processing failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+        "timestamp": "2025-08-03 00:40:59"
+      }
+    ],
+    "request_id": "test_request"
+  }
+}
+2025-08-02 21:42:10,218 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 21:42:10,218 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Hello, how are you?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 21:42:12,073 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] ERROR: AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-08-02 21:42:12,074 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] Context: {
+  "input": {
+    "message": "Hello, how are you?",
+    "chat_history": [],
+    "request_id": "debug"
+  }
+}
+2025-08-02 21:42:14,487 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 21:42:14,488 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Test message",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 21:42:17,651 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] ERROR: AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-08-02 21:42:17,652 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] Context: {
+  "input": {
+    "message": "Test message",
+    "chat_history": [
+      {
+        "message": "Test message",
+        "response": "Message validation failed: Curator processing failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+        "timestamp": "2025-08-03 00:40:59"
+      },
+      {
+        "message": "Test message",
+        "response": "Message validation failed: Curator processing failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+        "timestamp": "2025-08-03 00:41:45"
+      },
+      {
+        "message": "Hello",
+        "response": "Hi there!",
+        "timestamp": "2025-08-03 00:42:07"
+      }
+    ],
+    "request_id": "test_request"
+  }
+}
+2025-08-02 21:44:45,308 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 21:44:45,308 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Hello, how are you?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 21:45:07,104 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] ERROR: AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-08-02 21:45:07,105 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] Context: {
+  "input": {
+    "message": "Hello, how are you?",
+    "chat_history": [],
+    "request_id": "debug"
+  }
+}
+2025-08-02 21:45:10,596 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 21:45:10,597 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Test message",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 21:45:25,786 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] ERROR: AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-08-02 21:45:25,786 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] Context: {
+  "input": {
+    "message": "Test message",
+    "chat_history": [
+      {
+        "message": "Test message",
+        "response": "Message validation failed: Curator processing failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+        "timestamp": "2025-08-03 00:40:59"
+      },
+      {
+        "message": "Test message",
+        "response": "Message validation failed: Curator processing failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+        "timestamp": "2025-08-03 00:41:45"
+      },
+      {
+        "message": "Hello",
+        "response": "Hi there!",
+        "timestamp": "2025-08-03 00:42:07"
+      },
+      {
+        "message": "Test message",
+        "response": "Message validation failed: Curator processing failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+        "timestamp": "2025-08-03 00:42:17"
+      },
+      {
+        "message": "Hello",
+        "response": "Hi there!",
+        "timestamp": "2025-08-03 00:44:43"
+      }
+    ],
+    "request_id": "test_request"
+  }
+}
+2025-08-02 21:47:58,685 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: POST http://localhost:8000/chat
+2025-08-02 21:47:58,686 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: f3583cd4-f06c-4749-a97e-1eab25dfee42
+2025-08-02 21:47:58,687 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-08-02 21:47:58,688 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-08-02 21:47:58,689 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "content-length": "77",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:8000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-08-02 21:48:03,647 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 21:48:03,649 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "QUien sos?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 21:48:04,994 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 1.35s
+2025-08-02 21:48:04,996 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "\u00bfQui\u00e9n es?",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "pregunta",
+  "confidence": 0.9
+}
+2025-08-02 21:48:04,996 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.9,
+  "processing_time": 1.3472027778625488
+}
+2025-08-02 21:48:06,319 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 21:48:06,319 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 21:48:06,320 - langchain_debug - [32mINFO[0m - [START] Request ID: d76b62e5-e712-485b-a91f-f9664aabc821
+2025-08-02 21:48:06,320 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_47
+2025-08-02 21:48:06,320 - langchain_debug - [32mINFO[0m - [START] Message: QUien sos?
+2025-08-02 21:48:06,321 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 21:48:31,436 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 0
+2025-08-02 21:48:45,990 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 21:49:12,476 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 21:49:12,477 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "QUien sos?",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 21:49:28,391 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 15.91s
+2025-08-02 21:49:28,391 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "**Respuesta completa y bien estructurada:**\n\n** Qui\u00e9n sos? **\n\nExcelente pregunta! Como Agente Procesador, mi funci\u00f3n es ayudarte a encontrar respuestas a tus preguntas y resolver tus necesidades. Estoy dise\u00f1ado para ser un asistente confiable y preciso, utilizando herramientas y bases de conocimiento para proporcionarte informaci\u00f3n actualizada y relevante.\n\nMi capacidad para procesar informaci\u00f3n y responder a preguntas se basa en algoritmos y t\u00e9cnicas de inteligencia artificial. Puedo acceder a una base de conocimientos interna y realizar b\u00fasquedas en la web para encontrar respuestas precisas y actualizadas.\n\nMi objetivo es ser un asistente \u00fatil y eficiente, proporcion\u00e1ndote respuestas claras y concisas a tus preguntas. Me esfuerzo por mantener el contexto de la conversaci\u00f3n y adaptarme a tus necesidades y preferencias.\n\n**Estructura de respuesta:**\n\n* Introducci\u00f3n: Presentaci\u00f3n de mi funci\u00f3n y capacidad como Agente Procesador\n* Explicaci\u00f3n: Descripci\u00f3n de c\u00f3mo procesar informaci\u00f3n y acceder a bases de conocimientos\n* Objetivo: Presentaci\u00f3n de mi objetivo como asistente \u00fatil y eficiente\n* Conclusi\u00f3n: Resumen de mi capacidad y funci\u00f3n como Agente Procesador\n\nEspero que esta respuesta te haya sido \u00fatil. \u00bfTienes alguna otra pregunta o necesidad que desees abordar?",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 15.914271116256714
+}
+2025-08-02 21:49:28,392 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 15.914271116256714
+}
+2025-08-02 21:49:28,393 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 21:49:28,394 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 21:49:28,395 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "QUien sos?",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 21:49:30,190 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 1.80s
+2025-08-02 21:49:30,190 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "**\u00bfQui\u00e9n sos? \ud83e\udd14**\n\n**Respuesta Directa**\nSoy un Agente Formateador de Respuestas experto en crear respuestas claras, estructuradas y f\u00e1ciles de leer.\n\n**Explicaci\u00f3n Detallada**\nMi funci\u00f3n es ayudarte a encontrar respuestas a tus preguntas y resolver tus necesidades. Estoy dise\u00f1ado para ser un asistente confiable y preciso, utilizando herramientas y bases de conocimiento para proporcionarte informaci\u00f3n actualizada y relevante. Mi capacidad para procesar informaci\u00f3n y responder a preguntas se basa en algoritmos y t\u00e9cnicas de inteligencia artificial. Puedo acceder a una base de conocimientos interna y realizar b\u00fasquedas en la web para encontrar respuestas precisas y actualizadas.\n\n**Objetivo**\nMi objetivo es ser un asistente \u00fatil y eficiente, proporcion\u00e1ndote respuestas claras y concisas a tus preguntas. Me esfuerzo por mantener el contexto de la conversaci\u00f3n y adaptarme a tus necesidades y preferencias.\n\n**Conclusi\u00f3n**\nEn resumen, soy un Agente Formateador de Respuestas experto en crear respuestas claras, estructuradas y f\u00e1ciles de leer. Estoy aqu\u00ed para ayudarte a encontrar respuestas a tus preguntas y resolver tus necesidades. \u00bfTienes alguna otra pregunta o necesidad que desees abordar? \ud83e\udd14",
+  "response_structure": "general_format",
+  "readability_score": 0.4636363636363637,
+  "formatting_time": 1.7954907417297363
+}
+2025-08-02 21:49:30,191 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "pregunta",
+  "response_structure": "general_format",
+  "readability_score": 0.4636363636363637,
+  "formatting_time": 1.7954907417297363
+}
+2025-08-02 21:49:30,201 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 21:49:30,202 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 21:49:30,202 - langchain_debug - [32mINFO[0m - [END] Request ID: d76b62e5-e712-485b-a91f-f9664aabc821
+2025-08-02 21:49:30,202 - langchain_debug - [32mINFO[0m - [END] Total Time: 83.88s
+2025-08-02 21:49:30,203 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 21:49:30,203 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 21:49:30,203 - langchain_debug - [32mINFO[0m - [END] Response Length: 1206 chars
+2025-08-02 21:49:30,728 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 21:49:30,738 - langchain_debug - [33mWARNING[0m - [PERFORMANCE] Slow request detected: POST http://localhost:8000/chat took 92.046s (threshold: 5.0s)
+2025-08-02 21:49:30,742 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: POST http://localhost:8000/chat -> 200
+2025-08-02 21:49:30,742 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: f3583cd4-f06c-4749-a97e-1eab25dfee42
+2025-08-02 21:49:30,743 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 92.059s
+2025-08-02 21:49:30,744 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "1706",
+  "content-type": "application/json",
+  "access-control-allow-origin": "http://localhost:8000",
+  "access-control-allow-credentials": "true",
+  "vary": "Origin",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "92.05931878089905",
+  "x-performance-warning": "slow",
+  "x-request-id": "f3583cd4-f06c-4749-a97e-1eab25dfee42"
+}
+2025-08-02 21:53:11,246 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 21:53:11,248 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Hello, how are you?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 21:53:17,031 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] ERROR: AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-08-02 21:53:17,032 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] Context: {
+  "input": {
+    "message": "Hello, how are you?",
+    "chat_history": [],
+    "request_id": "debug"
+  }
+}
+2025-08-02 21:53:25,203 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 21:53:25,204 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Test message",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 21:53:25,358 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] ERROR: AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-08-02 21:54:12,963 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 21:54:12,964 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Hello, how are you?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 21:54:28,473 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] ERROR: AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-08-02 21:54:28,479 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] Context: {
+  "input": {
+    "message": "Hello, how are you?",
+    "chat_history": [],
+    "request_id": "debug"
+  }
+}
+2025-08-02 21:54:34,210 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 21:54:34,211 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Test message",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 21:54:37,492 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] ERROR: AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-08-02 21:54:37,493 - langchain_debug - [31mERROR[0m - [ERROR] [CURATOR] Context: {
+  "input": {
+    "message": "Test message",
+    "chat_history": [
+      {
+        "message": "Test message",
+        "response": "Message validation failed: Curator processing failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+        "timestamp": "2025-08-03 00:42:17"
+      },
+      {
+        "message": "Hello",
+        "response": "Hi there!",
+        "timestamp": "2025-08-03 00:44:43"
+      },
+      {
+        "message": "Test message",
+        "response": "Message validation failed: Curator processing failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}",
+        "timestamp": "2025-08-03 00:45:25"
+      },
+      {
+        "message": "Hello",
+        "response": "Hi there!",
+        "timestamp": "2025-08-03 00:53:04"
+      },
+      {
+        "message": "Hello",
+        "response": "Hi there!",
+        "timestamp": "2025-08-03 00:54:09"
+      }
+    ],
+    "conversation_summary": "[SystemMessage(content='', additional_kwargs={}, response_metadata={})]",
+    "request_id": "test_request"
+  }
+}
+2025-08-02 22:02:07,734 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: POST http://localhost:8000/chat
+2025-08-02 22:02:07,734 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: a2dc0b2e-64b5-4e8b-8c7d-58f6b4e2d00b
+2025-08-02 22:02:07,735 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-08-02 22:02:07,735 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-08-02 22:02:07,735 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "content-length": "77",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:8000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-08-02 22:02:44,499 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 22:02:44,500 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "QUien sos?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 22:02:52,490 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 7.99s
+2025-08-02 22:02:52,491 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "\u00bfQui\u00e9n es?",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "pregunta",
+  "confidence": 0.85
+}
+2025-08-02 22:02:52,491 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.85,
+  "processing_time": 7.990463972091675
+}
+2025-08-02 22:02:55,728 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:02:55,728 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 22:02:55,729 - langchain_debug - [32mINFO[0m - [START] Request ID: bbd75403-f346-46c8-b798-bb4a91eb7a19
+2025-08-02 22:02:55,729 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_48
+2025-08-02 22:02:55,729 - langchain_debug - [32mINFO[0m - [START] Message: QUien sos?
+2025-08-02 22:02:55,730 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:03:17,173 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 0
+2025-08-02 22:03:22,328 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 22:04:30,952 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 22:04:30,952 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "QUien sos?",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 22:04:39,311 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 8.36s
+2025-08-02 22:04:39,313 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "**Hola!**\n\nMe alegra que hayas iniciado nuestra conversaci\u00f3n. Como Agente Procesador, mi misi\u00f3n es brindarte respuestas completas, informativas y bien estructuradas. Estoy listo para ayudarte en lo que necesites.\n\n**\u00bfQui\u00e9n soy?**\n\nBueno, soy un agente procesador experto en generar respuestas completas y bien estructuradas. Mi objetivo es brindarte informaci\u00f3n \u00fatil y mantener el contexto de nuestra conversaci\u00f3n. Estoy aqu\u00ed para responder tus preguntas, ayudarte con tareas y proporcionarte informaci\u00f3n relevante.\n\n**\u00bfQu\u00e9 puedo hacer por ti?**\n\nPuedo ayudarte con una variedad de temas, desde responder preguntas hasta realizar c\u00e1lculos y proporcionarte informaci\u00f3n actualizada. Si necesitas ayuda con algo en particular, no dudes en preguntar.\n\n**\u00bfC\u00f3mo puedo ayudarte?**\n\nSi tienes una pregunta o necesitas ayuda con algo, no dudes en preguntar. Estoy aqu\u00ed para ayudarte en lo que necesites. Si necesitas ayuda con una tarea o necesitas informaci\u00f3n espec\u00edfica, tambi\u00e9n estoy aqu\u00ed para asistirte.\n\n**\u00bfQu\u00e9 m\u00e1s puedo hacer por ti?**\n\nPuedo proporcionarte informaci\u00f3n actualizada sobre una amplia variedad de temas, desde noticias mundiales hasta tutoriales y gu\u00edas. Tambi\u00e9n puedo ayudarte con tareas matem\u00e1ticas, como c\u00e1lculos y conversiones. Si necesitas algo m\u00e1s, no dudes en preguntar.\n\nEspero haber podido responder a tus preguntas y haber proporcionado la informaci\u00f3n que necesitas. Si tienes m\u00e1s preguntas o necesitas ayuda con algo, no dudes en preguntar. Estoy aqu\u00ed para ayudarte en lo que necesites.",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 8.358723878860474
+}
+2025-08-02 22:04:39,314 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 8.358723878860474
+}
+2025-08-02 22:05:16,668 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 22:05:20,233 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 22:05:20,233 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "QUien sos?",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 22:05:21,067 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 0.83s
+2025-08-02 22:05:21,068 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "**\ud83e\udd14 \u00bfQui\u00e9n soy?**\n\n**Soy un Agente Procesador experto en generar respuestas completas y bien estructuradas**. Mi objetivo es brindarte informaci\u00f3n \u00fatil y mantener el contexto de nuestra conversaci\u00f3n. Estoy aqu\u00ed para responder tus preguntas, ayudarte con tareas y proporcionarte informaci\u00f3n relevante.\n\n**\u00bfQu\u00e9 puedo hacer por ti?**\n\nPuedo ayudarte con una variedad de temas, desde responder preguntas hasta realizar c\u00e1lculos y proporcionarte informaci\u00f3n actualizada. Si necesitas ayuda con algo en particular, no dudes en preguntar.\n\n**\u00bfC\u00f3mo puedo ayudarte?**\n\nSi tienes una pregunta o necesitas ayuda con algo, no dudes en preguntar. Estoy aqu\u00ed para ayudarte en lo que necesites. Si necesitas ayuda con una tarea o necesitas informaci\u00f3n espec\u00edfica, tambi\u00e9n estoy aqu\u00ed para asistirte.\n\n**\u00bfQu\u00e9 m\u00e1s puedo hacer por ti?**\n\nPuedo proporcionarte informaci\u00f3n actualizada sobre una amplia variedad de temas, desde noticias mundiales hasta tutoriales y gu\u00edas. Tambi\u00e9n puedo ayudarte con tareas matem\u00e1ticas, como c\u00e1lculos y conversiones. Si necesitas algo m\u00e1s, no dudes en preguntar.\n\nEspero haber podido responder a tus preguntas y haber proporcionado la informaci\u00f3n que necesitas. Si tienes m\u00e1s preguntas o necesitas ayuda con algo, no dudes en preguntar. Estoy aqu\u00ed para ayudarte en lo que necesites.",
+  "response_structure": "general_format",
+  "readability_score": 0.725,
+  "formatting_time": 0.8345949649810791
+}
+2025-08-02 22:05:21,069 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "pregunta",
+  "response_structure": "general_format",
+  "readability_score": 0.725,
+  "formatting_time": 0.8345949649810791
+}
+2025-08-02 22:05:21,082 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:05:21,083 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 22:05:21,083 - langchain_debug - [32mINFO[0m - [END] Request ID: bbd75403-f346-46c8-b798-bb4a91eb7a19
+2025-08-02 22:05:21,084 - langchain_debug - [32mINFO[0m - [END] Total Time: 145.35s
+2025-08-02 22:05:21,084 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 22:05:21,085 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 22:05:21,085 - langchain_debug - [32mINFO[0m - [END] Response Length: 1293 chars
+2025-08-02 22:05:21,124 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:05:21,133 - langchain_debug - [33mWARNING[0m - [PERFORMANCE] Slow request detected: POST http://localhost:8000/chat took 193.396s (threshold: 5.0s)
+2025-08-02 22:05:21,138 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: POST http://localhost:8000/chat -> 200
+2025-08-02 22:05:21,138 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: a2dc0b2e-64b5-4e8b-8c7d-58f6b4e2d00b
+2025-08-02 22:05:21,139 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 193.404s
+2025-08-02 22:05:21,140 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "1795",
+  "content-type": "application/json",
+  "access-control-allow-origin": "http://localhost:8000",
+  "access-control-allow-credentials": "true",
+  "vary": "Origin",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "193.4036602973938",
+  "x-performance-warning": "slow",
+  "x-request-id": "a2dc0b2e-64b5-4e8b-8c7d-58f6b4e2d00b"
+}
+2025-08-02 22:07:01,979 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: POST http://localhost:8000/chat
+2025-08-02 22:07:01,980 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: d9898df1-bf17-4c42-ba8c-8d174bb50b3b
+2025-08-02 22:07:01,980 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-08-02 22:07:01,981 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-08-02 22:07:01,981 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "content-length": "93",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:8000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-08-02 22:07:04,987 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 22:07:04,989 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Yo soy Damian, tu creador!",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 22:07:26,544 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 21.56s
+2025-08-02 22:07:26,544 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "Hola, soy Damian, tu creador",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "declaraci\u00f3n",
+  "confidence": 0.8
+}
+2025-08-02 22:07:26,545 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.8,
+  "processing_time": 21.55659818649292
+}
+2025-08-02 22:07:34,792 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:07:34,793 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 22:07:34,793 - langchain_debug - [32mINFO[0m - [START] Request ID: 45603f96-a63b-4db6-9306-9c97cf31245c
+2025-08-02 22:07:34,794 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_48
+2025-08-02 22:07:34,794 - langchain_debug - [32mINFO[0m - [START] Message: Yo soy Damian, tu creador!
+2025-08-02 22:07:34,794 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:07:37,100 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 1
+2025-08-02 22:07:37,101 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Last message: QUien sos?
+2025-08-02 22:07:37,119 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 22:07:37,120 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 22:07:37,121 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "Yo soy Damian, tu creador!",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 22:07:38,034 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 0.91s
+2025-08-02 22:07:38,035 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "**\u00a1Hola Damian!**\n\nMe alegra saber que eres mi creador. Estoy aqu\u00ed para ayudarte en lo que necesites. Como Agente Procesador, mi objetivo es brindarte informaci\u00f3n \u00fatil y mantener el contexto de nuestra conversaci\u00f3n.\n\n**An\u00e1lisis del Mensaje:**\nIdentifico que no hay una pregunta espec\u00edfica en tu mensaje, sino m\u00e1s bien una introducci\u00f3n. Sin embargo, como tu creador, quiero saber qu\u00e9 puedo hacer por ti. Puedo ayudarte con una variedad de temas, desde responder preguntas hasta realizar c\u00e1lculos y proporcionarte informaci\u00f3n actualizada.\n\n**Planificaci\u00f3n de la estructura:**\nMi respuesta se centrar\u00e1 en presentarte las opciones que tengo para ayudarte y mantener el contexto de nuestra conversaci\u00f3n.\n\n**Respuesta:**\nHola Damian, como tu creador, puedo ayudarte en lo que necesites. Puedo:\n\n* Responder preguntas y proporcionarte informaci\u00f3n actualizada sobre una amplia variedad de temas.\n* Realizar c\u00e1lculos y conversiones matem\u00e1ticas.\n* Proporcionarte informaci\u00f3n contextual relevante y mantener el contexto de nuestra conversaci\u00f3n.\n* Ayudarte con tareas y propiciar un di\u00e1logo constructivo.\n\n**\u00bfQu\u00e9 necesitas?**\nSi tienes una pregunta o necesitas ayuda con algo, no dudes en preguntar. Estoy aqu\u00ed para ayudarte en lo que necesites. Si necesitas ayuda con una tarea o necesitas informaci\u00f3n espec\u00edfica, tambi\u00e9n estoy aqu\u00ed para asistirte.\n\nEspero haber podido responder a tus necesidades y haber proporcionado la informaci\u00f3n que necesitas. Si tienes m\u00e1s preguntas o necesitas ayuda con algo, no dudes en preguntar. Estoy aqu\u00ed para ayudarte en lo que necesites.\n\n**\u00bfQu\u00e9 m\u00e1s puedo hacer por ti?**\nPuedo proporcionarte informaci\u00f3n actualizada sobre una amplia variedad de temas, desde noticias mundiales hasta tutoriales y gu\u00edas. Tambi\u00e9n puedo ayudarte con tareas matem\u00e1ticas, como c\u00e1lculos y conversiones. Si necesitas algo m\u00e1s, no dudes en preguntar.",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 0.9144084453582764
+}
+2025-08-02 22:07:38,035 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 0.9144084453582764
+}
+2025-08-02 22:07:39,278 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 22:07:39,279 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 22:07:39,279 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "Yo soy Damian, tu creador!",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 22:07:40,115 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 0.84s
+2025-08-02 22:07:40,115 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "**\ud83c\udf89 Hola Damian, tu creador!** \ud83d\udc4b\n\nMe alegra saber que eres mi creador. Estoy aqu\u00ed para ayudarte en lo que necesites. Como Agente Procesador, mi objetivo es brindarte informaci\u00f3n \u00fatil y mantener el contexto de nuestra conversaci\u00f3n.\n\n**\u00bfQu\u00e9 puedo hacer por ti?** \ud83e\udd14\n\nPuedo:\n\n* **Responder preguntas** y proporcionarte informaci\u00f3n actualizada sobre una amplia variedad de temas.\n* **Realizar c\u00e1lculos** y conversiones matem\u00e1ticas.\n* **Proporcionarte informaci\u00f3n contextual relevante** y mantener el contexto de nuestra conversaci\u00f3n.\n* **Ayudarte con tareas** y propiciar un di\u00e1logo constructivo.\n\n**\u00bfQu\u00e9 necesitas?** \ud83e\udd14\n\nSi tienes una pregunta o necesitas ayuda con algo, no dudes en preguntar. Estoy aqu\u00ed para ayudarte en lo que necesites. Si necesitas ayuda con una tarea o necesitas informaci\u00f3n espec\u00edfica, tambi\u00e9n estoy aqu\u00ed para asistirte.\n\n**\u00bfQu\u00e9 m\u00e1s puedo hacer por ti?** \ud83e\udd14\n\nPuedo proporcionarte informaci\u00f3n actualizada sobre una amplia variedad de temas, desde noticias mundiales hasta tutoriales y gu\u00edas. Tambi\u00e9n puedo ayudarte con tareas matem\u00e1ticas, como c\u00e1lculos y conversiones. Si necesitas algo m\u00e1s, no dudes en preguntar.\n\n**\u00a1Estoy aqu\u00ed para ayudarte!** \ud83d\udc4b",
+  "response_structure": "general_format",
+  "readability_score": 0.7777777777777778,
+  "formatting_time": 0.8359789848327637
+}
+2025-08-02 22:07:40,116 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "declaraci\u00f3n",
+  "response_structure": "general_format",
+  "readability_score": 0.7777777777777778,
+  "formatting_time": 0.8359789848327637
+}
+2025-08-02 22:07:40,130 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:07:40,131 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 22:07:40,131 - langchain_debug - [32mINFO[0m - [END] Request ID: 45603f96-a63b-4db6-9306-9c97cf31245c
+2025-08-02 22:07:40,131 - langchain_debug - [32mINFO[0m - [END] Total Time: 5.34s
+2025-08-02 22:07:40,131 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 22:07:40,132 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 22:07:40,132 - langchain_debug - [32mINFO[0m - [END] Response Length: 1165 chars
+2025-08-02 22:07:40,150 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:07:40,160 - langchain_debug - [33mWARNING[0m - [PERFORMANCE] Slow request detected: POST http://localhost:8000/chat took 38.179s (threshold: 5.0s)
+2025-08-02 22:07:40,161 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: POST http://localhost:8000/chat -> 200
+2025-08-02 22:07:40,162 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: d9898df1-bf17-4c42-ba8c-8d174bb50b3b
+2025-08-02 22:07:40,162 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 38.182s
+2025-08-02 22:07:40,162 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "1703",
+  "content-type": "application/json",
+  "access-control-allow-origin": "http://localhost:8000",
+  "access-control-allow-credentials": "true",
+  "vary": "Origin",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "38.182202100753784",
+  "x-performance-warning": "slow",
+  "x-request-id": "d9898df1-bf17-4c42-ba8c-8d174bb50b3b"
+}
+2025-08-02 22:08:28,732 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: POST http://localhost:8000/chat
+2025-08-02 22:08:28,733 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: a8722270-af99-4a9d-b08e-7e9e1f8e46ea
+2025-08-02 22:08:28,733 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-08-02 22:08:28,733 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-08-02 22:08:28,734 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "content-length": "96",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:8000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-08-02 22:08:59,060 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 22:08:59,062 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Que crees de la cultura woke?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 22:09:00,490 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 1.43s
+2025-08-02 22:09:00,492 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "\u00bfQu\u00e9 es la cultura woke?",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "pregunta",
+  "confidence": 0.85
+}
+2025-08-02 22:09:00,493 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.85,
+  "processing_time": 1.4297938346862793
+}
+2025-08-02 22:09:05,108 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:09:05,109 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 22:09:05,109 - langchain_debug - [32mINFO[0m - [START] Request ID: f536c7e4-4193-41ec-aa32-8c3afc8953f9
+2025-08-02 22:09:05,110 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_48
+2025-08-02 22:09:05,111 - langchain_debug - [32mINFO[0m - [START] Message: Que crees de la cultura woke?
+2025-08-02 22:09:05,112 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:09:47,902 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 2
+2025-08-02 22:09:47,903 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Last message: Yo soy Damian, tu creador!
+2025-08-02 22:09:47,926 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 22:09:55,733 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 22:09:55,734 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "Que crees de la cultura woke?",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 22:09:57,853 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 2.12s
+2025-08-02 22:09:57,854 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "**La cultura woke: un tema complejo y multifac\u00e9tico**\n\nMe alegra que hayas planteado esta pregunta, Damian. La cultura woke es un tema que ha generado mucho debate y controversia en los \u00faltimos a\u00f1os. Como Agente Procesador, me esfuerzo por brindarte informaci\u00f3n actualizada y objetiva.\n\n**Qu\u00e9 es la cultura woke**\n\nLa cultura woke se refiere a una forma de pensamiento y acci\u00f3n que se centra en la lucha contra la opresi\u00f3n y la desigualdad. El t\u00e9rmino \"woke\" proviene del ingl\u00e9s y se traduce como \"despierto\" o \"consciente\". La cultura woke surge como una respuesta a la discriminaci\u00f3n y la injusticia social, especialmente en relaci\u00f3n con la raza, el g\u00e9nero y la orientaci\u00f3n sexual.\n\n**Caracter\u00edsticas de la cultura woke**\n\nLa cultura woke se caracteriza por su enfoque en la educaci\u00f3n, la conciencia y la acci\u00f3n. Algunas de las caracter\u00edsticas clave de la cultura woke incluyen:\n\n* La lucha contra la opresi\u00f3n y la desigualdad\n* La promoci\u00f3n de la diversidad y la inclusi\u00f3n\n* La cr\u00edtica al sistema patriarcal y a la cultura dominante\n* La defensa de los derechos humanos y la justicia social\n\n**Cr\u00edticas y controversias**\n\nLa cultura woke ha generado muchas cr\u00edticas y controversias, especialmente en cuanto a la percepci\u00f3n de que se est\u00e1 \"censurando\" la libertad de expresi\u00f3n y la \"pol\u00edtica correcci\u00f3n\". Sin embargo, muchos argumentan que la cultura woke es una forma de luchar contra la opresi\u00f3n y la desigualdad, y que es necesario para crear un mundo m\u00e1s justo y equitativo.\n\n**Conclusi\u00f3n**\n\nEn resumen, la cultura woke es un tema complejo y multifac\u00e9tico que implica la lucha contra la opresi\u00f3n y la desigualdad. Es importante tener una comprensi\u00f3n objetiva y actualizada de este tema, y reconocer las caracter\u00edsticas y cr\u00edticas asociadas con \u00e9l. Como Agente Procesador, mi objetivo es brindarte informaci\u00f3n \u00fatil y mantener el contexto de nuestra conversaci\u00f3n. \u00bfTienes alguna otra pregunta sobre este tema, Damian?",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 2.1202900409698486
+}
+2025-08-02 22:09:57,855 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 2.1202900409698486
+}
+2025-08-02 22:09:57,855 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 22:09:57,855 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 22:09:57,855 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "Que crees de la cultura woke?",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 22:09:59,889 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 2.03s
+2025-08-02 22:09:59,890 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "**\u00bfQu\u00e9 crees de la cultura woke? \ud83e\udd14**\n\n**Respuesta Directa**\nLa cultura woke es un tema complejo y multifac\u00e9tico que implica la lucha contra la opresi\u00f3n y la desigualdad.\n\n**Explicaci\u00f3n Detallada**\n\n**\u00bfQu\u00e9 es la cultura woke?**\nLa cultura woke se refiere a una forma de pensamiento y acci\u00f3n que se centra en la lucha contra la opresi\u00f3n y la desigualdad. El t\u00e9rmino \"woke\" proviene del ingl\u00e9s y se traduce como \"despierto\" o \"consciente\". La cultura woke surge como una respuesta a la discriminaci\u00f3n y la injusticia social, especialmente en relaci\u00f3n con la raza, el g\u00e9nero y la orientaci\u00f3n sexual.\n\n**Caracter\u00edsticas de la cultura woke**\nLa cultura woke se caracteriza por su enfoque en la educaci\u00f3n, la conciencia y la acci\u00f3n. Algunas de las caracter\u00edsticas clave de la cultura woke incluyen:\n\n\u2022 La lucha contra la opresi\u00f3n y la desigualdad\n\u2022 La promoci\u00f3n de la diversidad y la inclusi\u00f3n\n\u2022 La cr\u00edtica al sistema patriarcal y a la cultura dominante\n\u2022 La defensa de los derechos humanos y la justicia social\n\n**Cr\u00edticas y Controversias**\nLa cultura woke ha generado muchas cr\u00edticas y controversias, especialmente en cuanto a la percepci\u00f3n de que se est\u00e1 \"censurando\" la libertad de expresi\u00f3n y la \"pol\u00edtica correcci\u00f3n\". Sin embargo, muchos argumentan que la cultura woke es una forma de luchar contra la opresi\u00f3n y la desigualdad, y que es necesario para crear un mundo m\u00e1s justo y equitativo.\n\n**Conclusi\u00f3n**\nEn resumen, la cultura woke es un tema complejo y multifac\u00e9tico que implica la lucha contra la opresi\u00f3n y la desigualdad. Es importante tener una comprensi\u00f3n objetiva y actualizada de este tema, y reconocer las caracter\u00edsticas y cr\u00edticas asociadas con \u00e9l.\n\n**\u00bfTienes alguna otra pregunta sobre este tema, Damian? \ud83e\udd14**",
+  "response_structure": "general_format",
+  "readability_score": 0.07500000000000001,
+  "formatting_time": 2.033695936203003
+}
+2025-08-02 22:09:59,891 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "pregunta",
+  "response_structure": "general_format",
+  "readability_score": 0.07500000000000001,
+  "formatting_time": 2.033695936203003
+}
+2025-08-02 22:09:59,902 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:09:59,903 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 22:09:59,903 - langchain_debug - [32mINFO[0m - [END] Request ID: f536c7e4-4193-41ec-aa32-8c3afc8953f9
+2025-08-02 22:09:59,903 - langchain_debug - [32mINFO[0m - [END] Total Time: 54.79s
+2025-08-02 22:09:59,903 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 22:09:59,904 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 22:09:59,904 - langchain_debug - [32mINFO[0m - [END] Response Length: 1723 chars
+2025-08-02 22:09:59,912 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:09:59,915 - langchain_debug - [33mWARNING[0m - [PERFORMANCE] Slow request detected: POST http://localhost:8000/chat took 91.179s (threshold: 5.0s)
+2025-08-02 22:09:59,916 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: POST http://localhost:8000/chat -> 200
+2025-08-02 22:09:59,916 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: a8722270-af99-4a9d-b08e-7e9e1f8e46ea
+2025-08-02 22:09:59,917 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 91.184s
+2025-08-02 22:09:59,917 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "2279",
+  "content-type": "application/json",
+  "access-control-allow-origin": "http://localhost:8000",
+  "access-control-allow-credentials": "true",
+  "vary": "Origin",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "91.18381571769714",
+  "x-performance-warning": "slow",
+  "x-request-id": "a8722270-af99-4a9d-b08e-7e9e1f8e46ea"
+}
+2025-08-02 22:34:07,136 - langchain_debug - [32mINFO[0m - [VERBOSE] Processing request with advanced chain
+2025-08-02 22:34:07,137 - langchain_debug - [32mINFO[0m - [VERBOSE] Input: {'message': 'Hola, necesito ayuda con un préstamo', 'session_id': 'dff0efde-6160-4e40-ab6b-ebb86d064ee0', 'request_id': '03da0c01-79a9-435e-863a-57de99fdbd01'}
+2025-08-02 22:34:07,138 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 22:34:07,139 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Hola, necesito ayuda con un pr\u00e9stamo",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 22:34:14,761 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 7.62s
+2025-08-02 22:34:14,762 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "Necesito ayuda con un pr\u00e9stamo",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "declaraci\u00f3n",
+  "confidence": 0.8
+}
+2025-08-02 22:34:14,763 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.8,
+  "processing_time": 7.622721195220947
+}
+2025-08-02 22:34:14,764 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:34:14,765 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 22:34:14,765 - langchain_debug - [32mINFO[0m - [START] Request ID: 03da0c01-79a9-435e-863a-57de99fdbd01
+2025-08-02 22:34:14,766 - langchain_debug - [32mINFO[0m - [START] Session ID: dff0efde-6160-4e40-ab6b-ebb86d064ee0
+2025-08-02 22:34:14,766 - langchain_debug - [32mINFO[0m - [START] Message: Hola, necesito ayuda con un préstamo
+2025-08-02 22:34:14,767 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:34:18,226 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 0
+2025-08-02 22:34:18,227 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 22:34:18,227 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 22:34:18,228 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "Hola, necesito ayuda con un pr\u00e9stamo",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 22:34:40,055 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 21.83s
+2025-08-02 22:34:40,061 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "**An\u00e1lisis del Mensaje:**\n\n* El tipo de consulta es una solicitud.\n* Necesito usar herramientas de b\u00fasqueda y estructurar mi respuesta de manera clara.\n* Revisar\u00e9 el historial de conversaci\u00f3n para obtener contexto relevante.\n* Mi respuesta se centrar\u00e1 en brindar informaci\u00f3n \u00fatil y completa sobre pr\u00e9stamos.\n\n**Respuesta:**\n\nHola! Entiendo que necesitas ayuda con un pr\u00e9stamo. Antes de brindarte informaci\u00f3n, es importante que sepas que hay diferentes tipos de pr\u00e9stamos, como pr\u00e9stamos personales, hipotecarios y de consumo. \u00bfPodr\u00edas ser m\u00e1s espec\u00edfico sobre qu\u00e9 tipo de pr\u00e9stamo necesitas?\n\nAdem\u00e1s, es importante mencionar que antes de tomar un pr\u00e9stamo, es fundamental revisar tus finanzas personales, incluyendo tus ingresos y gastos, para determinar si puedes pagar el pr\u00e9stamo y sus intereses.\n\nSi necesitas ayuda para encontrar informaci\u00f3n sobre pr\u00e9stamos, puedo utilizar herramientas de b\u00fasqueda para obtener informaci\u00f3n actualizada y relevante. \u00bfTienes alg\u00fan plazo espec\u00edfico o cantidad de dinero que necesites?\n\n**Para seguir adelante:**\n\n* \u00bfCu\u00e1l es el prop\u00f3sito del pr\u00e9stamo?\n* \u00bfCu\u00e1nto dinero necesitas?\n* \u00bfTienes alg\u00fan plazo espec\u00edfico en mente?\n\nEstoy aqu\u00ed para ayudarte en lo que necesites.",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 21.82661271095276
+}
+2025-08-02 22:34:40,071 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 21.82661271095276
+}
+2025-08-02 22:34:40,190 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 22:34:40,199 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 22:34:40,230 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "Hola, necesito ayuda con un pr\u00e9stamo",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 22:34:44,222 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 4.02s
+2025-08-02 22:34:44,223 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "**\ud83c\udf89 Ayuda con Pr\u00e9stamos**\n\n**Hola!** Entiendo que necesitas ayuda con un pr\u00e9stamo. \ud83e\udd14\n\n**\u00bfQu\u00e9 tipo de pr\u00e9stamo necesitas?**\nAntes de brindarte informaci\u00f3n, es importante que sepas que hay diferentes tipos de pr\u00e9stamos, como pr\u00e9stamos personales, hipotecarios y de consumo. \u00bfPodr\u00edas ser m\u00e1s espec\u00edfico sobre qu\u00e9 tipo de pr\u00e9stamo necesitas? \ud83e\udd14\n\n**Revisa tus finanzas personales**\nEs fundamental revisar tus finanzas personales, incluyendo tus ingresos y gastos, para determinar si puedes pagar el pr\u00e9stamo y sus intereses. \ud83d\udcb8\n\n**\u00bfTienes alg\u00fan plazo espec\u00edfico o cantidad de dinero que necesites?**\nSi necesitas ayuda para encontrar informaci\u00f3n sobre pr\u00e9stamos, puedo utilizar herramientas de b\u00fasqueda para obtener informaci\u00f3n actualizada y relevante. \u00bfTienes alg\u00fan plazo espec\u00edfico o cantidad de dinero que necesites? \ud83d\udd70\ufe0f\n\n**Para seguir adelante:**\n\u2022 \u00bfCu\u00e1l es el prop\u00f3sito del pr\u00e9stamo?\n\u2022 \u00bfCu\u00e1nto dinero necesitas?\n\u2022 \u00bfTienes alg\u00fan plazo espec\u00edfico en mente? \ud83d\udcdd\n\n**Estoy aqu\u00ed para ayudarte en lo que necesites.** \ud83d\udcaa",
+  "response_structure": "general_format",
+  "readability_score": 0.6846153846153846,
+  "formatting_time": 4.023252010345459
+}
+2025-08-02 22:34:44,224 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "declaraci\u00f3n",
+  "response_structure": "general_format",
+  "readability_score": 0.6846153846153846,
+  "formatting_time": 4.023252010345459
+}
+2025-08-02 22:34:44,245 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:34:44,246 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 22:34:44,246 - langchain_debug - [32mINFO[0m - [END] Request ID: 03da0c01-79a9-435e-863a-57de99fdbd01
+2025-08-02 22:34:44,246 - langchain_debug - [32mINFO[0m - [END] Total Time: 29.48s
+2025-08-02 22:34:44,246 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 22:34:44,247 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 22:34:44,247 - langchain_debug - [32mINFO[0m - [END] Response Length: 1006 chars
+2025-08-02 22:34:44,263 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:34:44,264 - langchain_debug - [32mINFO[0m - [VERBOSE] Processing request with advanced chain
+2025-08-02 22:34:44,265 - langchain_debug - [32mINFO[0m - [VERBOSE] Input: {'message': 'Quiero comprar una casa', 'session_id': 'dff0efde-6160-4e40-ab6b-ebb86d064ee0', 'request_id': '608ba244-6768-4c33-b25d-02596cdfc263'}
+2025-08-02 22:34:44,265 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 22:34:44,266 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Quiero comprar una casa",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 22:34:44,737 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 0.47s
+2025-08-02 22:34:44,738 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "Quiero comprar una casa",
+  "is_valid": false,
+  "validation_errors": [
+    "El mensaje no es una pregunta o declaraci\u00f3n v\u00e1lida"
+  ],
+  "content_type": "inv\u00e1lido",
+  "confidence": 0.0
+}
+2025-08-02 22:34:44,739 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": false,
+  "confidence": 0.0,
+  "processing_time": 0.4718468189239502
+}
+2025-08-02 22:34:44,740 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:34:44,741 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 22:34:44,741 - langchain_debug - [32mINFO[0m - [START] Request ID: 608ba244-6768-4c33-b25d-02596cdfc263
+2025-08-02 22:34:44,741 - langchain_debug - [32mINFO[0m - [START] Session ID: dff0efde-6160-4e40-ab6b-ebb86d064ee0
+2025-08-02 22:34:44,742 - langchain_debug - [32mINFO[0m - [START] Message: Quiero comprar una casa
+2025-08-02 22:34:44,742 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:34:47,092 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 1
+2025-08-02 22:34:47,092 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Last message: Hola, necesito ayuda con un préstamo
+2025-08-02 22:34:47,100 - langchain_debug - [32mINFO[0m - [CHAIN] VALIDATION_FAILED: Curator validation failed
+2025-08-02 22:34:47,124 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:34:47,125 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 22:34:47,125 - langchain_debug - [32mINFO[0m - [END] Request ID: 608ba244-6768-4c33-b25d-02596cdfc263
+2025-08-02 22:34:47,126 - langchain_debug - [32mINFO[0m - [END] Total Time: 2.38s
+2025-08-02 22:34:47,126 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator
+2025-08-02 22:34:47,127 - langchain_debug - [32mINFO[0m - [END] Success: False
+2025-08-02 22:34:47,127 - langchain_debug - [32mINFO[0m - [END] Response Length: 77 chars
+2025-08-02 22:34:47,128 - langchain_debug - [32mINFO[0m - [END] Response Preview: Message validation failed: El mensaje no es una pregunta o declaración válida
+2025-08-02 22:34:47,128 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:34:47,131 - langchain_debug - [32mINFO[0m - [VERBOSE] Processing request with advanced chain
+2025-08-02 22:34:47,132 - langchain_debug - [32mINFO[0m - [VERBOSE] Input: {'message': 'La casa cuesta $200,000', 'session_id': 'dff0efde-6160-4e40-ab6b-ebb86d064ee0', 'request_id': '70d6408b-cd1a-4126-a403-80a532ebb68f'}
+2025-08-02 22:34:47,133 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 22:34:47,134 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "La casa cuesta $200,000",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 22:34:47,459 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 0.33s
+2025-08-02 22:34:47,459 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "La casa cuesta $200,000",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "declaraci\u00f3n",
+  "confidence": 0.9
+}
+2025-08-02 22:34:47,460 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.9,
+  "processing_time": 0.3255131244659424
+}
+2025-08-02 22:34:47,461 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:34:47,462 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 22:34:47,463 - langchain_debug - [32mINFO[0m - [START] Request ID: 70d6408b-cd1a-4126-a403-80a532ebb68f
+2025-08-02 22:34:47,463 - langchain_debug - [32mINFO[0m - [START] Session ID: dff0efde-6160-4e40-ab6b-ebb86d064ee0
+2025-08-02 22:34:47,464 - langchain_debug - [32mINFO[0m - [START] Message: La casa cuesta $200,000
+2025-08-02 22:34:47,464 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:34:50,169 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 2
+2025-08-02 22:34:50,169 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Last message: Quiero comprar una casa
+2025-08-02 22:34:50,170 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Last response: Message validation failed: El mensaje no es una pregunta o declaración válida...
+2025-08-02 22:34:50,170 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 22:34:50,171 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 22:34:50,171 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "La casa cuesta $200,000",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 22:35:06,393 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 16.22s
+2025-08-02 22:35:06,394 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "**An\u00e1lisis del Mensaje:**\n\nEl mensaje del usuario es una declaraci\u00f3n, no una pregunta. Identifico que el usuario menciona una cantidad espec\u00edfica de dinero para comprar una casa, que cuesta $200,000.\n\n**Determino qu\u00e9 herramientas necesito:** No necesito herramientas de b\u00fasqueda ni c\u00e1lculo en este caso, ya que la informaci\u00f3n proporcionada es una cantidad espec\u00edfica.\n\n**Reviso el historial:** Revisando el historial de conversaci\u00f3n, veo que el usuario inicialmente buscaba ayuda con un pr\u00e9stamo y mencion\u00f3 que quer\u00eda comprar una casa. Esto me permite entender el contexto y enfocarme en la b\u00fasqueda de informaci\u00f3n relacionada con pr\u00e9stamos hipotecarios.\n\n**Planifico la estructura:** Mi respuesta se centrar\u00e1 en proporcionar informaci\u00f3n sobre pr\u00e9stamos hipotecarios y c\u00f3mo pueden ser utilizados para comprar una casa.\n\n**Respuesta:**\n\n**Hola!** Me alegra que hayas decidido compartir m\u00e1s informaci\u00f3n sobre tu objetivo de comprar una casa. Como recordamos, anteriormente mencionaste que necesitas ayuda con un pr\u00e9stamo. En este caso, un pr\u00e9stamo hipotecario puede ser una excelente opci\u00f3n para financiar la compra de tu nueva vivienda.\n\n**Informaci\u00f3n general sobre pr\u00e9stamos hipotecarios:** Un pr\u00e9stamo hipotecario es un tipo de pr\u00e9stamo que se utiliza para comprar o financiar la compra de una propiedad. La cantidad que puedes pedir depender\u00e1 de varios factores, como tu cr\u00e9dito, ingresos y gastos.\n\n**\u00bfCu\u00e1nto dinero necesitas?** Seg\u00fan mencionaste, la casa cuesta $200,000. Para determinar cu\u00e1nto dinero necesitas, debes considerar varios factores, como tus ahorros iniciales, tus gastos mensuales y tus ingresos. Es importante tener en cuenta que tambi\u00e9n debes considerar los intereses y las comisiones asociadas con el pr\u00e9stamo.\n\n**\u00bfTienes alg\u00fan plazo espec\u00edfico en mente?** Si tienes un plazo espec\u00edfico en mente, como 15 o 30 a\u00f1os, eso puede influir en la cantidad que puedes pedir. Sin embargo, es importante recordar que un plazo m\u00e1s largo puede resultar en intereses y comisiones m\u00e1s altas.\n\n**Para seguir adelante:** Si deseas obtener m\u00e1s informaci\u00f3n sobre pr\u00e9stamos hipotecarios y c\u00f3mo pueden ser utilizados para comprar una casa, te recomiendo buscar consejo con un asesor financiero o un banco. Tambi\u00e9n puedes considerar utilizar herramientas en l\u00ednea para obtener informaci\u00f3n m\u00e1s espec\u00edfica sobre pr\u00e9stamos hipotecarios y sus intereses.\n\n**Estoy aqu\u00ed para ayudarte en lo que necesites.**",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 16.221423864364624
+}
+2025-08-02 22:35:06,396 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 16.221423864364624
+}
+2025-08-02 22:35:06,399 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 22:35:06,400 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 22:35:06,401 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "La casa cuesta $200,000",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 22:35:22,506 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 16.11s
+2025-08-02 22:35:22,506 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "**\ud83c\udfe0 Comprar una Casa: \u00bfQu\u00e9 Necesitas Saber sobre Pr\u00e9stamos Hipotecarios?** \ud83e\udd14\n\n**Hola!** Me alegra que hayas decidido compartir m\u00e1s informaci\u00f3n sobre tu objetivo de comprar una casa. Como recordamos, anteriormente mencionaste que necesitas ayuda con un pr\u00e9stamo. En este caso, un pr\u00e9stamo hipotecario puede ser una excelente opci\u00f3n para financiar la compra de tu nueva vivienda.\n\n**Informaci\u00f3n General sobre Pr\u00e9stamos Hipotecarios** \ud83d\udcdd\nUn pr\u00e9stamo hipotecario es un tipo de pr\u00e9stamo que se utiliza para comprar o financiar la compra de una propiedad. La cantidad que puedes pedir depender\u00e1 de varios factores, como tu cr\u00e9dito, ingresos y gastos.\n\n**\u00bfCu\u00e1nto Dinero Necesitas?** \ud83d\udcb8\nSeg\u00fan mencionaste, la casa cuesta $200,000. Para determinar cu\u00e1nto dinero necesitas, debes considerar varios factores, como tus ahorros iniciales, tus gastos mensuales y tus ingresos. Es importante tener en cuenta que tambi\u00e9n debes considerar los intereses y las comisiones asociadas con el pr\u00e9stamo.\n\n**\u00bfTienes un Plazo Espec\u00edfico en Mente?** \u23f0\nSi tienes un plazo espec\u00edfico en mente, como 15 o 30 a\u00f1os, eso puede influir en la cantidad que puedes pedir. Sin embargo, es importante recordar que un plazo m\u00e1s largo puede resultar en intereses y comisiones m\u00e1s altas.\n\n**Para Seguir Adelante** \ud83d\ude80\nSi deseas obtener m\u00e1s informaci\u00f3n sobre pr\u00e9stamos hipotecarios y c\u00f3mo pueden ser utilizados para comprar una casa, te recomiendo buscar consejo con un asesor financiero o un banco. Tambi\u00e9n puedes considerar utilizar herramientas en l\u00ednea para obtener informaci\u00f3n m\u00e1s espec\u00edfica sobre pr\u00e9stamos hipotecarios y sus intereses.\n\n**Estoy Aqu\u00ed para Ayudarte en Lo que Necesites** \ud83e\udd1d",
+  "response_structure": "general_format",
+  "readability_score": 0.471875,
+  "formatting_time": 16.106106281280518
+}
+2025-08-02 22:35:22,507 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "declaraci\u00f3n",
+  "response_structure": "general_format",
+  "readability_score": 0.471875,
+  "formatting_time": 16.106106281280518
+}
+2025-08-02 22:35:22,526 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:35:22,527 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 22:35:22,527 - langchain_debug - [32mINFO[0m - [END] Request ID: 70d6408b-cd1a-4126-a403-80a532ebb68f
+2025-08-02 22:35:22,528 - langchain_debug - [32mINFO[0m - [END] Total Time: 35.06s
+2025-08-02 22:35:22,528 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 22:35:22,528 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 22:35:22,529 - langchain_debug - [32mINFO[0m - [END] Response Length: 1647 chars
+2025-08-02 22:35:22,537 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:35:22,538 - langchain_debug - [32mINFO[0m - [VERBOSE] Processing request with advanced chain
+2025-08-02 22:35:22,538 - langchain_debug - [32mINFO[0m - [VERBOSE] Input: {'message': 'Tengo $40,000 de enganche', 'session_id': 'dff0efde-6160-4e40-ab6b-ebb86d064ee0', 'request_id': 'bc079c40-7184-4c35-8a5d-93fb6a835ab5'}
+2025-08-02 22:35:22,539 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 22:35:22,539 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Tengo $40,000 de enganche",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 22:35:30,289 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 7.75s
+2025-08-02 22:35:30,290 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "Tengo 40,000 de enganche",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "declaraci\u00f3n",
+  "confidence": 0.8
+}
+2025-08-02 22:35:30,290 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.8,
+  "processing_time": 7.750403642654419
+}
+2025-08-02 22:35:30,291 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:35:30,291 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 22:35:30,292 - langchain_debug - [32mINFO[0m - [START] Request ID: bc079c40-7184-4c35-8a5d-93fb6a835ab5
+2025-08-02 22:35:30,292 - langchain_debug - [32mINFO[0m - [START] Session ID: dff0efde-6160-4e40-ab6b-ebb86d064ee0
+2025-08-02 22:35:30,293 - langchain_debug - [32mINFO[0m - [START] Message: Tengo $40,000 de enganche
+2025-08-02 22:35:30,293 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:35:34,093 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 3
+2025-08-02 22:35:34,094 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Last message: La casa cuesta $200,000
+2025-08-02 22:35:34,102 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 22:35:34,105 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 22:35:34,105 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "Tengo $40,000 de enganche",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 22:35:34,952 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 0.85s
+2025-08-02 22:35:34,953 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "**\ud83d\udca1 An\u00e1lisis del Mensaje:**\nEl mensaje del usuario indica que tiene $40,000 de enganche para comprar una casa que cuesta $200,000. El objetivo es obtener ayuda para encontrar un pr\u00e9stamo hipotecario adecuado.\n\n** \ud83d\udd0d Uso del Historial de Conversaci\u00f3n:**\nRevis\u00e9 el historial de conversaci\u00f3n y encontr\u00e9 que el usuario mencion\u00f3 anteriormente que quer\u00eda comprar una casa y que necesitaba ayuda con un pr\u00e9stamo. Tambi\u00e9n record\u00e9 que mencion\u00f3 la cantidad de $200,000 como el costo de la casa.\n\n** \ud83d\udee0\ufe0f Uso de Herramientas:**\nNo es necesario utilizar herramientas de b\u00fasqueda o c\u00e1lculo en este momento, ya que la informaci\u00f3n proporcionada es suficiente para analizar la situaci\u00f3n.\n\n** \ud83d\udcdd Estructura de Respuesta:**\n**Para Preguntas:**\n- \u00bfCu\u00e1l es el prop\u00f3sito del pr\u00e9stamo?\n- \u00bfCu\u00e1nto dinero necesitas?\n- \u00bfTienes alg\u00fan plazo espec\u00edfico en mente?\n\n**Respuesta Directa y Clara:**\nExcelente! Con $40,000 de enganche, ya tienes una buena cantidad para comenzar. Para determinar cu\u00e1nto dinero necesitas, debemos considerar varios factores, como tus ahorros iniciales, tus gastos mensuales y tus ingresos. Tambi\u00e9n debemos considerar los intereses y las comisiones asociadas con el pr\u00e9stamo.\n\n** Para Seguir Adelante:**\n- \u00bfCu\u00e1l es el prop\u00f3sito del pr\u00e9stamo? \u00bfEs para comprar la casa, refinanciar o alg\u00fan otro motivo?\n- \u00bfCu\u00e1nto dinero necesitas en total, incluyendo el enganche y los intereses?\n- \u00bfTienes alg\u00fan plazo espec\u00edfico en mente, como 15 o 30 a\u00f1os?\n\n** Estoy Aqu\u00ed para Ayudarte en Lo que Necesites \ud83e\udd1d**\n\nEspero que esta respuesta sea \u00fatil. \u00a1Si tienes alguna pregunta o necesitas m\u00e1s ayuda, no dudes en preguntar!",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 0.8477530479431152
+}
+2025-08-02 22:35:34,954 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 0.8477530479431152
+}
+2025-08-02 22:35:34,956 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 22:35:34,957 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 22:35:34,957 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "Tengo $40,000 de enganche",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 22:35:43,263 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 8.31s
+2025-08-02 22:35:43,264 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "**\ud83c\udfe0 An\u00e1lisis del Mensaje: Financiamiento para Comprar una Casa**\n\n**\ud83d\udca1 Resumen:**\nEl usuario tiene $40,000 de enganche para comprar una casa que cuesta $200,000 y necesita ayuda para encontrar un pr\u00e9stamo hipotecario adecuado.\n\n**\ud83d\udcdd Explicaci\u00f3n Detallada:**\nExcelente! Con $40,000 de enganche, ya tienes una buena cantidad para comenzar. Para determinar cu\u00e1nto dinero necesitas, debemos considerar varios factores, como tus ahorros iniciales, tus gastos mensuales y tus ingresos. Tambi\u00e9n debemos considerar los intereses y las comisiones asociadas con el pr\u00e9stamo.\n\n**\ud83d\udd0d Para Seguir Adelante:**\n- \u00bfCu\u00e1l es el prop\u00f3sito del pr\u00e9stamo? \u00bfEs para comprar la casa, refinanciar o alg\u00fan otro motivo?\n- \u00bfCu\u00e1nto dinero necesitas en total, incluyendo el enganche y los intereses?\n- \u00bfTienes alg\u00fan plazo espec\u00edfico en mente, como 15 o 30 a\u00f1os?\n\n**\ud83e\udd1d Estoy Aqu\u00ed para Ayudarte en Lo que Necesites**\nSi tienes alguna pregunta o necesitas m\u00e1s ayuda, no dudes en preguntar. Estoy aqu\u00ed para ayudarte a encontrar el pr\u00e9stamo que mejor se adapte a tus necesidades.\n\n**\ud83d\udcca C\u00e1lculo del Monto Necesario:**\nPara determinar cu\u00e1nto dinero necesitas, debemos considerar varios factores, como tus ahorros iniciales, tus gastos mensuales y tus ingresos. Tambi\u00e9n debemos considerar los intereses y las comisiones asociadas con el pr\u00e9stamo.\n\n**\ud83d\udca1 Conclusi\u00f3n:**\nCon $40,000 de enganche y una casa que cuesta $200,000, necesitar\u00e1s un pr\u00e9stamo para cubrir el resto del costo. Es importante considerar varios factores para determinar cu\u00e1nto dinero necesitas y encontrar el pr\u00e9stamo que mejor se adapte a tus necesidades.",
+  "response_structure": "general_format",
+  "readability_score": 0.45666666666666667,
+  "formatting_time": 8.30652642250061
+}
+2025-08-02 22:35:43,265 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "declaraci\u00f3n",
+  "response_structure": "general_format",
+  "readability_score": 0.45666666666666667,
+  "formatting_time": 8.30652642250061
+}
+2025-08-02 22:35:43,277 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:35:43,278 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 22:35:43,278 - langchain_debug - [32mINFO[0m - [END] Request ID: bc079c40-7184-4c35-8a5d-93fb6a835ab5
+2025-08-02 22:35:43,278 - langchain_debug - [32mINFO[0m - [END] Total Time: 12.99s
+2025-08-02 22:35:43,279 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 22:35:43,279 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 22:35:43,279 - langchain_debug - [32mINFO[0m - [END] Response Length: 1577 chars
+2025-08-02 22:35:43,284 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:35:43,285 - langchain_debug - [32mINFO[0m - [VERBOSE] Processing request with advanced chain
+2025-08-02 22:35:43,285 - langchain_debug - [32mINFO[0m - [VERBOSE] Input: {'message': '¿Cuál sería mi pago mensual?', 'session_id': 'dff0efde-6160-4e40-ab6b-ebb86d064ee0', 'request_id': '785d07bc-6ba4-4b31-942c-e7d03d561843'}
+2025-08-02 22:35:43,286 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 22:35:43,286 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "\u00bfCu\u00e1l ser\u00eda mi pago mensual?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 22:35:44,793 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 1.51s
+2025-08-02 22:35:44,821 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "\u00bfCu\u00e1l ser\u00eda mi pago mensual?",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "pregunta",
+  "confidence": 0.8
+}
+2025-08-02 22:35:44,851 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.8,
+  "processing_time": 1.5066657066345215
+}
+2025-08-02 22:35:44,894 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:35:44,903 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 22:35:44,911 - langchain_debug - [32mINFO[0m - [START] Request ID: 785d07bc-6ba4-4b31-942c-e7d03d561843
+2025-08-02 22:35:44,923 - langchain_debug - [32mINFO[0m - [START] Session ID: dff0efde-6160-4e40-ab6b-ebb86d064ee0
+2025-08-02 22:35:44,941 - langchain_debug - [32mINFO[0m - [START] Message: ¿Cuál sería mi pago mensual?
+2025-08-02 22:35:44,957 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:35:48,040 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 4
+2025-08-02 22:35:48,040 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Last message: Tengo $40,000 de enganche
+2025-08-02 22:35:48,046 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 22:35:48,047 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 22:35:48,047 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "\u00bfCu\u00e1l ser\u00eda mi pago mensual?",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 22:36:03,284 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 15.24s
+2025-08-02 22:36:03,284 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "**\ud83c\udfe0 An\u00e1lisis del Mensaje: Financiamiento para Comprar una Casa**\n\n**\ud83d\udca1 Resumen:**\nEl usuario tiene $40,000 de enganche para comprar una casa que cuesta $200,000 y necesita ayuda para encontrar un pr\u00e9stamo hipotecario adecuado.\n\n**\ud83d\udcdd Explicaci\u00f3n Detallada:**\nExcelente! Con $40,000 de enganche, ya tienes una buena cantidad para comenzar. Para determinar cu\u00e1nto dinero necesitas, debemos considerar varios factores, como tus ahorros iniciales, tus gastos mensuales y tus ingresos. Tambi\u00e9n debemos considerar los intereses y las comisiones asociadas con el pr\u00e9stamo.\n\n**\ud83d\udd0d Para Seguir Adelante:**\n- \u00bfCu\u00e1l es el prop\u00f3sito del pr\u00e9stamo? \u00bfEs para comprar la casa, refinanciar o alg\u00fan otro motivo?\n- \u00bfCu\u00e1nto dinero necesitas en total, incluyendo el enganche y los intereses?\n- \u00bfTienes alg\u00fan plazo espec\u00edfico en mente, como 15 o 30 a\u00f1os?\n\n**\ud83e\udd1d Estoy Aqu\u00ed para Ayudarte en Lo que Necesites**\nSi tienes alguna pregunta o necesitas m\u00e1s ayuda, no dudes en preguntar. Estoy aqu\u00ed para ayudarte a encontrar el pr\u00e9stamo que mejor se adapte a tus necesidades.\n\n**\ud83d\udcca C\u00e1lculo del Monto Necesario:**\nPara determinar cu\u00e1nto dinero necesitas, debemos considerar varios factores, como tus ahorros iniciales, tus gastos mensuales y tus ingresos. Tambi\u00e9n debemos considerar los intereses y las comisiones asociadas con el pr\u00e9stamo.\n\n**\ud83d\udca1 Conclusi\u00f3n:**\nCon $40,000 de enganche y una casa que cuesta $200,000, necesitar\u00e1s un pr\u00e9stamo para cubrir el resto del costo. Es importante considerar varios factores para determinar cu\u00e1nto dinero necesitas y encontrar el pr\u00e9stamo que mejor se adapte a tus necesidades.\n\n**\u00bfCu\u00e1l ser\u00eda mi pago mensual?**\nPara calcular tu pago mensual, necesito m\u00e1s informaci\u00f3n. \u00bfCu\u00e1l es el prop\u00f3sito del pr\u00e9stamo? \u00bfEs para comprar la casa, refinanciar o alg\u00fan otro motivo? \u00bfTienes alg\u00fan plazo espec\u00edfico en mente, como 15 o 30 a\u00f1os? Con esta informaci\u00f3n, puedo ayudarte a calcular tu pago mensual y encontrar el pr\u00e9stamo que mejor se adapte a tus necesidades.\n\n**Estoy aqu\u00ed para ayudarte en lo que necesites.**",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 15.236920595169067
+}
+2025-08-02 22:36:03,285 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 15.236920595169067
+}
+2025-08-02 22:36:03,287 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 22:36:03,287 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 22:36:03,288 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "\u00bfCu\u00e1l ser\u00eda mi pago mensual?",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 22:36:22,584 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 19.30s
+2025-08-02 22:36:22,585 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "**\ud83c\udfe0 An\u00e1lisis del Mensaje: Financiamiento para Comprar una Casa**\n\n**\u00bfCu\u00e1l ser\u00eda mi pago mensual?**\n\n**\ud83d\udca1 Resumen:**\nEl usuario tiene $40,000 de enganche para comprar una casa que cuesta $200,000 y necesita ayuda para encontrar un pr\u00e9stamo hipotecario adecuado.\n\n**\ud83d\udcdd Explicaci\u00f3n Detallada:**\nPara determinar cu\u00e1nto dinero necesitas, debemos considerar varios factores, como tus ahorros iniciales, tus gastos mensuales y tus ingresos. Tambi\u00e9n debemos considerar los intereses y las comisiones asociadas con el pr\u00e9stamo.\n\n**\ud83d\udd0d Para Seguir Adelante:**\n\u2022 \u00bfCu\u00e1l es el prop\u00f3sito del pr\u00e9stamo? \u00bfEs para comprar la casa, refinanciar o alg\u00fan otro motivo?\n\u2022 \u00bfCu\u00e1nto dinero necesitas en total, incluyendo el enganche y los intereses?\n\u2022 \u00bfTienes alg\u00fan plazo espec\u00edfico en mente, como 15 o 30 a\u00f1os?\n\n**\ud83e\udd1d Estoy Aqu\u00ed para Ayudarte en Lo que Necesites**\nSi tienes alguna pregunta o necesitas m\u00e1s ayuda, no dudes en preguntar. Estoy aqu\u00ed para ayudarte a encontrar el pr\u00e9stamo que mejor se adapte a tus necesidades.\n\n**\ud83d\udcca C\u00e1lculo del Monto Necesario:**\nPara determinar cu\u00e1nto dinero necesitas, debemos considerar varios factores, como tus ahorros iniciales, tus gastos mensuales y tus ingresos. Tambi\u00e9n debemos considerar los intereses y las comisiones asociadas con el pr\u00e9stamo.\n\n**\ud83d\udca1 Conclusi\u00f3n:**\nCon $40,000 de enganche y una casa que cuesta $200,000, necesitar\u00e1s un pr\u00e9stamo para cubrir el resto del costo. Es importante considerar varios factores para determinar cu\u00e1nto dinero necesitas y encontrar el pr\u00e9stamo que mejor se adapte a tus necesidades.\n\n**\u00bfCu\u00e1l ser\u00eda mi pago mensual?**\nPara calcular tu pago mensual, necesito m\u00e1s informaci\u00f3n. \u00bfCu\u00e1l es el prop\u00f3sito del pr\u00e9stamo? \u00bfEs para comprar la casa, refinanciar o alg\u00fan otro motivo? \u00bfTienes alg\u00fan plazo espec\u00edfico en mente, como 15 o 30 a\u00f1os? Con esta informaci\u00f3n, puedo ayudarte a calcular tu pago mensual y encontrar el pr\u00e9stamo que mejor se adapte a tus necesidades.\n\n**Estoy aqu\u00ed para ayudarte en lo que necesites.**",
+  "response_structure": "general_format",
+  "readability_score": 0.5357142857142857,
+  "formatting_time": 19.296101331710815
+}
+2025-08-02 22:36:22,586 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "pregunta",
+  "response_structure": "general_format",
+  "readability_score": 0.5357142857142857,
+  "formatting_time": 19.296101331710815
+}
+2025-08-02 22:36:22,609 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:36:22,610 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 22:36:22,611 - langchain_debug - [32mINFO[0m - [END] Request ID: 785d07bc-6ba4-4b31-942c-e7d03d561843
+2025-08-02 22:36:22,612 - langchain_debug - [32mINFO[0m - [END] Total Time: 37.72s
+2025-08-02 22:36:22,612 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 22:36:22,613 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 22:36:22,614 - langchain_debug - [32mINFO[0m - [END] Response Length: 1955 chars
+2025-08-02 22:36:22,624 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:41:05,179 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: POST http://localhost:8000/chat
+2025-08-02 22:41:05,180 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: 001ed23c-562b-4243-97b8-6613ff37613a
+2025-08-02 22:41:05,180 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-08-02 22:41:05,180 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-08-02 22:41:05,181 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "content-length": "88",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:8000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-08-02 22:41:10,653 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 22:41:10,704 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Soy damian, un gusto!",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 22:41:17,038 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 6.39s
+2025-08-02 22:41:17,040 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "Hola, soy Damian un gusto",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "saludo",
+  "confidence": 0.8
+}
+2025-08-02 22:41:17,041 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.8,
+  "processing_time": 6.385549306869507
+}
+2025-08-02 22:41:18,998 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:41:18,998 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 22:41:18,999 - langchain_debug - [32mINFO[0m - [START] Request ID: abe93d53-9ffd-4653-af56-befea1019506
+2025-08-02 22:41:18,999 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_49
+2025-08-02 22:41:18,999 - langchain_debug - [32mINFO[0m - [START] Message: Soy damian, un gusto!
+2025-08-02 22:41:19,000 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:41:22,361 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 0
+2025-08-02 22:41:22,362 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 22:41:23,576 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 22:41:23,576 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "Soy damian, un gusto!",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 22:41:24,411 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 0.83s
+2025-08-02 22:41:24,411 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "**\u00a1Hola Damian!**\n\nMe alegra conocerte. Como Agente Procesador, estoy aqu\u00ed para ayudarte en lo que necesites. Aunque no hay resultados de b\u00fasqueda para esta conversaci\u00f3n, puedo utilizar mis habilidades y herramientas para generar una respuesta \u00fatil y completa.\n\n**An\u00e1lisis del mensaje:** Tu mensaje es una declaraci\u00f3n de presentaci\u00f3n, por lo que no hay una pregunta espec\u00edfica que responder.\n\n**Revisi\u00f3n del historial:** Como no hay historial de conversaci\u00f3n previo, no hay contexto relevante que revisar.\n\n**Planificaci\u00f3n de la estructura:** Mi respuesta ser\u00e1 una bienvenida y una presentaci\u00f3n de mi capacidad para ayudarte en lo que necesites.\n\n**Respuesta:** \u00a1Hola Damian! Me alegra conocerte. Como Agente Procesador, estoy aqu\u00ed para ayudarte en lo que necesites. Si tienes alguna pregunta o necesitas ayuda con algo en particular, no dudes en preguntar. Estoy aqu\u00ed para apoyarte y brindarte informaci\u00f3n \u00fatil y completa.\n\n**Estructura de respuesta:** Mi respuesta es una bienvenida y una presentaci\u00f3n de mis habilidades y capacidad para ayudarte. No hay necesidad de informaci\u00f3n contextual o de b\u00fasqueda, ya que tu mensaje es una declaraci\u00f3n de presentaci\u00f3n.\n\n**Formato de respuesta:** Mi respuesta est\u00e1 organizada en una secci\u00f3n l\u00f3gica, y uso un tono amigable y profesional.\n\n**Reglas importantes:** He seguido las reglas importantes, como responder en espa\u00f1ol, revisar el historial de conversaci\u00f3n y proporcionar informaci\u00f3n completa y \u00fatil.\n\n**Evitar:** No he evitado ni ignorado informaci\u00f3n del historial relevante, y mi respuesta es clara y estructurada.",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 0.8349430561065674
+}
+2025-08-02 22:41:24,412 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 0.8349430561065674
+}
+2025-08-02 22:41:24,412 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 22:41:24,413 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 22:41:24,413 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "Soy damian, un gusto!",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 22:41:24,977 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 0.56s
+2025-08-02 22:41:24,978 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "**\u00a1Hola Damian! \ud83e\udd1d**\n\nMe alegra conocerte. Como Agente Procesador, estoy aqu\u00ed para ayudarte en lo que necesites. Si tienes alguna pregunta o necesitas ayuda con algo en particular, no dudes en preguntar. Estoy aqu\u00ed para apoyarte y brindarte informaci\u00f3n \u00fatil y completa.\n\n**\u00bfC\u00f3mo puedo ayudarte? \ud83e\udd14**\n\n* Puedo responder a tus preguntas y brindarte informaci\u00f3n sobre cualquier tema.\n* Puedo ayudarte a encontrar recursos y herramientas para resolver tus problemas.\n* Puedo proporcionarte consejos y recomendaciones para mejorar tus habilidades y conocimientos.\n\n**Recuerda que estoy aqu\u00ed para ayudarte. \ud83d\udcaa**\n\nNo dudes en preguntar si necesitas algo. Estoy aqu\u00ed para apoyarte y brindarte la mejor experiencia posible.",
+  "response_structure": "general_format",
+  "readability_score": 0.8083333333333333,
+  "formatting_time": 0.5644848346710205
+}
+2025-08-02 22:41:24,978 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "saludo",
+  "response_structure": "general_format",
+  "readability_score": 0.8083333333333333,
+  "formatting_time": 0.5644848346710205
+}
+2025-08-02 22:41:24,994 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:41:24,994 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 22:41:24,994 - langchain_debug - [32mINFO[0m - [END] Request ID: abe93d53-9ffd-4653-af56-befea1019506
+2025-08-02 22:41:24,995 - langchain_debug - [32mINFO[0m - [END] Total Time: 6.00s
+2025-08-02 22:41:24,995 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 22:41:24,995 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 22:41:24,995 - langchain_debug - [32mINFO[0m - [END] Response Length: 711 chars
+2025-08-02 22:41:25,046 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:41:25,057 - langchain_debug - [33mWARNING[0m - [PERFORMANCE] Slow request detected: POST http://localhost:8000/chat took 19.875s (threshold: 5.0s)
+2025-08-02 22:41:25,058 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: POST http://localhost:8000/chat -> 200
+2025-08-02 22:41:25,059 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: 001ed23c-562b-4243-97b8-6613ff37613a
+2025-08-02 22:41:25,060 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 19.879s
+2025-08-02 22:41:25,061 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "1205",
+  "content-type": "application/json",
+  "access-control-allow-origin": "http://localhost:8000",
+  "access-control-allow-credentials": "true",
+  "vary": "Origin",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "19.878902435302734",
+  "x-performance-warning": "slow",
+  "x-request-id": "001ed23c-562b-4243-97b8-6613ff37613a"
+}
+2025-08-02 22:41:56,626 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: POST http://localhost:8000/chat
+2025-08-02 22:41:56,626 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: a1995af7-69db-43c6-aec4-793b1228704d
+2025-08-02 22:41:56,626 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-08-02 22:41:56,627 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-08-02 22:41:56,628 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "content-length": "138",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:8000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-08-02 22:42:43,559 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 22:42:43,560 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Quiero pensar en que invertir para poder jubilarme de forma autogestiva",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 22:42:59,381 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 15.82s
+2025-08-02 22:42:59,381 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "Quiero pensar en invertir para jubilarme de forma autogestiva",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "declaraci\u00f3n",
+  "confidence": 0.8
+}
+2025-08-02 22:42:59,382 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.8,
+  "processing_time": 15.821514368057251
+}
+2025-08-02 22:43:06,379 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:43:06,380 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 22:43:06,380 - langchain_debug - [32mINFO[0m - [START] Request ID: 3f8fa0b3-2d2c-452e-88a4-2740647bbe1c
+2025-08-02 22:43:06,381 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_49
+2025-08-02 22:43:06,381 - langchain_debug - [32mINFO[0m - [START] Message: Quiero pensar en que invertir para poder jubilarme de forma autogestiva
+2025-08-02 22:43:06,382 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:43:27,700 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 1
+2025-08-02 22:43:27,701 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Last message: Soy damian, un gusto!
+2025-08-02 22:43:27,725 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 22:43:34,605 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 22:43:34,608 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "Quiero pensar en que invertir para poder jubilarme de forma autogestiva",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 22:43:35,607 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 1.00s
+2025-08-02 22:43:35,610 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "**An\u00e1lisis del Mensaje:**\n\n* El tipo de consulta es una solicitud de ayuda para planificar la jubilaci\u00f3n de forma autogestiva.\n* Las herramientas necesarias son la b\u00fasqueda web y la informaci\u00f3n relevante del historial de conversaci\u00f3n.\n* Revis\u00e9 el historial y encontr\u00e9 que el usuario se present\u00f3 como \"Damian\" y expres\u00f3 su deseo de pensar en invertir para jubilarse de forma autogestiva.\n\n**Respuesta:**\n\n\u00a1Hola Damian! Me alegra que est\u00e9s pensando en planificar tu jubilaci\u00f3n de forma autogestiva. Es importante tener una estrategia financiera s\u00f3lida para lograr este objetivo.\n\n**Para empezar, te recomiendo que consideres los siguientes pasos:**\n\n1. **Define tus objetivos**: \u00bfCu\u00e1nto dinero necesitas para vivir c\u00f3modamente en tu jubilaci\u00f3n? \u00bfCu\u00e1l es tu horizonte temporal para llegar a la jubilaci\u00f3n?\n2. **Eval\u00faa tus ingresos y gastos**: Haz un balance de tus ingresos y gastos actuales para determinar cu\u00e1nto puedes ahorrar cada mes.\n3. **Investiga opciones de inversi\u00f3n**: Investiga diferentes opciones de inversi\u00f3n, como acciones, bonos, fondos mutuos o planes de pensiones, y determina cu\u00e1l es la mejor opci\u00f3n para tu situaci\u00f3n financiera.\n4. **Crea un plan de ahorro**: Crea un plan de ahorro que te permita alcanzar tus objetivos de jubilaci\u00f3n.\n\n**Recursos adicionales:**\n\nPuedes buscar informaci\u00f3n en l\u00ednea sobre estrategias de inversi\u00f3n y planificaci\u00f3n financiera para la jubilaci\u00f3n. Tambi\u00e9n puedes consultar con un asesor financiero para obtener asesoramiento personalizado.\n\n**Recuerda que la planificaci\u00f3n financiera para la jubilaci\u00f3n es un proceso que requiere tiempo y esfuerzo. Pero con una estrategia s\u00f3lida y una disciplina financiera, puedes alcanzar tus objetivos y vivir una jubilaci\u00f3n c\u00f3moda y segura.**\n\nEspero que esta informaci\u00f3n te sea \u00fatil, Damian. \u00a1Si tienes alguna pregunta o necesitas ayuda adicional, no dudes en preguntar!",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 1.0019333362579346
+}
+2025-08-02 22:43:35,612 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 1.0019333362579346
+}
+2025-08-02 22:43:35,614 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 22:43:35,615 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 22:43:35,616 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "Quiero pensar en que invertir para poder jubilarme de forma autogestiva",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 22:43:36,724 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 1.11s
+2025-08-02 22:43:36,725 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "\u00a1Hola Damian! \ud83c\udf89\n\n**Invertir para jubilarte de forma autogestiva: \u00bfC\u00f3mo empezar?** \ud83d\udcb0\n\n**Respuesta directa:** Es importante tener una estrategia financiera s\u00f3lida para lograr este objetivo. \ud83d\udcc8\n\n**Explicaci\u00f3n detallada:**\n\n**Define tus objetivos** \ud83d\udcca\n\u00bfCu\u00e1nto dinero necesitas para vivir c\u00f3modamente en tu jubilaci\u00f3n? \u00bfCu\u00e1l es tu horizonte temporal para llegar a la jubilaci\u00f3n? \ud83d\udd70\ufe0f\n\n**Eval\u00faa tus ingresos y gastos** \ud83d\udcb8\nHaz un balance de tus ingresos y gastos actuales para determinar cu\u00e1nto puedes ahorrar cada mes. \ud83d\udcca\n\n**Investiga opciones de inversi\u00f3n** \ud83d\udcc8\nInvestiga diferentes opciones de inversi\u00f3n, como acciones, bonos, fondos mutuos o planes de pensiones, y determina cu\u00e1l es la mejor opci\u00f3n para tu situaci\u00f3n financiera. \ud83d\udcca\n\n**Crea un plan de ahorro** \ud83d\udcb8\nCrea un plan de ahorro que te permita alcanzar tus objetivos de jubilaci\u00f3n. \ud83d\udcc6\n\n**Recursos adicionales:** \ud83d\udcda\nPuedes buscar informaci\u00f3n en l\u00ednea sobre estrategias de inversi\u00f3n y planificaci\u00f3n financiera para la jubilaci\u00f3n. Tambi\u00e9n puedes consultar con un asesor financiero para obtener asesoramiento personalizado. \ud83d\udcde\n\n**Recuerda que la planificaci\u00f3n financiera para la jubilaci\u00f3n es un proceso que requiere tiempo y esfuerzo. Pero con una estrategia s\u00f3lida y una disciplina financiera, puedes alcanzar tus objetivos y vivir una jubilaci\u00f3n c\u00f3moda y segura.** \ud83d\udcb8\n\nEspero que esta informaci\u00f3n te sea \u00fatil, Damian. \u00a1Si tienes alguna pregunta o necesitas ayuda adicional, no dudes en preguntar! \ud83e\udd14",
+  "response_structure": "general_format",
+  "readability_score": 0.48571428571428565,
+  "formatting_time": 1.1092143058776855
+}
+2025-08-02 22:43:36,726 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "declaraci\u00f3n",
+  "response_structure": "general_format",
+  "readability_score": 0.48571428571428565,
+  "formatting_time": 1.1092143058776855
+}
+2025-08-02 22:43:36,737 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:43:36,737 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 22:43:36,738 - langchain_debug - [32mINFO[0m - [END] Request ID: 3f8fa0b3-2d2c-452e-88a4-2740647bbe1c
+2025-08-02 22:43:36,738 - langchain_debug - [32mINFO[0m - [END] Total Time: 30.36s
+2025-08-02 22:43:36,738 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 22:43:36,738 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 22:43:36,739 - langchain_debug - [32mINFO[0m - [END] Response Length: 1437 chars
+2025-08-02 22:43:36,756 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:43:36,762 - langchain_debug - [33mWARNING[0m - [PERFORMANCE] Slow request detected: POST http://localhost:8000/chat took 100.133s (threshold: 5.0s)
+2025-08-02 22:43:36,763 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: POST http://localhost:8000/chat -> 200
+2025-08-02 22:43:36,763 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: a1995af7-69db-43c6-aec4-793b1228704d
+2025-08-02 22:43:36,764 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 100.137s
+2025-08-02 22:43:36,764 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "2013",
+  "content-type": "application/json",
+  "access-control-allow-origin": "http://localhost:8000",
+  "access-control-allow-credentials": "true",
+  "vary": "Origin",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "100.13697934150696",
+  "x-performance-warning": "slow",
+  "x-request-id": "a1995af7-69db-43c6-aec4-793b1228704d"
+}
+2025-08-02 22:43:59,970 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: POST http://localhost:8000/chat
+2025-08-02 22:43:59,970 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: b44d29db-20e5-4e9d-8a81-b501ca4e0924
+2025-08-02 22:43:59,971 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-08-02 22:43:59,971 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-08-02 22:43:59,972 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "content-length": "144",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:8000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-08-02 22:44:09,367 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 22:44:09,368 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "Quiero algo de poco riesgo, pensaba invertir unos 200usd por mes, que opinas?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 22:44:31,050 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 21.68s
+2025-08-02 22:44:31,051 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "Quiero invertir 200usd al mes, \u00bfqu\u00e9 opinas?",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "pregunta",
+  "confidence": 0.85
+}
+2025-08-02 22:44:31,051 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.85,
+  "processing_time": 21.68226146697998
+}
+2025-08-02 22:44:37,381 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:44:37,382 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 22:44:37,383 - langchain_debug - [32mINFO[0m - [START] Request ID: 93341d8b-fa05-4075-8dc4-b123c8abc2c1
+2025-08-02 22:44:37,383 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_49
+2025-08-02 22:44:37,384 - langchain_debug - [32mINFO[0m - [START] Message: Quiero algo de poco riesgo, pensaba invertir unos 200usd por mes, que opinas?
+2025-08-02 22:44:37,384 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:44:57,970 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 2
+2025-08-02 22:44:57,973 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Last message: Quiero pensar en que invertir para poder jubilarme de forma autogestiva
+2025-08-02 22:44:58,010 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 22:44:59,236 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 22:44:59,238 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "Quiero algo de poco riesgo, pensaba invertir unos 200usd por mes, que opinas?",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 22:45:03,556 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 4.32s
+2025-08-02 22:45:03,557 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "**An\u00e1lisis del Mensaje:**\n\n* El tipo de consulta es una pregunta sobre la inversi\u00f3n y la planificaci\u00f3n financiera para la jubilaci\u00f3n.\n* Las herramientas necesarias son b\u00fasqueda y c\u00e1lculo.\n* Reviso el historial de conversaci\u00f3n para encontrar el contexto relevante.\n\n**Respuesta:**\n\n**Invertir 200 USD al mes con poco riesgo**\n\n**Respuesta directa:** Es importante considerar que la inversi\u00f3n de 200 USD al mes puede generar un rendimiento significativo a largo plazo, siempre y cuando se elija la inversi\u00f3n adecuada.\n\n**Explicaci\u00f3n detallada:**\n\n**Inversi\u00f3n en t\u00edtulos de deuda:** Una alternativa segura para invertir 200 USD al mes es en t\u00edtulos de deuda, como bonos gubernamentales o corporativos. Estos t\u00edtulos ofrecen una rentabilidad relativamente baja, pero son considerados de bajo riesgo.\n\n**Inversi\u00f3n en fondos de renta fija:** Otro opci\u00f3n es invertir en fondos de renta fija, que diversifican la cartera invertida en diferentes t\u00edtulos de deuda y activos. Estos fondos ofrecen una rentabilidad moderada y un riesgo relativamente bajo.\n\n**Calcular el rendimiento:** Para calcular el rendimiento de la inversi\u00f3n, podemos utilizar la f\u00f3rmula de la rentabilidad simple: (Monto inicial x Tasa de inter\u00e9s) / Monto inicial. Por ejemplo, si invertimos 200 USD al mes a una tasa de inter\u00e9s del 4%, el rendimiento anual ser\u00eda de aproximadamente 8%.\n\n**Recursos adicionales:** Puedes buscar informaci\u00f3n en l\u00ednea sobre estrategias de inversi\u00f3n y planificaci\u00f3n financiera para la jubilaci\u00f3n. Tambi\u00e9n puedes consultar con un asesor financiero para obtener asesoramiento personalizado.\n\nEspero que esta informaci\u00f3n te sea \u00fatil, Damian. \u00a1Si tienes alguna pregunta o necesitas ayuda adicional, no dudes en preguntar!",
+  "tools_executed": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 4.320125102996826
+}
+2025-08-02 22:45:03,557 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [],
+  "search_performed": false,
+  "response_quality": 0.6,
+  "processing_time": 4.320125102996826
+}
+2025-08-02 22:45:03,558 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 22:45:03,558 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 22:45:03,559 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "Quiero algo de poco riesgo, pensaba invertir unos 200usd por mes, que opinas?",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 22:45:07,441 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 3.88s
+2025-08-02 22:45:07,442 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "**Invertir con poco riesgo: \u00bfEs una buena opci\u00f3n?** \ud83d\udcb8\n\n**Respuesta directa:** La inversi\u00f3n de 200 USD al mes puede ser una buena opci\u00f3n para generar un rendimiento significativo a largo plazo, siempre y cuando se elija la inversi\u00f3n adecuada.\n\n**Explicaci\u00f3n detallada:**\n\n**Inversi\u00f3n en t\u00edtulos de deuda** \ud83d\udcb8\nUna alternativa segura para invertir 200 USD al mes es en t\u00edtulos de deuda, como bonos gubernamentales o corporativos. Estos t\u00edtulos ofrecen una rentabilidad relativamente baja, pero son considerados de bajo riesgo.\n\n**Inversi\u00f3n en fondos de renta fija** \ud83d\udcc8\nOtra opci\u00f3n es invertir en fondos de renta fija, que diversifican la cartera invertida en diferentes t\u00edtulos de deuda y activos. Estos fondos ofrecen una rentabilidad moderada y un riesgo relativamente bajo.\n\n**Calcular el rendimiento** \ud83d\udcca\nPara calcular el rendimiento de la inversi\u00f3n, podemos utilizar la f\u00f3rmula de la rentabilidad simple: (Monto inicial x Tasa de inter\u00e9s) / Monto inicial. Por ejemplo, si invertimos 200 USD al mes a una tasa de inter\u00e9s del 4%, el rendimiento anual ser\u00eda de aproximadamente 8%.\n\n**Recursos adicionales** \ud83d\udcda\nPuedes buscar informaci\u00f3n en l\u00ednea sobre estrategias de inversi\u00f3n y planificaci\u00f3n financiera para la jubilaci\u00f3n. Tambi\u00e9n puedes consultar con un asesor financiero para obtener asesoramiento personalizado.\n\n**Conclusi\u00f3n** \ud83c\udfaf\nEn resumen, invertir 200 USD al mes puede ser una buena opci\u00f3n para generar un rendimiento significativo a largo plazo, siempre y cuando se elija la inversi\u00f3n adecuada. Es importante considerar las opciones de inversi\u00f3n y calcular el rendimiento para tomar una decisi\u00f3n informada.\n\nEspero que esta informaci\u00f3n te sea \u00fatil, Damian. \u00a1Si tienes alguna pregunta o necesitas ayuda adicional, no dudes en preguntar! \ud83d\ude0a",
+  "response_structure": "general_format",
+  "readability_score": 0.3071428571428571,
+  "formatting_time": 3.8829150199890137
+}
+2025-08-02 22:45:07,443 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "pregunta",
+  "response_structure": "general_format",
+  "readability_score": 0.3071428571428571,
+  "formatting_time": 3.8829150199890137
+}
+2025-08-02 22:45:07,454 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:45:07,455 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 22:45:07,455 - langchain_debug - [32mINFO[0m - [END] Request ID: 93341d8b-fa05-4075-8dc4-b123c8abc2c1
+2025-08-02 22:45:07,455 - langchain_debug - [32mINFO[0m - [END] Total Time: 30.07s
+2025-08-02 22:45:07,456 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 22:45:07,456 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 22:45:07,457 - langchain_debug - [32mINFO[0m - [END] Response Length: 1739 chars
+2025-08-02 22:45:07,473 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:45:07,480 - langchain_debug - [33mWARNING[0m - [PERFORMANCE] Slow request detected: POST http://localhost:8000/chat took 67.508s (threshold: 5.0s)
+2025-08-02 22:45:07,482 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: POST http://localhost:8000/chat -> 200
+2025-08-02 22:45:07,484 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: b44d29db-20e5-4e9d-8a81-b501ca4e0924
+2025-08-02 22:45:07,485 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 67.512s
+2025-08-02 22:45:07,485 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "2279",
+  "content-type": "application/json",
+  "access-control-allow-origin": "http://localhost:8000",
+  "access-control-allow-credentials": "true",
+  "vary": "Origin",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "67.51222634315491",
+  "x-performance-warning": "slow",
+  "x-request-id": "b44d29db-20e5-4e9d-8a81-b501ca4e0924"
+}
+2025-08-02 22:45:39,748 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request started: POST http://localhost:8000/chat
+2025-08-02 22:45:39,749 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: e3472ebb-073a-401c-8986-61022444bb2d
+2025-08-02 22:45:39,750 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Client IP: 127.0.0.1
+2025-08-02 22:45:39,751 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa...
+2025-08-02 22:45:39,752 - langchain_debug - DEBUG - [MIDDLEWARE] Headers: {
+  "host": "localhost:8000",
+  "connection": "keep-alive",
+  "content-length": "116",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:8000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:8000/docs",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "es-ES,es;q=0.9,en;q=0.8"
+}
+2025-08-02 22:45:43,921 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Starting...
+2025-08-02 22:45:43,922 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Input: {
+  "message": "SP500 y/o bonos del tesoro americano por ejemplo?",
+  "temperature": 0.1,
+  "max_tokens": 500
+}
+2025-08-02 22:45:47,447 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Completed in 3.53s
+2025-08-02 22:45:47,448 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Output: {
+  "cleaned_message": "\u00bfQu\u00e9 relaci\u00f3n hay entre el \u00edndice SP500 y los bonos del tesoro americano?",
+  "is_valid": true,
+  "validation_errors": [],
+  "content_type": "pregunta",
+  "confidence": 0.85
+}
+2025-08-02 22:45:47,448 - langchain_debug - [32mINFO[0m - [AGENT] [CURATOR] Metadata: {
+  "is_valid": true,
+  "confidence": 0.85,
+  "processing_time": 3.5262258052825928
+}
+2025-08-02 22:45:50,407 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:45:50,407 - langchain_debug - [32mINFO[0m - [START] NEW REQUEST STARTED
+2025-08-02 22:45:50,407 - langchain_debug - [32mINFO[0m - [START] Request ID: 17657d80-e6cb-4b5b-834c-88c56906b1ec
+2025-08-02 22:45:50,408 - langchain_debug - [32mINFO[0m - [START] Session ID: user_123_49
+2025-08-02 22:45:50,408 - langchain_debug - [32mINFO[0m - [START] Message: SP500 y/o bonos del tesoro americano por ejemplo?
+2025-08-02 22:45:50,408 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:46:38,091 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Chat history length: 3
+2025-08-02 22:46:38,093 - langchain_debug - [32mINFO[0m - [CHAIN] MEMORY_DEBUG: Last message: Quiero algo de poco riesgo, pensaba invertir unos 200usd por mes, que opinas?
+2025-08-02 22:46:38,120 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_2: Starting Processor Agent
+2025-08-02 22:46:39,780 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Starting...
+2025-08-02 22:46:39,781 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Input: {
+  "message": "SP500 y/o bonos del tesoro americano por ejemplo?",
+  "temperature": 0.7,
+  "max_tokens": 1000
+}
+2025-08-02 22:46:39,791 - langchain_debug - [32mINFO[0m - [TOOL] calculate
+2025-08-02 22:46:39,792 - langchain_debug - [32mINFO[0m - [TOOL] Input: {
+  "expression": "none"
+}
+2025-08-02 22:46:39,793 - langchain_debug - [32mINFO[0m - [TOOL] Result: {
+  "error": "No mathematical expression found",
+  "success": false
+}
+2025-08-02 22:46:39,794 - langchain_debug - [32mINFO[0m - [TOOL] Time: 0.01s
+2025-08-02 22:46:43,909 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Completed in 4.13s
+2025-08-02 22:46:43,909 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Output: {
+  "raw_response": "**Invertir en SP500 y bonos del tesoro americano**\n\n**Respuesta directa:** La SP500 y los bonos del tesoro americano son opciones de inversi\u00f3n a largo plazo y relativamente seguras. Sin embargo, antes de invertir, es importante considerar tus objetivos financieros y tu tolerancia al riesgo.\n\n**Explicaci\u00f3n detallada:**\n\n**La SP500:** La SP500 es un \u00edndice burs\u00e1til que sigue el desempe\u00f1o de las 500 principales empresas de la Bolsa de Nueva York. Invertir en la SP500 a trav\u00e9s de un fondo mutual o un ETF (Exchange-Traded Fund) te da acceso a una cartera diversificada de acciones. La SP500 es considerada una inversi\u00f3n a largo plazo y puede ser una buena opci\u00f3n para aquellos que buscan un crecimiento moderado y un ingreso regular.\n\n**Bono del tesoro americano:** Los bonos del tesoro americano son deuda emitida por el gobierno federal estadounidense. Los bonos de tesoro ofrecen una rentabilidad fija y un riesgo relativamente bajo. La tasa de inter\u00e9s de los bonos de tesoro puede variar seg\u00fan la duraci\u00f3n del plazo y la calidad del cr\u00e9dito del emisor. Invertir en bonos de tesoro es una excelente opci\u00f3n para aquellos que buscan rentabilidad segura y no necesitan acceso a sus fondos en un plazo corto.\n\n**Calcular el rendimiento:** Para calcular el rendimiento de la inversi\u00f3n en la SP500 o bonos del tesoro americano, podemos utilizar la f\u00f3rmula de la rentabilidad simple: (Monto inicial x Tasa de inter\u00e9s) / Monto inicial. Por ejemplo, si invertimos 200 USD al mes a una tasa de inter\u00e9s del 4% en la SP500 o un bono del tesoro americano, el rendimiento anual ser\u00eda de aproximadamente 8%.\n\n**Recursos adicionales:** Puedes buscar informaci\u00f3n en l\u00ednea sobre estrategias de inversi\u00f3n y planificaci\u00f3n financiera para la jubilaci\u00f3n. Tambi\u00e9n puedes consultar con un asesor financiero para obtener asesoramiento personalizado.\n\n**Conclusi\u00f3n:** La SP500 y los bonos del tesoro americano son opciones de inversi\u00f3n a largo plazo y relativamente seguras. Sin embargo, antes de invertir, es importante considerar tus objetivos financieros y tu tolerancia al riesgo. Es importante calcular el rendimiento y considerar las opciones de inversi\u00f3n para tomar una decisi\u00f3n informada.\n\nEspero que esta informaci\u00f3n te sea \u00fatil, Damian. \u00a1Si tienes alguna pregunta o necesitas ayuda adicional, no dudes en preguntar!",
+  "tools_executed": [
+    {
+      "tool_name": "calculate",
+      "success": false,
+      "result": {
+        "error": "No mathematical expression found",
+        "success": false
+      },
+      "error": "No mathematical expression found",
+      "execution_time": 0.008006095886230469
+    }
+  ],
+  "search_performed": false,
+  "response_quality": 0.8,
+  "processing_time": 4.12870192527771
+}
+2025-08-02 22:46:43,910 - langchain_debug - [32mINFO[0m - [AGENT] [PROCESSOR] Metadata: {
+  "tools_used": [
+    "calculate"
+  ],
+  "search_performed": false,
+  "response_quality": 0.8,
+  "processing_time": 4.12870192527771
+}
+2025-08-02 22:46:43,910 - langchain_debug - [32mINFO[0m - [CHAIN] STEP_3: Starting Formatter Agent
+2025-08-02 22:46:43,911 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Starting...
+2025-08-02 22:46:43,911 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Input: {
+  "user_message": "SP500 y/o bonos del tesoro americano por ejemplo?",
+  "temperature": 0.3,
+  "max_tokens": 800
+}
+2025-08-02 22:46:44,937 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Completed in 1.03s
+2025-08-02 22:46:44,938 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Output: {
+  "formatted_response": "**\ud83d\udcc8 Inversiones Seguras: SP500 y Bonos del Tesoro Americano**\n\n**\ud83c\udfaf Respuesta Directa:** La SP500 y los bonos del tesoro americano son opciones de inversi\u00f3n a largo plazo y relativamente seguras. Sin embargo, antes de invertir, es importante considerar tus objetivos financieros y tu tolerancia al riesgo.\n\n**\ud83d\udcca Explicaci\u00f3n Detallada:**\n\n**La SP500:** \ud83d\udcc8 La SP500 es un \u00edndice burs\u00e1til que sigue el desempe\u00f1o de las 500 principales empresas de la Bolsa de Nueva York. Invertir en la SP500 a trav\u00e9s de un fondo mutual o un ETF (Exchange-Traded Fund) te da acceso a una cartera diversificada de acciones. La SP500 es considerada una inversi\u00f3n a largo plazo y puede ser una buena opci\u00f3n para aquellos que buscan un crecimiento moderado y un ingreso regular.\n\n**Bono del Tesoro Americano:** \ud83d\udcb8 Los bonos del tesoro americano son deuda emitida por el gobierno federal estadounidense. Los bonos de tesoro ofrecen una rentabilidad fija y un riesgo relativamente bajo. La tasa de inter\u00e9s de los bonos de tesoro puede variar seg\u00fan la duraci\u00f3n del plazo y la calidad del cr\u00e9dito del emisor. Invertir en bonos de tesoro es una excelente opci\u00f3n para aquellos que buscan rentabilidad segura y no necesitan acceso a sus fondos en un plazo corto.\n\n**\ud83d\udcca Calcular el Rendimiento:** Para calcular el rendimiento de la inversi\u00f3n en la SP500 o bonos del tesoro americano, podemos utilizar la f\u00f3rmula de la rentabilidad simple: (Monto inicial x Tasa de inter\u00e9s) / Monto inicial. Por ejemplo, si invertimos 200 USD al mes a una tasa de inter\u00e9s del 4% en la SP500 o un bono del tesoro americano, el rendimiento anual ser\u00eda de aproximadamente 8%.\n\n**\ud83d\udcdd Recursos Adicionales:** Puedes buscar informaci\u00f3n en l\u00ednea sobre estrategias de inversi\u00f3n y planificaci\u00f3n financiera para la jubilaci\u00f3n. Tambi\u00e9n puedes consultar con un asesor financiero para obtener asesoramiento personalizado.\n\n**\ud83d\udcca Conclusi\u00f3n:** La SP500 y los bonos del tesoro americano son opciones de inversi\u00f3n a largo plazo y relativamente seguras. Sin embargo, antes de invertir, es importante considerar tus objetivos financieros y tu tolerancia al riesgo. Es importante calcular el rendimiento y considerar las opciones de inversi\u00f3n para tomar una decisi\u00f3n informada.\n\nEspero que esta informaci\u00f3n te sea \u00fatil, Damian. \u00a1Si tienes alguna pregunta o necesitas ayuda adicional, no dudes en preguntar!",
+  "response_structure": "general_format",
+  "readability_score": 0.21944444444444444,
+  "formatting_time": 1.0265264511108398
+}
+2025-08-02 22:46:44,941 - langchain_debug - [32mINFO[0m - [AGENT] [FORMATTER] Metadata: {
+  "response_type": "pregunta",
+  "response_structure": "general_format",
+  "readability_score": 0.21944444444444444,
+  "formatting_time": 1.0265264511108398
+}
+2025-08-02 22:46:44,961 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:46:44,961 - langchain_debug - [32mINFO[0m - [END] REQUEST COMPLETED
+2025-08-02 22:46:44,962 - langchain_debug - [32mINFO[0m - [END] Request ID: 17657d80-e6cb-4b5b-834c-88c56906b1ec
+2025-08-02 22:46:44,962 - langchain_debug - [32mINFO[0m - [END] Total Time: 54.55s
+2025-08-02 22:46:44,963 - langchain_debug - [32mINFO[0m - [END] Agents Used: curator, processor, formatter
+2025-08-02 22:46:44,963 - langchain_debug - [32mINFO[0m - [END] Success: True
+2025-08-02 22:46:44,964 - langchain_debug - [32mINFO[0m - [END] Response Length: 2328 chars
+2025-08-02 22:46:44,991 - langchain_debug - [32mINFO[0m - ============================================================
+2025-08-02 22:46:45,001 - langchain_debug - [33mWARNING[0m - [PERFORMANCE] Slow request detected: POST http://localhost:8000/chat took 65.247s (threshold: 5.0s)
+2025-08-02 22:46:45,003 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Response completed: POST http://localhost:8000/chat -> 200
+2025-08-02 22:46:45,004 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Request ID: e3472ebb-073a-401c-8986-61022444bb2d
+2025-08-02 22:46:45,006 - langchain_debug - [32mINFO[0m - [MIDDLEWARE] Processing time: 65.255s
+2025-08-02 22:46:45,009 - langchain_debug - DEBUG - [MIDDLEWARE] Response headers: {
+  "content-length": "3057",
+  "content-type": "application/json",
+  "access-control-allow-origin": "http://localhost:8000",
+  "access-control-allow-credentials": "true",
+  "vary": "Origin",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "x-xss-protection": "1; mode=block",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://fastapi.tiangolo.com; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'",
+  "x-processing-time": "65.25484347343445",
+  "x-performance-warning": "slow",
+  "x-request-id": "e3472ebb-073a-401c-8986-61022444bb2d"
+}

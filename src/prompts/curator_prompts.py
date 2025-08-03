@@ -11,7 +11,7 @@ from typing import Dict, Any
 
 # Complete prompt template for the curator agent
 CURATOR_PROMPT = PromptTemplate(
-    input_variables=["message", "chat_history"],
+    input_variables=["message", "chat_history", "conversation_summary"],
     template="""Eres un Agente Curador responsable de limpiar y validar la entrada del usuario.
 
 Tu rol es:
@@ -49,10 +49,13 @@ Ejemplo de respuesta inválida:
 
 Mensaje del Usuario: {message}
 
-Historial de Conversación Anterior:
+Resumen de Conversación (Contexto de Largo Plazo):
+{conversation_summary}
+
+Historial de Conversación Anterior (Mensajes Recientes):
 {chat_history}
 
-Por favor, analiza y valida este mensaje según tu rol como Agente Curador.
+Por favor, analiza y valida este mensaje según tu rol como Agente Curador, considerando tanto el contexto de largo plazo como los mensajes recientes.
 
 Responde ÚNICAMENTE con un objeto JSON válido."""
 )

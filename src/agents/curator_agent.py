@@ -134,6 +134,7 @@ class CuratorAgent(Runnable):
         request_id = input_data.get("request_id", "unknown")
         message = input_data.get("message", "")
         chat_history = input_data.get("chat_history", [])
+        conversation_summary = input_data.get("conversation_summary", "")
         
         # Log the request (using enhanced logger)
         self.logger.start_agent(request_id, "curator", {
@@ -149,7 +150,8 @@ class CuratorAgent(Runnable):
             # Prepare input for the chain
             chain_input = {
                 "message": message,
-                "chat_history": formatted_history
+                "chat_history": formatted_history,
+                "conversation_summary": conversation_summary
             }
             
             # Run the chain

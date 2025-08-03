@@ -22,7 +22,7 @@ def test_imports():
         from src.config import get_settings
         from src.utils.llm_client import create_llm_client
         from src.utils.logger import get_logger
-        from src.memory.conversation_memory import create_memory
+        from src.memory.hybrid_conversation_memory import create_hybrid_memory
         from src.agents.curator_agent import create_curator_agent
         from src.chains.simple_chain import create_simple_chain
         from src.models import ChatRequest, ChatResponse
@@ -74,10 +74,10 @@ def test_memory():
     print("🔍 Testing memory...")
     
     try:
-        from src.memory.conversation_memory import create_memory, get_conversation_history
+        from src.memory.hybrid_conversation_memory import create_hybrid_memory, get_hybrid_conversation_history
         
         # Create memory
-        memory = create_memory("test_session")
+        memory = create_hybrid_memory("test_session")
         
         # Save context
         memory.save_context(
@@ -86,8 +86,8 @@ def test_memory():
         )
         
         # Load history
-        history = get_conversation_history("test_session")
-        assert len(history) > 0
+        history = get_hybrid_conversation_history("test_session")
+        assert len(history["recent_messages"]) > 0
         
         print("✅ Memory test passed")
         return True

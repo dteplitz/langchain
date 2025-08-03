@@ -69,12 +69,14 @@ class ProcessorInput(BaseModel):
     Attributes:
         message: User message
         chat_history: Previous conversation history
+        conversation_summary: Summary of long-term conversation context
         curator_output: Output from curator agent
         tools_used: List of tools that were used
         search_results: Results from search operations
     """
     message: str = Field(..., description="User message")
     chat_history: List[Dict[str, Any]] = Field(default_factory=list, description="Previous conversation history")
+    conversation_summary: str = Field(default="", description="Summary of long-term conversation context")
     curator_output: CuratorOutput = Field(..., description="Output from curator agent")
     tools_used: List[str] = Field(default_factory=list, description="List of tools that were used")
     search_results: List[SearchResult] = Field(default_factory=list, description="Results from search operations")

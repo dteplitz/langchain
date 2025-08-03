@@ -10,7 +10,8 @@ import uuid
 from typing import Dict, Any, Optional
 from langchain.schema.runnable import Runnable
 from src.agents.curator_agent import CuratorAgent, create_curator_agent
-from src.memory.conversation_memory import create_memory, get_conversation_history
+from src.memory.hybrid_conversation_memory import create_hybrid_memory
+from src.memory.hybrid_conversation_memory import get_hybrid_conversation_history
 from src.utils.logger import get_logger
 
 
@@ -59,16 +60,19 @@ class SimpleChain(Runnable):
         debug = input_data.get("debug", False)
         
         # Create memory for this session
-        memory = create_memory(session_id)
+        memory = create_hybrid_memory(session_id)
         
-        # Get conversation history
-        chat_history = get_conversation_history(session_id, limit=5)
+        # Get conversation history and summary
+        chat_history_data = get_hybrid_conversation_history(session_id, limit=5, include_summary=True)
+        chat_history = chat_history_data["recent_messages"]
+        conversation_summary = chat_history_data["conversation_summary"]
         
         try:
             # Process through curator agent
             curator_result = self.curator_agent.invoke({
                 "message": message,
                 "chat_history": chat_history,
+                "conversation_summary": conversation_summary,
                 "request_id": request_id
             })
             

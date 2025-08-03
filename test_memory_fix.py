@@ -13,7 +13,7 @@ from pathlib import Path
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
-from src.memory.conversation_memory import create_memory, get_conversation_history
+from src.memory.hybrid_conversation_memory import create_hybrid_memory, get_hybrid_conversation_history
 from src.prompts.curator_prompts import format_chat_history
 from src.config import get_settings
 
@@ -25,7 +25,7 @@ def test_memory_creation():
     try:
         # Create memory for test session
         session_id = "test_session_123"
-        memory = create_memory(session_id)
+        memory = create_hybrid_memory(session_id)
         
         print(f"✅ Memoria creada para sesión: {session_id}")
         print(f"✅ Ruta de base de datos: {memory.db_path}")
@@ -52,7 +52,7 @@ def test_memory_save_and_load():
     
     try:
         session_id = "test_session_456"
-        memory = create_memory(session_id)
+        memory = create_hybrid_memory(session_id)
         
         # Test data
         test_message = "Hola, ¿cómo estás?"
@@ -66,7 +66,8 @@ def test_memory_save_and_load():
         print("✅ Conversación guardada")
         
         # Load conversation history
-        history = get_conversation_history(session_id, limit=5)
+        history_data = get_hybrid_conversation_history(session_id, limit=5)
+        history = history_data["recent_messages"]
         print(f"✅ Historial cargado: {len(history)} mensajes")
         
         if history:
@@ -86,7 +87,7 @@ def test_chat_history_format():
     print("\n🧪 Probando formato de historial de chat...")
     
     try:
-        # Create test history in the format returned by get_conversation_history
+        # Create test history in the format returned by get_hybrid_conversation_history
         test_history = [
             {
                 "message": "Hola, me llamo Juan",
@@ -129,7 +130,7 @@ def test_memory_integration():
     
     try:
         session_id = "test_integration_789"
-        memory = create_memory(session_id)
+        memory = create_hybrid_memory(session_id)
         
         # Simulate a conversation
         conversations = [
@@ -148,7 +149,8 @@ def test_memory_integration():
         print(f"✅ {len(conversations)} conversaciones guardadas")
         
         # Load history
-        history = get_conversation_history(session_id, limit=10)
+        history_data = get_hybrid_conversation_history(session_id, limit=10)
+        history = history_data["recent_messages"]
         print(f"✅ Historial cargado: {len(history)} mensajes")
         
         # Format for agents
